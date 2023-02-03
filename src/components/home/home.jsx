@@ -1,7 +1,10 @@
+import { Footer } from '../footer';
 import { CarousalComponent } from './carousal';
+import { Guide } from './guide';
 import { HeroSection } from './heroSection';
 import Styles from './home.module.scss';
 import { ServicesSection } from './servicesSection';
+import { Testimonials } from './testimonials';
 
 function Home() {
 	return (
@@ -9,7 +12,10 @@ function Home() {
 			<HeroSection />
 			<ServicesSection />
 			<CarousalComponent title="Top Destinations"/>
+			<Guide />
+			<Testimonials />
 			<CarousalComponent title="Top Tour Organizers"/>
+			<Footer />
 		</div>
 	);
 }
