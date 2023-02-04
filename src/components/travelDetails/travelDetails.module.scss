@@ -1,0 +1,36 @@
+.tourDetails {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+
+    .top {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/traveldetails.png);
+        background-size: cover;
+        background-position: center;
+        font-family: Poppins;
+        font-size: 47px;
+        font-weight: 700;
+        line-height: 71px;
+        text-align: center;
+        color: white;
+
+    }
+    .main{
+        background-color: #E5E5E5;
+        display: flex;
+        .booking{
+            border: 1px solid red;
+            width: 65%;
+        }
+        .bill{
+            border: 1px solid green;
+            width: 35%;
+        }
+    }
+
+}
