@@ -1,0 +1,82 @@
+.navbar{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 160px;
+
+    .navbarContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3rem 0 2rem;
+
+        .logo{
+            display: flex;
+            align-items: center;
+            .navbarLogo{
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+                .navbarImage{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .name{
+                font-family: 'Philosopher';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 40px;
+                text-decoration: uppercase;
+                color: #FFFFFF;
+            }
+        }
+        .navbarLinks{
+            display: flex;
+            align-items: center;
+            .navbarLink{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                color: #FFFFFF;
+                margin: 0 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    color: #14183E;
+                }
+            }
+            .loginButton{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 13px 44px;
+                gap: 10px;
+                border: 2px solid #FFFFFF;
+                border-radius: 12px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                color: #FFFFFF;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    background: #14183E;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
