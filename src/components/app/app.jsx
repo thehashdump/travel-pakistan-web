@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from '../home';
+import { TourList } from '../tourList';
 import Styles from './app.module.scss';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 			<Layout>
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/tours" element={<TourList />} />
 				</Routes>
 			</Layout>
 		</div>

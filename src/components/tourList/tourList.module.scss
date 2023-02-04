@@ -1,0 +1,119 @@
+.tourList{
+    display: flex;
+    flex-direction: column;
+
+    .top{
+        width: 100%;
+        height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: url(../../assets/listTourBackground.png);
+        background-size: cover;
+    }
+    .main{
+        display: flex;
+        padding: 30px 60px 100px;
+        background-color:  #EBF0F4;
+        
+        .filterBox{
+            display: flex;
+            width: 25%;
+            height: fit-content;
+            background: #FFFFFF;
+            border-radius: 15px;
+            flex-direction: column;
+            font-family: 'Poppins';
+            font-style: normal;
+
+            .top{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100px;
+                justify-content: space-between;
+                background: #FFFFFF;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1E1D4C;
+                border-bottom: 1px solid #4F4F4F33;
+                padding: 14px 22px;
+                border-radius: 15px 15px 0px 0px;
+            }
+            .middle{
+                display: flex;
+                flex-direction: column;
+                padding: 14px 22px;
+                gap: 10px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1E1D4C;
+                border-bottom: 1px solid #4F4F4F33;
+
+                .range{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    .rangeInfo{
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 18px;
+                        text-align: center;
+                        color: #1E1D4C;
+                    }
+                }
+            }
+            .bottom{
+                display: flex;
+                flex-direction: column;
+                padding: 14px 22px;
+                gap: 11px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1E1D4C;
+                .checkBox{
+                    display: flex;
+                    gap: 11px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: #4F4F4F;
+                }
+                .resetButton{
+                    width: 134px;
+                    height: 46px;
+                    display: flex;
+                    background: #14183E;
+                    border-radius: 38px;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: justify;
+                    color: #FFFFFF;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 7px auto;
+                    cursor: pointer;
+                    &:hover{
+                        background: #1E1D4C;
+                    }
+                }
+
+            }
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            align-items: flex-end;
+            gap: 15px;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+.card{
+    width: 95%;
+    height: 170px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    cursor: pointer;
+    &:hover{
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+    }
+
+    .cardImage{
+        width: 25%;
+        height: 100%;
+        border-radius: 5px;
+        
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
+    .cardInfo{
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .top{
+            display: flex;
+            justify-content: space-between;
+            
+            .left{
+                display: flex;
+                flex-direction: column;
+                .title{
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #1E1D4C;
+                }
+                .moreInfo{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-weight: 300;
+                    font-size: 10px;
+                    line-height: 15px;
+                    color: #1E1D4C;
+
+                    span{
+                        display: flex;
+                        align-items: center;
+                        gap: 3px;
+                    }
+                }
+            }
+            .right{
+                .price{
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 300;
+                    font-size: 10px;
+                    line-height: 15px;
+                    color: #1E1D4C;
+                    .priceText{
+                        font-weight: 500;
+                        line-height: 15px;
+                        span{
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            .tripInfo{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                .days,
+                .people
+                {
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                    font-weight: 300;
+                    font-size: 10px;
+                    line-height: 15px;
+                    color: #1E1D4C;
+                }
+            }
+            .tags{
+                display: flex;
+                gap: 15px;
+                .tag{
+                    width: fit-content;
+                    padding: 7px 15px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #1E1D4C;
+                    background-color: gainsboro;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
