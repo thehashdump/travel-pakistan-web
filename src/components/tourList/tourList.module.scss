@@ -20,6 +20,7 @@
         .filterBox{
             display: flex;
             width: 25%;
+            height: fit-content;
             background: #FFFFFF;
             border-radius: 15px;
             flex-direction: column;
@@ -109,7 +110,10 @@
         }
         .list{
             display: flex;
+            flex-direction: column;
             width: 75%;
+            align-items: flex-end;
+            gap: 15px;
         }
     }
 }

@@ -1,6 +1,7 @@
 import { Footer } from '../footer';
 import { Navbar } from '../navbar';
 import { SearchBar } from '../searchBar';
+import { Card } from './card/card';
 import Styles from './tourList.module.scss';
 
 function TourList() {
@@ -48,7 +49,11 @@ function TourList() {
 					</div>
 				</div>
 				<div className={Styles.list}>
-					Tour list comes here
+					<Card />
+					<Card />
+					<Card />
+					<Card />
+					<Card />
 				</div>
 			</div>
 			<Footer />
