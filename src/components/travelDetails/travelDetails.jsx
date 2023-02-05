@@ -3,6 +3,7 @@ import { Image } from 'react-bootstrap';
 import { useState } from 'react';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
+import { BillCard } from './billCard';
 import Styles from './travelDetails.module.scss';
 
 function TravelDetails() {
@@ -110,7 +111,9 @@ function TravelDetails() {
 						<button className={Styles.continue}>Continue</button>
 					</div>
 				</div>
-				<div className={Styles.bill}></div>
+				<div className={Styles.bill}>
+					<BillCard/>
+				</div>
 			</div>
 			<Footer/>
 		</div>

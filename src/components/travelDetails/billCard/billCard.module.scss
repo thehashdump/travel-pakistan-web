@@ -1,0 +1,178 @@
+.cardContainer{
+    width: 100%;
+    background-color: white;
+    border-radius:8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins';
+    .cardContent{
+        width: 95%;
+        height: 100;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        hr{
+            width: 100%;
+            border: 1px solid #4F4F4F33;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .fareSummary{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            
+
+            span{
+                font-size: 16px;
+                font-weight: 600;
+                color: #1E1D4C;
+            }
+            div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span{
+                    
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 21px;
+                        letter-spacing: 0.08em;
+                        color: #4F4F4F;
+                        
+                }
+                .price{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #1E1D4C;
+                    .currency{
+                        font-size: 16px;
+                        font-weight: 600;
+                        padding-right: 5px;
+                        color: #1E1D4C;
+                    }
+                }
+            }
+        }
+        .subTotal{
+            width: 100%;
+                display: flex;
+                flex-direction: column;
+                color: #4F4F4F;
+            .totalText{
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                .Text{
+                    font-weight: 400;
+                }
+                .priceText{
+                    font-weight: 600;
+                }
+
+            }
+            .charges{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                color: #4F4F4F;
+                font-size: 14px;
+                .Text {
+                        font-weight: 400;
+                    }
+                div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .priceText {
+                        font-weight: 600;
+                        .additionIcon{
+                            width:15px;
+                            height: 15px;
+                            margin-right:5px ;
+                        }
+                    }
+                    }
+
+            }
+        }
+        
+        .tourInfo{
+            display: flex;
+            width: 100%;
+            .Image{
+                width: 130px;
+                height: 130px;
+                background-image: url(../../../assets/billCardImage.png);
+                background-size: cover;
+            }
+            .tourContent{              
+                display: flex;
+                flex-direction: column;
+                margin-left: 6px;
+                color: #1E1D4C;
+                .destination{
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                .heading{
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                .tourlocation{
+                        display: flex;
+                        flex-direction: column;
+                        
+                        .location{
+                            
+                                font-size: 14px;
+                                font-weight: 300;
+                                line-height: 15px;
+                                color: #1E1D4C;
+                        }
+                    }
+                    .agencyname{
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 15px;
+                        padding-left: 5px;
+                    }
+                .tourIcon{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    .Icon{
+                        width: 25px;
+                        height: 25px;
+                    }
+                    span{
+                        font-size: 15px;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+        .totalAmount {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1E1D4C;
+            height: 59px;
+            border-radius: 0 0 8px 8px;
+    
+            span {
+                margin: 10px;
+                color: white;
+                font-size: 20px;
+                font-weight: 600;
+            }
+    
+        }
+}
