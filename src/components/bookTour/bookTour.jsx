@@ -1,12 +1,11 @@
-// import { Footer } from '../footer';
 import { Image } from 'react-bootstrap';
 import { useState } from 'react';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
 import { BillCard } from './billCard';
-import Styles from './travelDetails.module.scss';
+import Styles from './bookTour.module.scss';
 
-function TravelDetails() {
+function BookTour() {
 	const [selectedGender, setSelectedGender] = useState(null);
 
 	const handleClick = (gender) => {
@@ -16,7 +15,7 @@ function TravelDetails() {
 		<div className={Styles.tourDetails}>
 			<div className={Styles.top}>
 				<Navbar />
-				<div>
+				<div className={Styles.divTop}>
 					<span>6 Days Tour to Hunza & Naltar Valley</span>
 				</div>
 			</div>
@@ -120,4 +119,4 @@ function TravelDetails() {
 	);
 }
 
-export { TravelDetails };
+export { BookTour };

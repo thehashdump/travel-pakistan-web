@@ -1,1 +1,0 @@
-export { TravelDetails } from './travelDetails';
