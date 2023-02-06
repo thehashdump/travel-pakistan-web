@@ -71,25 +71,71 @@ function TourPayment() {
 									</form>
 								</div>
 
-								<span>Passenger: Adult (Primary Contact)</span>
-								<div className={Styles.names}>
-									<div className={Styles.firstname}>
-										<span>First Name</span>
-										<input required />
-									</div>
-									<div className={Styles.lastname}>
-										<span>Last Name</span>
+								<div className={Styles.cardDetails}>
+									<div className={Styles.cardHolder}>
+										<span>
+                      CardHolder Name<span className={Styles.asterik}>*</span>
+										</span>
 										<input required />
 									</div>
 								</div>
-								<div className={Styles.email}>
-									<span>Email Address</span>
-									<input type="email" required />
-								</div>
-								<div className={Styles.cnic}>
-									<span>CNIC</span>
+								<div className={Styles.cardNumber}>
+									<span>
+                    Credit/Debit Card Number
+										<span className={Styles.asterik}>*</span>
+									</span>
 									<input required />
 								</div>
+								<div className={Styles.expiryDate}>
+									<span>
+                    Expiration Date<span className={Styles.asterik}>*</span>
+									</span>
+									<div className={Styles.Options}>
+										<select className={Styles.selectMonth}>
+											<option>Month</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+										<select className={Styles.selectMonth}>
+											<option>Year</option>
+											<option>2023</option>
+											<option>2024</option>
+											<option>2025</option>
+											<option>2026</option>
+											<option>2027</option>
+											<option>2028</option>
+										</select>
+
+									</div>
+
+								</div>
+								<div className={Styles.cvc}>
+									<span>CVC Code <span className={Styles.asterik}>*</span></span>
+									<input required/>
+								</div>
+								<div className={Styles.countryInfo}>
+									<div className={Styles.country}>
+										<span>Country<span className={Styles.asterik}>*</span></span>
+										<select className={Styles.selectCountry}>
+											<option>Pakistan</option>
+										</select>
+									</div>
+									<div className={Styles.country}>
+										<span>Postal/ZipCode<span className={Styles.asterik}>*</span></span>
+										<input/>
+									</div>
+								</div>
+
 							</div>
 						</div>
 						<button className={Styles.continue}>Confirm</button>
