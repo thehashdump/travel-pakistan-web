@@ -2,6 +2,7 @@ import { Image } from 'react-bootstrap';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
 import { BillCard } from '../bookTour/billCard/billCard';
+import { InfoCard } from './infoCard/infoCard';
 import Styles from './tourPayment.module.scss';
 
 function TourPayment() {
@@ -143,7 +144,8 @@ function TourPayment() {
 				</div>
 				<div className={Styles.bill}>
 					<BillCard />
-                    
+					<InfoCard/>
+
 				</div>
 			</div>
 			<Footer />
