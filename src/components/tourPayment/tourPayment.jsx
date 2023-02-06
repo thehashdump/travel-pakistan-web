@@ -28,7 +28,7 @@ function TourPayment() {
                 secure.
 							</span>
 						</div>
-						<div className={Styles.detailcontainer}>
+						<form className={Styles.detailcontainer}>
 							<div className={Styles.wrapper}>
 								<div>
 									<form className={Styles.Radio}>
@@ -137,12 +137,13 @@ function TourPayment() {
 								</div>
 
 							</div>
-						</div>
+						</form>
 						<button className={Styles.continue}>Confirm</button>
 					</div>
 				</div>
 				<div className={Styles.bill}>
 					<BillCard />
+                    
 				</div>
 			</div>
 			<Footer />
