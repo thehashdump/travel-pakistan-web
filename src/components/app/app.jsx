@@ -3,7 +3,7 @@ import { Home } from '../home';
 import { TourDetails } from '../tourDetails';
 import { TourList } from '../tourList';
 import { SignIn } from '../signIn';
-import { SignUp } from '../signUp';
+import { SignUp } from '../SignUp';
 import Styles from './app.module.scss';
 
 function App() {
