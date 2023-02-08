@@ -1,0 +1,401 @@
+.tourDetails{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-style: normal;
+
+    .top{
+        width: 100%;
+        height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/tourDetailsBackground.png);
+        background-size: cover;
+
+        .title{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 70px;
+            color: #FFFFFF;
+        }
+    }
+    .main{
+        width: 100%;
+        padding: 50px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #E5E5E5;
+        gap: 50px;
+
+        .info{
+            width: 100%;
+            height: 460px;
+            padding: 10px;
+            display: flex;
+            gap: 12px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            .left{
+                width: 45%;
+                height: 100%;
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    background: url(../../assets/tourDetails1.png);
+                    background-size: cover;
+                }
+            }
+            .middle{
+                display: flex;
+                flex-direction: column;
+                gap: 13px;
+                width: 100px;
+
+                .image{
+                    display: flex;
+                    width: 100%;
+                    height: 100px;
+                    background: url(../../assets/tourDetails2.png);
+                    background-size: cover;
+                }
+            }
+            .right{
+                display: flex;
+                flex-direction: column;
+                gap: 13px;
+
+                .topInfo{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .title{
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 36px;
+                        color: #1E1D4C;
+                    }
+                    .moreInfo{
+                        display: flex;
+                        flex-direction: column;
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #1E1D4C;
+                        justify-content: center;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                        }
+                    }
+                }
+                .bottomInfo{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 10px;
+                    
+                    .tripInfo{
+                        display: flex;
+                        align-items: center;
+                        gap: 30px;
+                        .days,
+                        .people
+                        {
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                            font-weight: 300;
+                            font-size: 10px;
+                            line-height: 15px;
+                            color: #1E1D4C;
+                        }
+                    }
+                    .requirements{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .heading{
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 18px;
+                            color: #1E1D4C;
+                        }
+                        ul{
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 18px;
+                            color: #4F4F4F;
+                        }
+                    }
+                    .tags{
+                        display: flex;
+                        gap: 15px;
+                        .tag{
+                            width: fit-content;
+                            padding: 7px 15px;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: #1E1D4C;
+                            background-color: gainsboro;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .details{
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            border-radius: 8px;
+            width: 100%;
+            padding: 15px 25px;
+            gap: 20px;
+
+            .heading{
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 36px;
+                color: #1E1D4C;
+            }
+            .content{
+                display: flex;
+                .left{
+                    display: flex;
+                    width: 60%;
+                    
+                    .steps{
+                        width: 90%;
+                        .item{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 25px 0px;
+                            background-color: #FFFFFF;
+                            font-weight: 500;
+                            font-size: 24px;
+                            line-height: 36px;
+                            color: #1E1D4C;
+                            cursor: pointer;
+                            .title{
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                            }
+                        }
+                    }
+                    .route,
+                    .duration
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        span{
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: #1E1D4C;
+                        }
+                    }
+                    .tips,
+                    .policy
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        span{
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: #1E1D4C;
+                        }
+                        ul{
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: #4F4F4F;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+                    }
+                    .inclusionAndExclusion{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        .inclusion,.exclusion{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            span{
+                                font-weight: 700;
+                                font-size: 18px;
+                                line-height: 24px;
+                                color: #1E1D4C;
+                            }
+                            ul{
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 20px;
+                                color: #4F4F4F;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                            }
+                        }
+                    }
+                    .tinerary{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        span{
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: #1E1D4C;
+                        }
+                    }
+                }
+                .right{
+                    display: flex;
+                    width: 40%;
+                    justify-content: center;
+                    .card{
+                        display: flex;
+                        flex-direction: column;
+                        width: 80%;
+                        height: fit-content;
+                        background: #FFFFFF;
+                        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+                        border-radius: 10px;
+                        align-items: center;
+                        padding: 24px 27px;
+                        gap: 20px;
+                        
+                        .date,.passengers{
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            background: #FFFFFF;
+                            border: 1px solid rgba(79, 79, 79, 0.2);
+                            border-radius: 10px;
+                            padding: 10px;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 21px;
+                            letter-spacing: 0.08em;
+                            color: #1E1D4C;
+                            gap: 3px;
+                            span{
+                                font-weight: 400;
+                                font-size: 12px;
+                                line-height: 18px;
+                                letter-spacing: 0.08em;
+                                color: #4F4F4F;
+                            }
+                        }
+                        .passengers{
+                            &::after{
+                                border-color: #1E1D4C;
+                            }
+                            input{
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 21px;
+                                letter-spacing: 0.08em;
+                                color: #1E1D4C;
+                                border: none;
+                                outline: none;
+                            }
+                        }
+                        .pickup{
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            background: #FFFFFF;
+                            border: 1px solid rgba(79, 79, 79, 0.2);
+                            border-radius: 10px;
+                            padding: 10px;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 21px;
+                            letter-spacing: 0.08em;
+                            color: #1E1D4C;
+                            gap: 3px;
+                            span{
+                                font-weight: 400;
+                                font-size: 12px;
+                                line-height: 18px;
+                                letter-spacing: 0.08em;
+                                color: #4F4F4F;
+                            }
+                            select{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 100%;
+                                height: 40px;
+                                background: #FFFFFF;
+                                border: 1px solid rgba(79, 79, 79, 0.2);
+                                border-radius: 10px;
+                                padding: 10px;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 21px;
+                                letter-spacing: 0.08em;
+                                color: #1E1D4C;
+                                gap: 3px;
+                                span{
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    line-height: 18px;
+                                    letter-spacing: 0.08em;
+                                    color: #4F4F4F;
+                                }
+                            }
+                        }
+                        .price{
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 30px;
+                            letter-spacing: 0.08em;
+                            color: #1E1D4C;
+                            span{
+                                font-weight: 400;
+                                font-size: 14px;
+                                letter-spacing: -0.04em;
+                                color: #4F4F4F;
+                            }
+                        }
+                        .button{
+                            font-family: 'Open Sans';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 25px;
+                            text-align: center;
+                            width: 100%;
+                            height: 50px;
+                            background: #14183E;
+                            border-radius: 10px;
+                            color: #FFFFFF;
+                            align-items: center;
+                            &:hover{
+                                background: #1E1D4C;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
