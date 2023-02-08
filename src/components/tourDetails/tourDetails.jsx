@@ -127,7 +127,12 @@ function TourDetails() {
 									</AccordionItemHeading>
 									<AccordionItemPanel>
 										<p>
-											Overview
+											Hunza valley tour takes you to the lush green mountainous valleys
+											in the Gilgit-Baltistan region of Pakistan.
+											Hunza is situated in the extreme northern part of Pakistan bordering
+											with the Xinjiang region of China. Hunza Valley’s natural splendour and
+											position on the Central Asian Silk Route has attracted travellers,
+											merchants, and mountaineers for centuries.
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -148,8 +153,10 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
-											Location
+										<p className={Styles.route}>
+											<div><span>Pick-up: </span> ISLAMABAD</div>
+											<div><span>Route: </span> Islamabad - NARAN - CHILAS - KARIMABAD -
+											EAGLE'S NEST - KHUNJERAB PASS - FAIRY MEADOWS - Islamabad</div>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -171,8 +178,9 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
-											Timings
+										<p className={Styles.duration}>
+											<div><span>Departure: </span> 10:00 PM</div>
+											<div><span>Duration: </span>5 days</div>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -186,7 +194,7 @@ function TourDetails() {
 													<path d="M5 8.5A2.5 2.5 0 0 1 7.5 6H9V4.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L9.41 8.658A.25.25 0 0 1 9 8.466V7H7.5A1.5 1.5 0 0 0 6 8.5V11H5V8.5Z"/>
 													<path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134Z"/>
 												</svg>
-												Route Plan
+												TINERARY
 											</div>
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
 												<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -194,8 +202,21 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
-											Route Plan
+										<p className={Styles.tinerary}>
+											<div><span>Day 1: </span>Islamabad To Naran</div>
+											<div>Pickup from Islamabad and Departure to Naran Sightseeing:
+											Balakot, Kuwai, Kaghan, Naran Stay: Rose Valley Naran or Same</div>
+											<div><span>Day 2: </span>Naran to Hunza</div>
+											<div>Departure for Hunza Sightseeing: Lulusar lake, Babusar Top, Chilas,
+											3M junction, Rakaposhi View Point, Hunza Stay: Baig Hotel Hunza or Same</div>
+											<div><span>Day 3: </span>Hunza to Pak China Border</div>
+											<div>Departure for Pakchina Border Sightseeing: Aatabad Lake,
+											Passu Cones, Khunjerab Pass Stay : Baig Hotel Hunza or Same</div>
+											<div><span>Day 4: </span>Hunza to Naran</div>
+											<div>Sightseeing to Altit Fort, Baltit Fort
+											Departure to Naran Stay: Rose Valley Naran</div>
+											<div><span>Day 5: </span>Naran to Islamabad</div>
+											<div>Departure to Islamabad</div>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -205,7 +226,53 @@ function TourDetails() {
 											className={Styles.item}
 										>
 											<div className={Styles.title}>
-												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-plus-circle" viewBox="0 0 16 16">
+													<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+													<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+												</svg>
+												Inclusion and Exclusion
+											</div>
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+											</svg>
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p className={Styles.inclusionAndExclusion}>
+											<div className={Styles.inclusion}>
+												<span>Inclusive Services</span>
+												<ul>
+													<li>Private Transport</li>
+													<li>Fuel</li>
+													<li>Hotel Accommodation</li>
+													<li>Daily Breakfast</li>
+													<li>Driver Food and Accommodation</li>
+													<li>All Tolls and Taxes</li>
+												</ul>
+											</div>
+											<div className={Styles.exclusion}>
+												<span>Exclusive Services</span>
+												<ul>
+													<li>Air Tickets</li>
+													<li>Meals</li>
+													<li>Personal nature expenses</li>
+													<li>Fort tickets</li>
+													<li>Any extra charges in case of flight cancellation.</li>
+													<li>Any sunk cost (hotel, transport advance etc)</li>
+													<li>Natural Disaster / Land Sliding</li>
+													<li>Rescue cost</li>
+												</ul>
+											</div>
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton
+											className={Styles.item}
+										>
+											<div className={Styles.title}>
+												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-card-text" viewBox="0 0 16 16">
 													<path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
 													<path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
 												</svg>
@@ -218,7 +285,20 @@ function TourDetails() {
 									</AccordionItemHeading>
 									<AccordionItemPanel>
 										<p>
-											Description
+										Hunza is probably Pakistan's most visited valley, by the tourists.
+										It is a fairy tale land surrounded by beautiful rugged & snow capped mountains.
+										Only at a distance of 100 Kms. from Gilgit Hunza is a small town
+										on Karakorum Highway. At the altitude of 7000 - 800 feet it is the first main
+										town or stop if you are entering Pakistan from China. The central
+										Hunza known as Karimabad is basically a town of just 6 villages. The first main
+										villages as you come from Gilgit on the main Karakorum Highway is Aliabad.
+										There there are spectacular views of  Rakaposhi mountain (7788 meters),
+										PTDC Motel Hunza and other small hotels are located on the main Karakorum
+										highway here. Just above Aliabad on the hill are Altit and Baltit villages
+										the heart of Hunza. There is a very interesting Bazaar and two Forts in Altit
+										& Baltit Villages. The Baltit fort has recently been restored and converted
+										into a guided museum. Hunza is undoubtly the Shangri-la of James Hilton's novel
+										The Lost Horizon. It is probably the most Photogenic point in the world.
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -239,8 +319,23 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
-											Travel Tips
+										<p className={Styles.tips}>
+											<span>Recommended Gear:</span>
+											<ul>
+												<li>Day Bag / Rucksack</li>
+												<li>Trekking boots or Joggers</li>
+												<li>Warm Jacket & Trouser</li>
+												<li>Rain Coat</li>
+												<li>Warm Socks</li>
+												<li>Trekking Stick</li>
+												<li>Warm Gloves</li>
+												<li>Woolen Cap</li>
+												<li>Sandals/ Teva</li>
+												<li>Basic first aid/basic medicine</li>
+												<li>Water bottle (normal 1.5 L bottle)</li>
+												<li>Sun glasses & Sun Block cream,</li>
+												<li>Tissue roll , Tooth Brush, Toothpaste, soap, shampoo</li>
+											</ul>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -263,8 +358,24 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
-											Policy
+										<p className={Styles.policy}>
+											<span>Cancellation</span>
+											<ul>
+												<li>The amount will be deducted for non-refundable advance paid
+													for Hotels and Transportation services.</li>
+												<li>Any suck cost not mentioned above will be deducted.</li>
+												<li>The refund amount will be processed in 7-10 working days.</li>
+											</ul>
+											<span>Refund</span>
+											<ul>
+												<li>Please refer to the "Cancellation Policy" section.</li>
+											</ul>
+											<span>Child Policy</span>
+											<ul>
+												<li>Children below 2 years count as an infant.</li>
+												<li>Children Between 3 to 8 years children are counted as kids.</li>
+												<li>Children above 8 years children are count as adults.</li>
+											</ul>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -278,7 +389,18 @@ function TourDetails() {
 								</div>
 								<div className={Styles.passengers}>
 									<span>Passengers</span>
-									<input type="number" min="1" />
+									<label>Adults</label>
+									<input type="number" min="1" placeholder='above 8 years'/>
+									<label>Childern</label>
+									<input type="number" min="0" placeholder='Children between 3 to 8 yrs'/>
+									<label>Infants</label>
+									<input type="number" min="0" placeholder='Children below 2 yrs'/>
+								</div>
+								<div className={Styles.pickup}>
+									<span>Pickup Location</span>
+									<select>
+										<option value="islamabad">Islamabad</option>
+									</select>
 								</div>
 								<div className={Styles.price}>
 									PKR 27,000 <span>per person</span>
