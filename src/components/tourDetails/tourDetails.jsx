@@ -62,13 +62,13 @@ function TourDetails() {
 										<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
 										<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
 									</svg>
-									Hunza Valley
+									Islamabad - Hunza Valley
 								</span>
 								<span>By Dream Trip Planners</span>
 							</div>
 						</div>
 						<div className={Styles.map}>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51441.31704985877!2d74.6493444!3d36.31031065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e8a0927450692b%3A0x866b1b1181ca7cea!2sHunza%20Valley!5e0!3m2!1sen!2s!4v1675623071349!5m2!1sen!2s" width="100%" height="140" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51441.31704985877!2d74.6493444!3d36.31031065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e8a0927450692b%3A0x866b1b1181ca7cea!2sHunza%20Valley!5e0!3m2!1sen!2s!4v1675623071349!5m2!1sen!2s" width="100%" height="180" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						</div>
 						<div className={Styles.bottomInfo}>
 							<div className={Styles.tripInfo}>
@@ -77,26 +77,42 @@ function TourDetails() {
 										<path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
 										<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
 									</svg>
-									6 Days
+									5 Days
 								</div>
 								<div className={Styles.people}>
-									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-bus-front-fill" viewBox="0 0 16 16">
-										<path d="M16 7a1 1 0 0 1-1 1v3.5c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.496 2.496 0 0 1-1-2V8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1V2.64C1 1.452 1.845.408 3.064.268A43.608 43.608 0 0 1 8 0c2.1 0 3.792.136 4.936.268C14.155.408 15 1.452 15 2.64V4a1 1 0 0 1 1 1v2ZM3.552 3.22A43.306 43.306 0 0 1 8 3c1.837 0 3.353.107 4.448.22a.5.5 0 0 0 .104-.994A44.304 44.304 0 0 0 8 2c-1.876 0-3.426.109-4.552.226a.5.5 0 1 0 .104.994ZM8 4c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9c1.876 0 3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44.304 44.304 0 0 0 8 4Zm-3 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm8 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-7 0a1 1 0 0 0 1 1h2a1 1 0 1 0 0-2H7a1 1 0 0 0-1 1Z"/>
-									</svg>
-									1 to 22 people
+									<Image src={require('../../assets/bus.png')} alt="image" width={14} height={14} />
+									50 people going
+								</div>
+								<div className={Styles.people}>
+									<Image src={require('../../assets/tickets.png')} alt="image" width={14} height={14} />
+									100 tickets left
 								</div>
 							</div>
 							<div className={Styles.requirement}>
 								<span className={Styles.heading}>Requirements</span>
 								<ul>
-									<li>Passport size copies (for foreigners)</li>
+									<li>Passport copies (for foreigners)</li>
 									<li>NOC (In case of foreign diplomats)</li>
 									<li>National ID Card</li>
 								</ul>
 							</div>
 							<div className={Styles.tags}>
-								<div className={Styles.tag}>Sightseeing</div>
-								<div className={Styles.tag}>Adventure</div>
+								<div className={Styles.tag}>
+									<Image src={require('../../assets/tour-icon.png')} alt="image" width={18} height={18} />
+									Sightseeing
+								</div>
+								<div className={Styles.tag}>
+									<Image src={require('../../assets/camera.png')} alt="image" width={18} height={18} />
+									Photography
+								</div>
+								<div className={Styles.tag}>
+									<Image src={require('../../assets/fuel.png')} alt="image" width={18} height={18} />
+									Fuel
+								</div>
+								<div className={Styles.tag}>
+									<Image src={require('../../assets/food.png')} alt="image" width={18} height={18} />
+									Food
+								</div>
 							</div>
 						</div>
 					</div>
@@ -126,7 +142,7 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
+										<p style={{ textAlign: 'justify' }}>
 											Hunza valley tour takes you to the lush green mountainous valleys
 											in the Gilgit-Baltistan region of Pakistan.
 											Hunza is situated in the extreme northern part of Pakistan bordering
@@ -284,7 +300,7 @@ function TourDetails() {
 										</AccordionItemButton>
 									</AccordionItemHeading>
 									<AccordionItemPanel>
-										<p>
+										<p style={{ textAlign: 'justify' }}>
 										Hunza is probably Pakistan's most visited valley, by the tourists.
 										It is a fairy tale land surrounded by beautiful rugged & snow capped mountains.
 										Only at a distance of 100 Kms. from Gilgit Hunza is a small town
@@ -405,7 +421,12 @@ function TourDetails() {
 								<div className={Styles.price}>
 									PKR 27,000 <span>per person</span>
 								</div>
-								<button className={Styles.button}>Continue</button>
+								<button
+									className={Styles.button}
+									onClick={() => {
+										window.location.href = '/booktour';
+									}}
+								>Continue</button>
 							</div>
 						</div>
 					</div>

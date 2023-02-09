@@ -14,8 +14,8 @@ function HeroSection() {
 					<span>BEACHES</span>
 				</div>
 				<div className={Styles.heading}>
-					<span>Spend your vacation</span>
-					<span>with our activites</span>
+					<span>Leave the world behind,</span>
+					<span>let us lead the way.</span>
 				</div>
 				<div className={Styles.bottom}>
 					<span>Most Popular</span>

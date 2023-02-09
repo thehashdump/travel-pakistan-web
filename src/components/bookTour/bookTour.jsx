@@ -107,7 +107,12 @@ function BookTour() {
 								</div>
 							</div>
 						</div>
-						<button className={Styles.continue}>Continue</button>
+						<button
+							className={Styles.continue}
+							onClick={() => {
+								window.location.href = '/payment';
+							}}
+						>Continue</button>
 					</div>
 				</div>
 				<div className={Styles.bill}>

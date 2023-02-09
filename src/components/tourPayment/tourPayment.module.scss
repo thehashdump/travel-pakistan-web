@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../../assets/traveldetails.png);
+    background: url(../../assets/tourDetailsBackground.png);
     background-size: cover;
     background-position: center;
     font-family: Poppins;
@@ -79,9 +79,10 @@
             height: 100%;
             margin-top: 15px;
             margin-bottom: 35px;
+            
             .Radio {
               display: flex;
-              flex-direction: column;
+              gap: 20px;
               .radioDiv {
                 input {
                   margin-right: 10px;
@@ -99,15 +100,15 @@
               }
             }
 
-            .cardDetails {
+            .cardDetails{
               width: 100%;
-
               display: flex;
               gap: 54px;
               margin-top: 19px;
-
-              .cardHolder {
+              align-items: center;
+              .cardHolder,.cardNumber {
                 display: flex;
+                width: 50%;
                 flex-direction: column;
 
                 span {
@@ -120,7 +121,7 @@
                 }
 
                 input {
-                  width: 539px;
+                  width: 100%;
                   height: 48px;
                   border-radius: 8px;
                   outline: none;
@@ -129,103 +130,98 @@
               }
             }
 
-            .cardNumber {
-              width: 100%;
-
-              display: flex;
-              flex-direction: column;
-              margin-top: 19px;
-
-              span {
-                font-size: 16px;
-                font-weight: 600;
-                color: black;
-              }
-              .asterik {
-                color: red;
-              }
-
-              input {
-                width: 539px;
-                height: 48px;
-                border-radius: 8px;
-                outline: none;
-                border: 1px solid #4f4f4f;
-              }
-            }
-
             .expiryDate {
               display: flex;
-              flex-direction: column;
+              align-items: center;
+              gap: 54px;
+              margin-top: 20px;
 
-              margin-top: 19px;
-              .Options {
+              .left{
                 display: flex;
-                gap: 15px;
-
-                .selectMonth {
-                  width: 100px;
-                  height: 48px;
-                  border-radius: 5px;
-                  outline: none;
-                  cursor: pointer;
+                width: 50%;
+                gap: 20px;
+                align-items: center;
+                .Options {
+                  display: flex;
+                  width: 100%;
+                  gap: 15px;
+  
+                  .selectMonth {
+                    width: 50%;
+                    height: 48px;
+                    border-radius: 5px;
+                    outline: none;
+                    cursor: pointer;
+                  }
                 }
-              }
-
-              span {
-                font-size: 16px;
-                font-weight: 600;
-                color: black;
-              }
-              .asterik {
-                color: red;
-              }
-
-              input {
-                width: 539px;
-                height: 48px;
-                border-radius: 8px;
-                outline: none;
-                border: 1px solid #4f4f4f;
-              }
-            }
-            .cvc {
-              display: flex;
-              flex-direction: column;
-              margin-top: 19px;
-              input {
-                width: 100px;
-                height: 48px;
-                border-radius: 5px;
-                outline: none;
-                border: 1px solid #4f4f4f;
-              }
-              span {
-                font-size: 16px;
-                font-weight: 600;
-                color: black;
-              }
-              .asterik {
-                color: red;
-              }
-            }
-            .countryInfo {
-              display: flex;
-              gap: 64px;
-              .country {
-                display: flex;
-                flex-direction: column;
+  
                 span {
+                  width: fit-content;
+                  min-width: 140px;
                   font-size: 16px;
                   font-weight: 600;
                   color: black;
                 }
-
                 .asterik {
                   color: red;
                 }
+  
+                input {
+                  width: 539px;
+                  height: 48px;
+                  border-radius: 8px;
+                  outline: none;
+                  border: 1px solid #4f4f4f;
+                }
+              }
+              .cvc {
+                display: flex;
+                align-items: center;
+                width: 50%;
+                gap: 20px;
+                input {
+                  display: flex;
+                  flex: 1;
+                  height: 48px;
+                  border-radius: 5px;
+                  outline: none;
+                  border: 1px solid #4f4f4f;
+                }
+                span {
+                  display: flex;
+                  flex: 0.4;
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: black;
+                }
+                .asterik {
+                  color: red;
+                }
+              }
+            }
+            .countryInfo {
+              display: flex;
+              gap: 54px;
+              margin-top: 20px;
+              .country {
+                display: flex;
+                width: 50%;
+                gap: 20px;
+                align-items: center;
+                justify-content: space-between;
+                span {
+                  display: flex;
+                  flex: 0.4;
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: black;
+                  .asterik {
+                    color: red;
+                  }
+                }
+
                 .selectCountry {
-                  width: 170px;
+                  width: 100%;
                   height: 48px;
                   border-radius: 5px;
                   outline: none;
@@ -233,7 +229,8 @@
                   border: 1px solid #4f4f4f;
                 }
                 input {
-                  width: 170px;
+                  display: flex;
+                  flex: 1;
                   height: 48px;
                   border-radius: 5px;
                   outline: none;
