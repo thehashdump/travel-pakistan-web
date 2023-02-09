@@ -1,0 +1,268 @@
+.tourDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  background-color: #e5e5e5;
+
+  .top {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../assets/traveldetails.png);
+    background-size: cover;
+    background-position: center;
+    font-family: Poppins;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 71px;
+    text-align: center;
+    color: white;
+
+    .divTop {
+      margin-top: 100px;
+    }
+  }
+
+  .main {
+    width: 95%;
+    display: flex;
+
+    .booking {
+      width: 70%;
+      margin-top: 40px;
+
+      .bookingcontent {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 36px;
+          color: #1e1d4c;
+        }
+        .secureMsg {
+          display: flex;
+          align-items: center;
+
+          gap: 2px;
+          .lock {
+            width: 15px;
+            height: 15px;
+            margin-bottom: 4px;
+          }
+
+          .encryptionMsg {
+            color: #4f4f4f;
+            font-weight: 300;
+            font-size: 14px;
+          }
+        }
+        .detailcontainer {
+          width: 95%;
+          border-radius: 13px;
+          background-color: white;
+          // height: 800px;
+          margin-top: 26px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+            height: 100%;
+            margin-top: 15px;
+            margin-bottom: 35px;
+            .Radio {
+              display: flex;
+              flex-direction: column;
+              .radioDiv {
+                input {
+                  margin-right: 10px;
+                }
+
+                label {
+                  color: black;
+                  font-weight: 500;
+                }
+                .cardImage {
+                  width: 40px;
+                  height: 40px;
+                  margin-left: 3px;
+                }
+              }
+            }
+
+            .cardDetails {
+              width: 100%;
+
+              display: flex;
+              gap: 54px;
+              margin-top: 19px;
+
+              .cardHolder {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #000000;
+                }
+                .asterik {
+                  color: red;
+                }
+
+                input {
+                  width: 539px;
+                  height: 48px;
+                  border-radius: 8px;
+                  outline: none;
+                  border: 1px solid #4f4f4f;
+                }
+              }
+            }
+
+            .cardNumber {
+              width: 100%;
+
+              display: flex;
+              flex-direction: column;
+              margin-top: 19px;
+
+              span {
+                font-size: 16px;
+                font-weight: 600;
+                color: black;
+              }
+              .asterik {
+                color: red;
+              }
+
+              input {
+                width: 539px;
+                height: 48px;
+                border-radius: 8px;
+                outline: none;
+                border: 1px solid #4f4f4f;
+              }
+            }
+
+            .expiryDate {
+              display: flex;
+              flex-direction: column;
+
+              margin-top: 19px;
+              .Options {
+                display: flex;
+                gap: 15px;
+
+                .selectMonth {
+                  width: 100px;
+                  height: 48px;
+                  border-radius: 5px;
+                  outline: none;
+                  cursor: pointer;
+                }
+              }
+
+              span {
+                font-size: 16px;
+                font-weight: 600;
+                color: black;
+              }
+              .asterik {
+                color: red;
+              }
+
+              input {
+                width: 539px;
+                height: 48px;
+                border-radius: 8px;
+                outline: none;
+                border: 1px solid #4f4f4f;
+              }
+            }
+            .cvc {
+              display: flex;
+              flex-direction: column;
+              margin-top: 19px;
+              input {
+                width: 100px;
+                height: 48px;
+                border-radius: 5px;
+                outline: none;
+                border: 1px solid #4f4f4f;
+              }
+              span {
+                font-size: 16px;
+                font-weight: 600;
+                color: black;
+              }
+              .asterik {
+                color: red;
+              }
+            }
+            .countryInfo {
+              display: flex;
+              gap: 64px;
+              .country {
+                display: flex;
+                flex-direction: column;
+                span {
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: black;
+                }
+
+                .asterik {
+                  color: red;
+                }
+                .selectCountry {
+                  width: 170px;
+                  height: 48px;
+                  border-radius: 5px;
+                  outline: none;
+                  cursor: pointer;
+                  border: 1px solid #4f4f4f;
+                }
+                input {
+                  width: 170px;
+                  height: 48px;
+                  border-radius: 5px;
+                  outline: none;
+                  border: 1px solid #4f4f4f;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .continue {
+        width: 95%;
+        height: 52px;
+        background-color: #1e1d4c;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        margin-top: 33px;
+        margin-bottom: 33px;
+      }
+    }
+
+    .bill {
+      width: 30%;
+      margin-top: 140px;
+    }
+  }
+}
