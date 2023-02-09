@@ -4,6 +4,7 @@ import { TourDetails } from '../tourDetails';
 import { TourList } from '../tourList';
 import { SignIn } from '../signIn';
 import { SignUp } from '../SignUp';
+import { BookTour } from '../bookTour';
 import Styles from './app.module.scss';
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
 					<Route path="/tour" element={<TourDetails />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
+					<Route path="/booktour" element={<BookTour />} />
+
 				</Routes>
 			</Layout>
 		</div>

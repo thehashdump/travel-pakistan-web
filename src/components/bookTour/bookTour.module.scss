@@ -1,0 +1,268 @@
+.tourDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    background-color: #E5E5E5;
+
+    .top {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/traveldetails.png);
+        background-size: cover;
+        background-position: center;
+        font-family: Poppins;
+        font-size: 47px;
+        font-weight: 700;
+        line-height: 71px;
+        text-align: center;
+        color: white;
+        .divTop{
+            margin-top: 100px;            
+        }
+
+    }
+    .main{
+        width: 95%;
+        display: flex;
+        .booking{
+            width: 70%;
+            margin-top: 40px;
+            .bookingcontent{
+                display: flex;
+                flex-direction: column;
+                span{
+                    
+                        font-size: 24px;
+                        font-weight: 600;
+                        line-height: 36px;
+                        color: #1E1D4C;
+                }
+                .detailheading{
+                    margin-top: 27px;
+                    .signin {
+                            cursor: pointer;
+                        }
+                    
+                        .subtext {
+                            font-size: 16px;
+                            font-weight: 400;
+                            padding-left: 5px;
+                        }
+                }
+                
+            .tourinfo{
+                width: 95%;
+                height: 106px;
+                border-radius: 13px;
+                margin-top: 13px;
+                background-color: white;
+                .tourcontent{
+                    margin-left: 25px;
+                    margin-top: 5px;
+                    height: 10px;
+                    .tourtitle{
+                        
+                            font-size: 24px;
+                            font-weight: 500;
+                            line-height: 36px;
+                            
+                    }
+                    .tourlocation{
+                        display: flex;
+                        flex-direction: column;
+                        
+                        .location{
+                            
+                                font-size: 14px;
+                                font-weight: 300;
+                                line-height: 15px;
+                                color: #1E1D4C;
+                        }
+                    }
+                    .agencyname{
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 15px;
+                        padding-left: 5px;
+                    }
+                    
+                }
+            }
+            .coupan{
+                width: 95%;
+                height: 56px;
+                margin-top: 32px;
+                border-radius: 13px;
+                background-color: white;
+                display: flex;                
+                align-items: center;
+                .coupancontent{
+                    width: 100%;                    
+                    margin-left: 25px;
+                    gap: 15px;
+                }
+                span{
+                    font-size: 16px;
+                    color: #1E1D4C;
+                    line-height: 24px;
+                }
+                input{
+                    font-size: 12px;
+                    width: 360px;
+                    height: 30px;
+                    border: 1px solid #4F4F4F;
+                    outline: none;
+                    border-radius: 8px;
+                    margin-left: 15px;
+                }
+                button{
+                    width: 131px;
+                    height: 35px;
+                    background-color: #1E1D4C;
+                    color: white;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 8px;
+                    margin-left: 15px;
+                    outline: none;
+                }
+            }
+            .detailcontainer {
+                width: 95%;
+                border-radius: 13px;
+                background-color: white;
+                // height: 800px;
+                margin-top: 26px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    width: 95%;
+                    height: 100%;
+                    margin-top: 15px;
+                    margin-bottom: 35px;
+                    span{
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: #1E1D4C;
+                    }
+                    .names{
+                        width: 100%;
+                        
+                        display: flex;
+                        gap: 54px;
+                        margin-top: 19px;
+                        .firstname,.lastname{
+                            display: flex;
+                            flex-direction: column;
+                            span{
+                                font-size: 16px;
+                                font-weight: 400;
+                            }
+                            input{
+                                width: 360px;
+                                height:48px;
+                                border-radius: 8px;
+                                outline: none;
+                                border:1px solid #4F4F4F;
+                            }
+                        }
+                    }
+                    .contact{
+                        width: 100%;
+                        
+                        display: flex;
+                        gap: 54px;
+                        margin-top: 19px;
+                        .gender{
+                            display: flex;
+                            flex-direction: column;
+                            width: 360px;
+                            span {
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                }
+                            div{
+                                display: flex;
+                                gap: 20px;
+                                button{
+                                    cursor: pointer;
+                                    width: 131px;
+                                    height: 41px;
+                                    border: 1px solid #4F4F4F;
+                                    background-color: white;
+                                    color: #1E1D4C;
+                                    border-radius: 8px;
+                                    outline: none;
+                                }
+
+                            }
+                        }
+                        .contactnumber{
+                            display: flex;
+                            flex-direction: column;
+                            span{
+                                font-size: 16px;
+                                font-weight: 400;
+                            }
+                            input{
+                                width: 360px;
+                                height:48px;
+                                border-radius: 8px;
+                                outline: none;
+                                border:1px solid #4F4F4F;
+                            }
+                        }
+                    }
+                    .email,.cnic{
+                        width: 100%;
+                        
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 19px;
+                        span{
+                                font-size: 16px;
+                                font-weight: 400;
+                            }
+                            input{
+                                width: 775px;
+                                height:48px;
+                                border-radius: 8px;
+                                outline: none;
+                                border:1px solid #4F4F4F;
+                            }
+
+                    }
+
+                }
+                }
+            }
+            .continue{
+                width: 95%;
+                height: 52px;
+                background-color: #1E1D4C;
+                color: white;
+                font-size: 18px;
+                font-weight: 700;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                margin-top: 33px; 
+                margin-bottom: 33px;               
+            }
+        }
+        .bill{
+            
+            width: 30%;
+            margin-top: 90px;
+        }
+    }
+
+}
