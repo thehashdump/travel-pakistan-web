@@ -25,7 +25,13 @@ function SignIn() {
 								className={Styles.password}
 								required
 							/>
-							<button className={Styles.loginbtn}>Login</button>
+							<button
+								className={Styles.loginbtn}
+								onClick={(e) => {
+									e.preventDefault();
+									window.location.href = '/';
+								}}
+							>Login</button>
 							<div className={Styles.noaccount}>
 								<span>
                 Not have a account?

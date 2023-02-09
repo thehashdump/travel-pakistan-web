@@ -67,12 +67,13 @@
             .right{
                 display: flex;
                 flex-direction: column;
-                gap: 13px;
+                justify-content: space-between;
 
                 .topInfo{
                     display: flex;
                     flex-direction: column;
                     width: 100%;
+                    gap: 7px;
                     .title{
                         font-weight: 700;
                         font-size: 24px;
@@ -81,12 +82,11 @@
                     }
                     .moreInfo{
                         display: flex;
-                        flex-direction: column;
                         font-weight: 300;
                         font-size: 14px;
                         line-height: 20px;
                         color: #1E1D4C;
-                        justify-content: center;
+                        justify-content: space-between;
                         span{
                             display: flex;
                             align-items: center;
@@ -116,14 +116,14 @@
                             color: #1E1D4C;
                         }
                     }
-                    .requirements{
+                    .requirement{
                         display: flex;
                         flex-direction: column;
-                        gap: 10px;
+                        gap: 7px;
 
                         .heading{
                             font-weight: 500;
-                            font-size: 12px;
+                            font-size: 14px;
                             line-height: 18px;
                             color: #1E1D4C;
                         }
@@ -136,7 +136,7 @@
                     }
                     .tags{
                         display: flex;
-                        gap: 15px;
+                        gap: 10px;
                         .tag{
                             width: fit-content;
                             padding: 7px 15px;
@@ -146,6 +146,9 @@
                             color: #1E1D4C;
                             background-color: gainsboro;
                             border-radius: 5px;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
                         }
                     }
                 }

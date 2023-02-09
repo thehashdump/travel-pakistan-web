@@ -25,15 +25,15 @@
             box-shadow: 64.0184px 76.8221px 80px rgba(0, 0, 0, 0.07), 41.4934px 49.7921px 46.8519px rgba(0, 0, 0, 0.0531481), 24.659px 29.5907px 25.4815px rgba(0, 0, 0, 0.0425185), 12.8037px 15.3644px 13px rgba(0, 0, 0, 0.035), 5.21632px 6.25958px 6.51852px rgba(0, 0, 0, 0.0274815), 1.18553px 1.42263px 3.14815px rgba(0, 0, 0, 0.0168519);
             border-radius: 12px;
 
-            .destination{
+            .destination,.source{
                 display: flex;
-                flex: 2;
+                flex: 1.6;
                 align-items: center;
-                gap: 20px;
+                gap: 15px;
                 padding: 14px 11px;
                 border-right: 1px solid #E5E5E5;
                 
-                .destinationInput{
+                .destinationInput,.sourceInput{
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -42,7 +42,7 @@
                     line-height: 14px;
                     color: #3E4958;
                     select{
-                        width: 80%;
+                        width: 100%;
                         font-weight: 700;
                         font-size: 16px;
                         line-height: 20px;
@@ -64,7 +64,7 @@
                 display: flex;
                 flex: 1;
                 align-items: center;
-                gap: 20px;
+                gap: 15px;
                 align-items: center;
                 justify-content: center;
                 border-right: 1px solid #E5E5E5;
@@ -93,14 +93,16 @@
             }
             .people{
                 display: flex;
-                flex: 1;
+                flex: 0.9;
                 align-items: center;
-                gap: 20px;
+                gap: 15px;
                 align-items: center;
                 justify-content: center;
+                padding: 14px 11px;
 
                 .peopleInput{
                     display: flex;
+                    width: 100%;
                     flex-direction: column;
                     gap: 4px;
                     span{
@@ -110,7 +112,7 @@
                         color: #3E4958;
                     }
                     select{
-                        width: 80px;
+                        width: 100%;
                         font-weight: 700;
                         font-size: 12px;
                         line-height: 20px;
