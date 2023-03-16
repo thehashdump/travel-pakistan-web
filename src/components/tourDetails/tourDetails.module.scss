@@ -1,3 +1,5 @@
+@import '../../utils/sass/variables.scss';
+
 .tourDetails{
     display: flex;
     flex-direction: column;
@@ -6,7 +8,7 @@
 
     .top{
         width: 100%;
-        height: 350px;
+        min-height: 350px;
         padding: 0px 0px 17px;
         display: flex;
         flex-direction: column;
@@ -21,6 +23,15 @@
             font-size: 47px;
             line-height: 70px;
             color: #FFFFFF;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 920px){
+            .title{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
         }
     }
     .main{
@@ -34,37 +45,39 @@
 
         .info{
             width: 100%;
-            height: 460px;
             padding: 10px;
             display: flex;
             gap: 12px;
             background: #FFFFFF;
             border-radius: 10px;
             .left{
-                width: 45%;
-                height: 100%;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
                 .image{
                     width: 100%;
                     height: 100%;
                     background: url(../../assets/tourDetails1.png);
-                    background-size: cover;
+                    object-fit: cover;
                 }
-            }
-            .middle{
-                display: flex;
-                flex-direction: column;
-                gap: 13px;
-                width: 100px;
-
-                .image{
-                    display: flex;
+                .bottom{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: 13px;
                     width: 100%;
-                    height: 100px;
-                    background: url(../../assets/tourDetails2.png);
-                    background-size: cover;
+
+                    .image{
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        background: url(../../assets/tourDetails2.png);
+                        object-fit: cover;
+                    }
                 }
             }
             .right{
+                width: 50%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -78,21 +91,33 @@
                         font-weight: 700;
                         font-size: 24px;
                         line-height: 36px;
-                        color: #1E1D4C;
+                        color: $primary-color;
                     }
                     .moreInfo{
                         display: flex;
                         font-weight: 300;
                         font-size: 14px;
                         line-height: 20px;
-                        color: #1E1D4C;
+                        color: $quaternary;
                         justify-content: space-between;
                         span{
                             display: flex;
                             align-items: center;
                             gap: 3px;
                         }
+                        @media screen and (max-width: 400px){
+                            flex-direction: column;
+                            align-items: flex-start;
+                            span{
+                                margin-bottom: 5px;
+                            }
+                        }
                     }
+                }
+                .map{
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px 0px;
                 }
                 .bottomInfo{
                     display: flex;
@@ -113,7 +138,12 @@
                             font-weight: 300;
                             font-size: 10px;
                             line-height: 15px;
-                            color: #1E1D4C;
+                            color: $quaternary;
+                        }
+                        @media screen and (max-width: 400px){
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 10px;
                         }
                     }
                     .requirement{
@@ -125,13 +155,13 @@
                             font-weight: 500;
                             font-size: 14px;
                             line-height: 18px;
-                            color: #1E1D4C;
+                            color: $primary-color;
                         }
                         ul{
                             font-weight: 400;
                             font-size: 12px;
                             line-height: 18px;
-                            color: #4F4F4F;
+                            color: $quaternary;
                         }
                     }
                     .tags{
@@ -143,12 +173,75 @@
                             font-weight: 400;
                             font-size: 14px;
                             line-height: 18px;
-                            color: #1E1D4C;
+                            color: $secondary-color;
                             background-color: gainsboro;
                             border-radius: 5px;
                             display: flex;
                             align-items: center;
                             gap: 5px;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width:1180px){
+                .tags{
+                    flex-wrap: wrap;
+                }
+            }
+
+            @media screen and (max-width: 1009px){
+                flex-direction: column;
+                .left{
+                    width: 100%;
+                    
+                }
+                .middle{
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    .image{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .right{
+                    width: 100%;
+                    .topInfo{
+                        .title{
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+                        .moreInfo{
+                            font-size: 12px;
+                            line-height: 18px;
+                        }
+                    }
+                    .bottomInfo{
+                        .tripInfo{
+                            .days,
+                            .people
+                            {
+                                font-size: 10px;
+                                line-height: 15px;
+                            }
+                        }
+                        .requirement{
+                            .heading{
+                                font-size: 12px;
+                                line-height: 18px;
+                            }
+                            ul{
+                                font-size: 10px;
+                                line-height: 15px;
+                            }
+                        }
+                        .tags{
+                            flex-wrap: wrap;
+                            .tag{
+                                font-size: 12px;
+                                line-height: 18px;
+                            }
                         }
                     }
                 }
@@ -167,7 +260,7 @@
                 font-weight: 700;
                 font-size: 24px;
                 line-height: 36px;
-                color: #1E1D4C;
+                color: $primary-color;
             }
             .content{
                 display: flex;
@@ -186,7 +279,7 @@
                             font-weight: 500;
                             font-size: 24px;
                             line-height: 36px;
-                            color: #1E1D4C;
+                            color: $secondary-color;
                             cursor: pointer;
                             .title{
                                 display: flex;
@@ -205,7 +298,7 @@
                             font-weight: 700;
                             font-size: 18px;
                             line-height: 24px;
-                            color: #1E1D4C;
+                            color: $primary-color;
                         }
                     }
                     .tips,
@@ -218,13 +311,13 @@
                             font-weight: 700;
                             font-size: 18px;
                             line-height: 24px;
-                            color: #1E1D4C;
+                            color: $primary-color;
                         }
                         ul{
                             font-weight: 400;
                             font-size: 14px;
                             line-height: 20px;
-                            color: #4F4F4F;
+                            color: $quaternary;
                             display: flex;
                             flex-direction: column;
                             gap: 10px;
@@ -242,13 +335,13 @@
                                 font-weight: 700;
                                 font-size: 18px;
                                 line-height: 24px;
-                                color: #1E1D4C;
+                                color: $primary-color;
                             }
                             ul{
                                 font-weight: 400;
                                 font-size: 14px;
                                 line-height: 20px;
-                                color: #4F4F4F;
+                                color: $quaternary;
                                 display: flex;
                                 flex-direction: column;
                                 gap: 10px;
@@ -263,7 +356,7 @@
                             font-weight: 700;
                             font-size: 18px;
                             line-height: 24px;
-                            color: #1E1D4C;
+                            color: $primary-color;
                         }
                     }
                 }
@@ -295,14 +388,14 @@
                             font-size: 14px;
                             line-height: 21px;
                             letter-spacing: 0.08em;
-                            color: #1E1D4C;
+                            color: $primary-color;
                             gap: 3px;
                             span{
                                 font-weight: 400;
                                 font-size: 12px;
                                 line-height: 18px;
                                 letter-spacing: 0.08em;
-                                color: #4F4F4F;
+                                color: $quaternary;
                             }
                         }
                         .passengers{
@@ -314,7 +407,7 @@
                                 font-size: 14px;
                                 line-height: 21px;
                                 letter-spacing: 0.08em;
-                                color: #1E1D4C;
+                                color: $secondary-color;
                                 border: none;
                                 outline: none;
                             }
@@ -331,14 +424,14 @@
                             font-size: 14px;
                             line-height: 21px;
                             letter-spacing: 0.08em;
-                            color: #1E1D4C;
+                            color: $primary-color;
                             gap: 3px;
                             span{
                                 font-weight: 400;
                                 font-size: 12px;
                                 line-height: 18px;
                                 letter-spacing: 0.08em;
-                                color: #4F4F4F;
+                                color: $quaternary;
                             }
                             select{
                                 display: flex;
@@ -354,14 +447,14 @@
                                 font-size: 14px;
                                 line-height: 21px;
                                 letter-spacing: 0.08em;
-                                color: #1E1D4C;
+                                color: $primary-color;
                                 gap: 3px;
                                 span{
                                     font-weight: 400;
                                     font-size: 12px;
                                     line-height: 18px;
                                     letter-spacing: 0.08em;
-                                    color: #4F4F4F;
+                                    color: $quaternary;
                                 }
                             }
                         }
@@ -370,12 +463,12 @@
                             font-size: 20px;
                             line-height: 30px;
                             letter-spacing: 0.08em;
-                            color: #1E1D4C;
+                            color: $primary-color;
                             span{
                                 font-weight: 400;
                                 font-size: 14px;
                                 letter-spacing: -0.04em;
-                                color: #4F4F4F;
+                                color: $quaternary;
                             }
                         }
                         .button{
@@ -387,17 +480,87 @@
                             text-align: center;
                             width: 100%;
                             height: 50px;
-                            background: #14183E;
+                            background: $primary-color;
                             border-radius: 10px;
                             color: #FFFFFF;
                             align-items: center;
+                            border: none;
+                            outline: none;
                             &:hover{
-                                background: #1E1D4C;
+                                background: $hover-primary;
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width: 1009px){
+                    flex-direction: column;
+                    gap: 20px;
+                    .left{
+                        width: 100%;
+                        .card{
+                            width: 100%;
+                            padding: 20px;
+                            gap: 10px;
+                            .date,.passengers{
+                                padding: 5px;
+                                gap: 2px;
+                            }
+                            .passengers{
+                                input{
+                                    font-size: 12px;
+                                }
+                            }
+                            .pickup{
+                                padding: 5px;
+                                gap: 2px;
+                                select{
+                                    padding: 5px;
+                                }
+                            }
+                            .price{
+                                font-size: 16px;
+                            }
+                            .button{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .right{
+                        width: 100%;
+                        .card{
+                            width: 100%;
+                            padding: 20px;
+                            gap: 10px;
+                            .date,.passengers{
+                                padding: 5px;
+                                gap: 2px;
+                            }
+                            .passengers{
+                                input{
+                                    font-size: 12px;
+                                }
+                            }
+                            .pickup{
+                                padding: 5px;
+                                gap: 2px;
+                                select{
+                                    padding: 5px;
+                                }
+                            }
+                            .price{
+                                font-size: 16px;
+                            }
+                            .button{
+                                font-size: 16px;
                             }
                         }
                     }
                 }
             }
+        }
+
+        @media screen and (max-width: 1009px){
+           padding: 30px;
         }
     }
     

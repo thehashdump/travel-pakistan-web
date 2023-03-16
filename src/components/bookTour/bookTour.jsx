@@ -16,7 +16,7 @@ function BookTour() {
 			<div className={Styles.top}>
 				<Navbar />
 				<div className={Styles.divTop}>
-					<span>6 Days Tour to Hunza & Naltar Valley</span>
+					6 Days Tour to Hunza & Naltar Valley
 				</div>
 			</div>
 			<div className={Styles.main}>

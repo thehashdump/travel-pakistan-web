@@ -1,10 +1,13 @@
+@import '../../../utils/sass/variables.scss';
+
 .guide{
     width: 80%;
-    height: 473px;
     display: flex;
     margin: 0px auto;
     font-family: 'Poppins';
     font-style: normal;
+
+    
 
     .content{
         display: flex;
@@ -12,13 +15,14 @@
         flex:1;
         justify-content: center;
         gap: 18px;
+        order: 1;
 
         .title{
             font-weight: 700;
             font-size: 50px;
             line-height: 75px;
             text-transform: capitalize;
-            color: #14183E;
+            color: $primary-color;
         }
         .steps{
             display: flex;
@@ -42,13 +46,13 @@
                         font-weight: 700;
                         font-size: 16px;
                         line-height: 124.5%;
-                        color: #14183E;
+                        color: $secondary-color;
                     }
                     .stepDescription{
                         font-weight: 400;
                         font-size: 16px;
                         line-height: 124.5%;
-                        color: #5E6282;
+                        color: $quaternary;
                     }
                 }
 
@@ -61,43 +65,47 @@
         flex:1;
         justify-content: center;
         align-items: flex-end;
+        order: 2;
 
         .card{
-            width: 370px;
+            width: 320px;
             background: #FFFFFF;
             box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
             border-radius: 26px;
-            padding: 20px 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 25px;
             
             .cardImage{
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
-                margin: 0 auto;
-                height: fit-content;
+
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
 
             .cardContent{
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
+                width: 100%;
 
                 .cardTitle{
                     font-weight: 500;
                     font-size: 18px;
                     line-height: 124.5%;
                     letter-spacing: 0.015em;
-                    color: #080809;
+                    color: $primary-color;
                 }
                 .cardDescription{
                     font-weight: 500;
                     font-size: 16px;
                     line-height: 124.5%;
                     letter-spacing: -0.005em;
-                    color: #84829A;
+                    color: $quaternary;
                 }
                 .icons{
                     display: flex;
@@ -106,7 +114,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: #84829A;
+                        color: $tertiary-color;
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
@@ -125,9 +133,31 @@
                         font-size: 16px;
                         line-height: 124.5%;
                         letter-spacing: -0.02em;
-                        color: #84829A;
+                        color: $quaternary;
                     }
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 960px){
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 0px 20px;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        .content{
+            padding: 0px 20px;
+            font-size: 2rem;
+            gap: 30px;
+        }
+        .cardContainer{
+            order: 1;
+            margin: 0px auto;
+            .card{
+                width: 90%;
+                margin: 0px auto;
             }
         }
     }

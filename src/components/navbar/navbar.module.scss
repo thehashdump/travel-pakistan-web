@@ -1,3 +1,4 @@
+@import '../../utils/sass/variables.scss';
 .navbar{
     background: transparent;
     position: absolute;
@@ -5,6 +6,13 @@
     left: 0;
     width: 100%;
     min-height: 160px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+
+    @media screen and (max-width: 1150px) {
+        display: none;
+    }
 
     .navbarContainer{
         width: 100%;
@@ -18,8 +26,8 @@
             display: flex;
             align-items: center;
             .navbarLogo{
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
                 cursor: pointer;
                 .navbarImage{
                     width: 100%;
@@ -33,6 +41,7 @@
                 font-weight: 700;
                 font-size: 36px;
                 line-height: 40px;
+                margin: -15px;
                 text-decoration: uppercase;
                 color: #FFFFFF;
                 cursor: pointer;
@@ -42,9 +51,6 @@
             display: flex;
             align-items: center;
             .navbarLink{
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 700;
                 font-size: 20px;
                 line-height: 30px;
                 color: #FFFFFF;
@@ -52,32 +58,121 @@
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
                 &:hover{
-                    color: #14183E;
+                    color: $tertiary-color;
                 }
             }
             .loginButton{
                 display: flex;
-                flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                padding: 13px 44px;
-                gap: 10px;
+                padding: 5px 18px;
                 border: 2px solid #FFFFFF;
                 border-radius: 12px;
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 30px;
+                font-size: 16px;
+                font-weight: 900;
                 color: #FFFFFF;
                 background-color: transparent;
                 cursor: pointer;
-                transition: all 0.3s ease-in-out;
                 &:hover{
-                    background: #14183E;
+                    transition: all 0.3s ease-in-out;
+                    background: $primary-color;
                     color: #FFFFFF;
                 }
             }
         }
+    }
+}
+
+.mobileNavbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 120px;
+	background-color: transparent;
+
+	@media screen and (min-width: 1150px) {
+		display: none;
+	}
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 90%;
+		margin: 0 auto;
+
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100px;
+			height: 100%;
+
+            .logoimg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+		}
+
+		.icon {
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
+#linkContainer {
+	position: absolute;
+	top: 120px;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	margin: 0;
+	margin-top: -16px;
+	padding: 20px;
+    backdrop-filter: blur(10px);
+
+	@media screen and (max-width: 1250px) {
+		display: none;
+	}
+
+	.links {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 20px;
+		font-family: 'Poppins', sans-serif;
+
+		.link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $secondary-color;
+			font-weight: 700;
+			font-size: 1.5rem;
+			cursor: pointer;
+
+			&:hover {
+				color: $tertiary-color;
+			}
+		}
+	}
+    .button {
+        padding: 7px 15px;
+        border-radius: 10px;
+        color: white;
+        background-color: $tertiary-color;
+        font-weight: 750;
+        font-size: 0.8rem;
+        border: none;
+        outline: none;
     }
 }

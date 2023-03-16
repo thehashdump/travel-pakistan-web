@@ -53,7 +53,11 @@ function Guide() {
 			<div className={Styles.cardContainer}>
 				<div className={Styles.card}>
 					<div className={Styles.cardImage}>
-						<Image src={require('../../../assets/guideCard.jpg')} alt="card image" />
+						<Image
+							src={require('../../../assets/guideCard.jpg')}
+							alt="card image"
+							className={Styles.image}
+						/>
 					</div>
 					<div className={Styles.cardContent}>
 						<div className={Styles.cardTitle}>

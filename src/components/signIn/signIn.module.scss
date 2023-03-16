@@ -1,3 +1,5 @@
+@import '../../utils/sass/variables.scss';
+
 .SignIn{
     height: 100vh;
     display: flex;
@@ -13,16 +15,27 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        .heading{
-            font-size: 37px;
-            font-weight: 600;
-            line-height: 55.5px;
-            color: white;
+
+        @media screen and (max-width: 550px) {
+            display: none;
         }
-        .subtext{
-            font-size: 15px;
-            line-height: 22.5px;
+
+        .content{
+            width: 90%;
+            text-align: center;
+            .heading{
+                font-size: 37px;
+                font-weight: 600;
+                line-height: 55.5px;
+                color: white;
+            }
+            .subtext{
+                font-size: 15px;
+                line-height: 22.5px;
+            }
         }
+
+        
         
     }
     .form{
@@ -30,6 +43,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (max-width: 550px) {
+            width: 100%;
+        }
     }
     .formcontent{
         width: 80%;
@@ -37,24 +54,39 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .logo{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            right: 10px;
+
+            .logoimg{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
         .signinheading{
             font-size: 30px;
             font-weight: 500;
             line-height: 45px;
             text-align: left;
-            color: #14183E;
+            color: $primary-color;
         }
         .email,.password{
             width: 100%;
             border: none;
             outline: none;
-            border-bottom: 2px solid #14183E;
+            border-bottom: 2px solid $primary-color;
             color: #4E4E4E;
             margin-top: 40px;
         }
         .loginbtn{
             width: 100%;
-            background-color: #14183E;
+            background-color: $primary-color;
             height: 50px;
             border: none;
             color: white;
@@ -62,18 +94,27 @@
             font-weight: bold;
             margin-top: 40px;
             border-radius: 5px;
+
+            &:hover{
+                background-color: $hover-primary;
+            }
         }
         .noaccount{
             color:#14183E;
             font-size: 18px;
             padding-top: 17px;
             span{
-                color: #4F4F4F;
+                color: $quaternary;
             }
             .redirectlink {
-                            cursor: pointer;
-                            padding-left: 5px;
-                            color: #14183E;
+                cursor: pointer;
+                padding-left: 5px;
+                font-weight: 600;
+                color: $primary-color;
+
+                &:hover{
+                    color: $hover-primary;
+                }
             }
         }
         
@@ -81,12 +122,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #4F4F4F;
+            color: $quaternary;
             font-size: 18px;
             margin-top: 34px;
             hr{
                 width: 100%;
-                border: 1px solid #4F4F4F;
+                border: 1px solid $quaternary;
             }
             span{
                 padding-left: 15px;
@@ -100,11 +141,13 @@
             margin-top: 35px;
             width: 100%;
             gap: 20px;
-            color: #4F4F4F;
-            cursor: pointer;
+            color: $quaternary;
             span{
                 cursor: text;
             }   
+            .icon{
+                cursor: pointer;
+            }
         }
     }
 }
