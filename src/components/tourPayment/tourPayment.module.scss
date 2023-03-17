@@ -1,3 +1,4 @@
+@import '../../utils/sass/variables.scss';
 .tourDetails {
   display: flex;
   flex-direction: column;
@@ -6,26 +7,32 @@
   font-family: "Poppins";
   background-color: #e5e5e5;
 
-  .top {
-    width: 100%;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(../../assets/tourDetailsBackground.png);
-    background-size: cover;
-    background-position: center;
-    font-family: Poppins;
-    font-size: 47px;
-    font-weight: 700;
-    line-height: 71px;
-    text-align: center;
-    color: white;
-
-    .divTop {
-      margin-top: 100px;
-    }
-  }
+   .top {
+        width: 100%;
+        min-height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/tourDetailsBackground.png);
+        background-size: cover;
+        .divTop{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .divTop{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+      }
 
   .main {
     width: 95%;
@@ -34,6 +41,7 @@
     .booking {
       width: 70%;
       margin-top: 40px;
+      order: 1;
 
       .bookingcontent {
         display: flex;
@@ -43,7 +51,7 @@
           font-size: 24px;
           font-weight: 600;
           line-height: 36px;
-          color: #1e1d4c;
+          color: $primary-color;
         }
         .secureMsg {
           display: flex;
@@ -57,9 +65,16 @@
           }
 
           .encryptionMsg {
-            color: #4f4f4f;
+            color: $quaternary;
             font-weight: 300;
             font-size: 14px;
+          }
+          @media screen and (max-width:475px) {
+            .encryptionMsg{
+              font-size: 12px;
+              line-height: 15px;
+            }
+            
           }
         }
         .detailcontainer {
@@ -105,10 +120,10 @@
               display: flex;
               gap: 54px;
               margin-top: 19px;
-              align-items: center;
+              // align-items: center;
               .cardHolder,.cardNumber {
                 display: flex;
-                width: 50%;
+                width: 100%;
                 flex-direction: column;
 
                 span {
@@ -129,16 +144,23 @@
                 }
               }
             }
+            @media screen and (max-width:600px) {
+              .cardDetails{
+                flex-direction: column;
+                gap: 10px;
+              }
+              
+            }
 
             .expiryDate {
               display: flex;
-              align-items: center;
+              // align-items: center;
               gap: 54px;
               margin-top: 20px;
 
               .left{
                 display: flex;
-                width: 50%;
+                width: 100%;
                 gap: 20px;
                 align-items: center;
                 .Options {
@@ -147,7 +169,7 @@
                   gap: 15px;
   
                   .selectMonth {
-                    width: 50%;
+                    // width: 100%;
                     height: 48px;
                     border-radius: 5px;
                     outline: none;
@@ -167,21 +189,29 @@
                 }
   
                 input {
-                  width: 539px;
+                  width: 100%;
                   height: 48px;
                   border-radius: 8px;
                   outline: none;
                   border: 1px solid #4f4f4f;
                 }
               }
+              @media  screen and (max-width:475px) {
+                .left{
+                  gap: 0px;
+                }
+                
+              }
+             
               .cvc {
                 display: flex;
                 align-items: center;
-                width: 50%;
+                width: 100%;
                 gap: 20px;
                 input {
                   display: flex;
                   flex: 1;
+                  width: 100%;
                   height: 48px;
                   border-radius: 5px;
                   outline: none;
@@ -199,13 +229,19 @@
                 }
               }
             }
+            @media screen and (max-width:550px){
+              .expiryDate{
+                flex-direction: column;
+                gap: 10px;
+              }
+            }
             .countryInfo {
               display: flex;
               gap: 54px;
               margin-top: 20px;
               .country {
                 display: flex;
-                width: 50%;
+                width: 100%;
                 gap: 20px;
                 align-items: center;
                 justify-content: space-between;
@@ -231,6 +267,7 @@
                 input {
                   display: flex;
                   flex: 1;
+                  width: 100%;
                   height: 48px;
                   border-radius: 5px;
                   outline: none;
@@ -238,14 +275,26 @@
                 }
               }
             }
+            @media  screen and (max-width:475px) {
+          .countryInfo{
+            gap: 20px;
+            flex-direction: column;
           }
+        }
+          }
+        }
+        @media  screen and (max-width:768px) {
+          .detailcontainer{
+            width:100%;
+          }
+          
         }
       }
 
       .continue {
         width: 95%;
         height: 52px;
-        background-color: #1e1d4c;
+        background-color: $primary-color;
         color: white;
         font-size: 18px;
         font-weight: 700;
@@ -255,11 +304,40 @@
         margin-top: 33px;
         margin-bottom: 33px;
       }
+      @media  screen and (max-width:768px) {
+          .continue{
+            width:100%;
+          }
+          
+        }
     }
+    @media screen and (max-width: 768px){
+      .booking{
+        width: 100%;
+        order: 2;
+      }
+      
+    }
+    
 
     .bill {
       width: 30%;
       margin-top: 140px;
+      order: 2;
+    }
+    @media screen and (max-width: 768px){
+      .bill{
+        width: 100%;
+        order: 1;
+        margin-top: 70px;
+      }
+      
     }
   }
+  @media screen and (max-width: 768px){
+      .main{
+        flex-direction: column;
+      }
+      
+    }
 }

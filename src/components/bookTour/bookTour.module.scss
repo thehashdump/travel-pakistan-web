@@ -134,18 +134,17 @@
                                 
                             }
                         }
-                                                @media screen and (max-width: 768px) {
-                                                    .tourinfo {
-                                                        width: 100%;
-                                                    }
-                                                }
+                        @media screen and (max-width: 768px) {
+                            .tourinfo {
+                                width: 100%;
+                                }
+                        }
                         @media  screen and (max-width: 656px) {
                             .tourinfo{
                                 height: 140px;
                             }
                             
-                        }
-                                               
+                        }                                           
             .coupan{
                 width: 95%;
                 height: 56px;
@@ -221,10 +220,10 @@
                             background-color: $hover-primary;
                         }
                 }
-                 @media screen and (max-width: 1024px){
+                @media screen and (max-width: 1024px){
                     .coupancontent{
-                             gap: 0px;
-                             margin-left: 15px;
+                        gap: 0px;
+                        margin-left: 15px;
                         }
                 }
                                 
@@ -269,7 +268,7 @@
                     span{
                         font-size: 20px;
                         font-weight: 400;
-                        color: $primary-color;
+                        color: $secondary-color;
                     }
                     .names{
                         width: 100%;
@@ -407,6 +406,12 @@
                 margin-top: 33px; 
                 margin-bottom: 33px;               
             }
+            @media  screen and (max-width:768px) {
+          .continue{
+            width:100%;
+          }
+          
+        }
         }
         @media screen and (max-width:768px) {
             .booking{
