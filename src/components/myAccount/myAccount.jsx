@@ -21,7 +21,9 @@ function MyAccount() {
 				<div className={Styles.account}>
 					<div className={Styles.accountContent}>
 						<div className={Styles.image}>
+							<div className={Styles.profileImage}>
 
+							</div>
 						</div>
 						<div className={Styles.accountInfo}>
 							<div className={Styles.details}>
@@ -53,29 +55,56 @@ function MyAccount() {
 								className={activeTab === 'Activity Feed' ? Styles.active : ''}
 								onClick={() => handleTabClick('Activity Feed')}
 							>
-                                Activity Feed
+                Activity Feed
 							</li>
 							<li
 								className={activeTab === 'My Bookings' ? Styles.active : ''}
 								onClick={() => handleTabClick('My Bookings')}
 							>
-                                My Bookings
+                My Bookings
 							</li>
 							<li
-								className={activeTab === 'Private Tour Requests' ? Styles.active : ''}
+								className={
+									activeTab === 'Private Tour Requests' ? Styles.active : ''
+								}
 								onClick={() => handleTabClick('Private Tour Requests')}
 							>
-                                Private Tour Requests
+                Private Tour Requests
 							</li>
 							<li
 								className={activeTab === 'History' ? Styles.active : ''}
 								onClick={() => handleTabClick('History')}
 							>
-                                History
+                History
 							</li>
 						</ul>
 					</div>
 
+					<div className={Styles.content}>
+						{activeTab === 'Activity Feed' && (
+							<div className={Styles.activity}>
+
+							</div>
+						)}
+
+						{activeTab === 'My Bookings' && (
+							<div className={Styles.bookings}>
+
+							</div>
+						)}
+
+						{activeTab === 'Private Tour Requests' && (
+							<div className={Styles.requests}>
+
+							</div>
+						)}
+
+						{activeTab === 'History' && (
+							<div className={Styles.history}>
+
+							</div>
+						)}
+					</div>
 				</div>
 			</div>
 			<Footer />
