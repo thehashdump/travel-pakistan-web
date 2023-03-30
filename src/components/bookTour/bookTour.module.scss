@@ -210,10 +210,11 @@
                             margin-left: 15px;
                             outline: none;
                         }
-                        @media screen and (max-width:768px){
+                        @media screen and (max-width:912px){
                             button{
                                 width: 120px;
                                 height: 30px;
+                                margin-right: 10px;
                             }
                         }
                         button:hover{
