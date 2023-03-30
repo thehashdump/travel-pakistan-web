@@ -9,12 +9,13 @@ function TourList() {
 		<div className={Styles.tourList}>
 			<div className={Styles.top}>
 				<Navbar />
+				<span className={Styles.title}>Discover new horizons with our tours.</span>
 				<SearchBar />
 			</div>
 			<div className={Styles.main}>
 				<div className={Styles.filterBox}>
-					<div className={Styles.top}>
-						<span>Destination: 14 places found</span>
+					<div className={Styles.filterTop}>
+						<span>Destination: <span>14 places found</span></span>
 						<span>Filter By:</span>
 					</div>
 					<div className={Styles.middle}>

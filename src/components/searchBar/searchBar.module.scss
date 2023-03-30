@@ -1,6 +1,8 @@
+@import '../../utils/sass/variables.scss';
+
 .searchBar{
     width: 90%;
-    height: 145px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 64.0184px 76.8221px 80px rgba(0, 0, 0, 0.07), 41.4934px 49.7921px 46.8519px rgba(0, 0, 0, 0.0531481), 24.659px 29.5907px 25.4815px rgba(0, 0, 0, 0.0425185), 12.8037px 15.3644px 13px rgba(0, 0, 0, 0.035), 5.21632px 6.25958px 6.51852px rgba(0, 0, 0, 0.0274815), 1.18553px 1.42263px 3.14815px rgba(0, 0, 0, 0.0168519);
     border-radius: 12px;
@@ -9,17 +11,19 @@
     align-items: center;
     font-family: 'Poppins';
     font-style: normal;
-    color: #3E4958;
+    color: $quaternary;
     .wrapper{
         width: 100%;
         display: flex;
-        padding: 0px 35px;
         align-items: center;
         gap: 30px;
+        @media screen and (max-width: 1150px) {
+            flex-direction: column;
+        }
         .filters{
             display: flex;
-            width: 1020px;
-            height: 70px;
+            width: 100%;
+            flex-wrap: wrap;
             background: #FFFFFF;
             border: 2px solid #FFFFFF;
             box-shadow: 64.0184px 76.8221px 80px rgba(0, 0, 0, 0.07), 41.4934px 49.7921px 46.8519px rgba(0, 0, 0, 0.0531481), 24.659px 29.5907px 25.4815px rgba(0, 0, 0, 0.0425185), 12.8037px 15.3644px 13px rgba(0, 0, 0, 0.035), 5.21632px 6.25958px 6.51852px rgba(0, 0, 0, 0.0274815), 1.18553px 1.42263px 3.14815px rgba(0, 0, 0, 0.0168519);
@@ -27,7 +31,7 @@
 
             .destination,.source{
                 display: flex;
-                flex: 1.6;
+                flex: 1;
                 align-items: center;
                 gap: 15px;
                 padding: 14px 11px;
@@ -40,7 +44,7 @@
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 14px;
-                    color: #3E4958;
+                    color: $quaternary;
                     select{
                         width: 100%;
                         font-weight: 700;
@@ -48,7 +52,7 @@
                         line-height: 20px;
                         display: flex;
                         align-items: center;
-                        color: #3E4958;
+                        color: $primary-color;
                         mix-blend-mode: normal;
                         outline: none;
                         border: none;
@@ -65,8 +69,8 @@
                 flex: 1;
                 align-items: center;
                 gap: 15px;
-                align-items: center;
                 justify-content: center;
+                padding: 14px 11px;
                 border-right: 1px solid #E5E5E5;
 
                 .datePicker{
@@ -78,7 +82,7 @@
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 14px;
-                        color: #3E4958;
+                        color: $quaternary;
                     }
                     .dateString{
                         font-weight: 700;
@@ -86,7 +90,7 @@
                         line-height: 20px;
                         display: flex;
                         align-items: center;
-                        color: #3E4958;
+                        color: $primary-color;
                         mix-blend-mode: normal;
                     }
                 }
@@ -109,7 +113,7 @@
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 14px;
-                        color: #3E4958;
+                        color: $quaternary;
                     }
                     select{
                         width: 100%;
@@ -118,7 +122,7 @@
                         line-height: 20px;
                         display: flex;
                         align-items: center;
-                        color: #3E4958;
+                        color: $primary-color;
                         mix-blend-mode: normal;
                         outline: none;
                         border: none;
@@ -126,11 +130,19 @@
                     }
                 }
             }
+            @media screen and (max-width: 950px) {
+                flex-direction: column;
+                .date{
+                    justify-content: flex-start;
+                }
+            } 
         }
         .searchButton{
             width: 175px;
             height: 72px;
-            background: #14183E;
+            background: $primary-color;
+            border: none;
+            outline: none;
             border-radius: 12px;
             font-weight: 700;
             font-size: 18px;
@@ -142,8 +154,11 @@
             color: #FFFFFF;
 
             &:hover{
-                background: #0f0046;
+                background: $hover-primary;
             }
+            @media screen and (max-width: 1150px) {
+                width: 100%;
+            } 
         }
     }
 }

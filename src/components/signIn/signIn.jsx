@@ -5,18 +5,25 @@ function SignIn() {
 	return (
 		<div className={Styles.SignIn}>
 			<div className={Styles.image}>
-				<div>
+				<div className={Styles.content}>
 					<span className={Styles.heading}>Explore Pakistan With Us!</span>
 					<br />
 					<span className={Styles.subtext}>
-            Its time to unfold the beauty of Pakistan!
+						Its time to unfold the beauty of Pakistan!
 					</span>
 				</div>
 			</div>
 			<div className={Styles.form}>
 				<div className={Styles.formcontent}>
+					<div className={Styles.logo}>
+						<Image
+							src={require('../../assets/Travel-Pakistan-Logo.png')}
+							alt="Logo"
+							className={Styles.logoimg}
+						/>
+					</div>
 					<div>
-						<span className={Styles.signinheading}>SignIn</span>
+						<span className={Styles.signinheading}>Sign in</span>
 						<form>
 							<input placeholder="Email Address" className={Styles.email} required/>
 							<input
@@ -34,8 +41,16 @@ function SignIn() {
 							>Login</button>
 							<div className={Styles.noaccount}>
 								<span>
-                Not have a account?
-									<span className={Styles.redirectlink}>SignUp</span>
+									Not have an account?
+									<span
+										className={Styles.redirectlink}
+										onClick={(e) => {
+											e.preventDefault();
+											window.location.href = '/signup';
+										}}
+									>
+										SignUp
+									</span>
 								</span>
 							</div>
 							<div className={Styles.borderline}>
@@ -48,14 +63,17 @@ function SignIn() {
 								<Image
 									src={require('../../assets/google.png')}
 									alt="Google"
+									className={Styles.icon}
 								/>
 								<Image
 									src={require('../../assets/facebook.png')}
 									alt="Facebook"
+									className={Styles.icon}
 								/>
 								<Image
 									src={require('../../assets/twitter.png')}
 									alt="Twitter"
+									className={Styles.icon}
 								/>
 							</div>
 						</form>

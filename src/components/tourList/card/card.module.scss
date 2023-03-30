@@ -1,3 +1,5 @@
+@import '../../../utils/sass/variables.scss';
+
 .card{
     width: 95%;
     height: 170px;
@@ -43,7 +45,7 @@
                     font-weight: 600;
                     font-size: 16px;
                     line-height: 24px;
-                    color: #1E1D4C;
+                    color: $primary-color;
                 }
                 .moreInfo{
                     width: 100%;
@@ -53,7 +55,7 @@
                     font-weight: 300;
                     font-size: 10px;
                     line-height: 15px;
-                    color: #1E1D4C;
+                    color: $secondary-color;
 
                     span{
                         display: flex;
@@ -69,7 +71,7 @@
                     font-weight: 300;
                     font-size: 10px;
                     line-height: 15px;
-                    color: #1E1D4C;
+                    color: $primary-color;
                     .priceText{
                         font-weight: 500;
                         line-height: 15px;
@@ -99,7 +101,7 @@
                     font-weight: 300;
                     font-size: 10px;
                     line-height: 15px;
-                    color: #1E1D4C;
+                    color: $secondary-color;
                 }
             }
             .tags{
@@ -111,12 +113,123 @@
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 18px;
-                    color: #1E1D4C;
+                    color: $secondary-color;
                     background-color: gainsboro;
                     border-radius: 5px;
                     display: flex;
                     align-items: center;
                     gap: 5px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1100px){
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        gap: 20px;
+        .cardImage{
+            width: 100%;
+            height: 200px;
+        }
+        .cardInfo{
+            width: 100%;
+            height: 100%;
+            .top{
+                gap: 10px;
+                .left{
+                    gap: 10px;
+                    .title{
+                        font-size: 20px;
+                        line-height: 28px;
+                    }
+                    .moreInfo{
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+                }
+                .right{
+                    .price{
+                        font-size: 12px;
+                        line-height: 18px;
+                        .priceText{
+                            font-size: 20px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+            .bottom{
+                .tripInfo{
+                    gap: 10px;
+                    .days,
+                    .people
+                    {
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+                }
+                .tags{
+                    gap: 10px;
+                    .tag{
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 660px){
+        .cardInfo{
+            gap: 10px;
+            .top{
+                flex-direction: column;
+                gap: 10px;
+                .left{
+                    gap: 10px;
+                    .title{
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    .moreInfo{
+                        font-size: 10px;
+                        line-height: 15px;
+                    }
+                }
+                .right{
+                    .price{
+                        font-size: 10px;
+                        line-height: 15px;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 10px;
+                        .priceText{
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+            .bottom{
+                gap: 20px;
+                .tripInfo{
+                    gap: 15px;
+                    .days,
+                    .people
+                    {
+                        font-size: 10px;
+                        line-height: 15px;
+                    }
+                }
+                .tags{
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    .tag{
+                        font-size: 14px;
+                        line-height: 18px;
+                    }
                 }
             }
         }

@@ -1,3 +1,4 @@
+@import '../../utils/sass/variables.scss';
 .tourDetails {
     display: flex;
     flex-direction: column;
@@ -8,21 +9,28 @@
 
     .top {
         width: 100%;
-        height: 350px;
+        min-height: 350px;
+        padding: 0px 0px 17px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background: url(../../assets/tourDetailsBackground.png);
         background-size: cover;
-        background-position: center;
-        font-family: Poppins;
-        font-size: 47px;
-        font-weight: 700;
-        line-height: 71px;
-        text-align: center;
-        color: white;
         .divTop{
-            margin-top: 100px;            
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .divTop{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
         }
 
     }
@@ -32,6 +40,7 @@
         .booking{
             width: 70%;
             margin-top: 40px;
+            order: 1;
             .bookingcontent{
                 display: flex;
                 flex-direction: column;
@@ -40,7 +49,12 @@
                         font-size: 24px;
                         font-weight: 600;
                         line-height: 36px;
-                        color: #1E1D4C;
+                        color: $primary-color;
+                }
+                @media screen and (max-width:768px) {
+                    span{
+                        font-size: 22px;
+                    }
                 }
                 .detailheading{
                     margin-top: 27px;
@@ -61,6 +75,7 @@
                 border-radius: 13px;
                 margin-top: 13px;
                 background-color: white;
+            
                 .tourcontent{
                     margin-left: 25px;
                     margin-top: 5px;
@@ -70,8 +85,21 @@
                             font-size: 24px;
                             font-weight: 500;
                             line-height: 36px;
+
                             
                     }
+                    @media screen and (max-width:1024px) {
+                        .tourtitle{
+                            font-size:22px;
+                        }
+                    }
+                    @media  screen and (max-width: 425px) {
+                        .tourtitle{
+                            font-size: 20px;
+                        }
+                        
+                    }
+                    
                     .tourlocation{
                         display: flex;
                         flex-direction: column;
@@ -81,7 +109,7 @@
                                 font-size: 14px;
                                 font-weight: 300;
                                 line-height: 15px;
-                                color: #1E1D4C;
+                                color: $quaternary;
                         }
                     }
                     .agencyname{
@@ -89,10 +117,34 @@
                         font-weight: 300;
                         line-height: 15px;
                         padding-left: 5px;
+                        color: $quaternary;
                     }
                     
                 }
+                @media screen and (max-width: 1024px) {
+                    .tourcontent{
+                        margin-left: 15px;
+                    }
+                }
+                
             }
+                        @media screen and (max-width: 924px) and (min-width: 768px) {
+                            .tourinfo {
+                                height: 140px;
+                                
+                            }
+                        }
+                        @media screen and (max-width: 768px) {
+                            .tourinfo {
+                                width: 100%;
+                                }
+                        }
+                        @media  screen and (max-width: 656px) {
+                            .tourinfo{
+                                height: 140px;
+                            }
+                            
+                        }                                           
             .coupan{
                 width: 95%;
                 height: 56px;
@@ -101,42 +153,108 @@
                 background-color: white;
                 display: flex;                
                 align-items: center;
+                
                 .coupancontent{
                     width: 100%;                    
                     margin-left: 25px;
                     gap: 15px;
+                    display: flex;
+                    align-items: center;
+                    span {
+                            font-size: 16px;
+                            color: $primary-color;
+                            line-height: 24px;
+                        }
+                    @media screen and (max-width: 1024px) {
+                    span {
+                        font-size: 14px;
+                         }
+                        }
+                                                @media screen and (max-width: 768px) {
+                                                    span {
+                                                        font-size: 16px;
+                                                    }
+                                                }
+                        
+                    
+                        input {
+                            font-size: 12px;
+                            width: 360px;
+                            height: 30px;
+                            border: 1px solid #4F4F4F;
+                            outline: none;
+                            border-radius: 8px;
+                            margin-left: 15px;
+                        }
+                                                @media screen and (max-width: 1024px) {
+                                                    input {
+                                                        width: 260px;
+                                                        
+                                                    }
+                                                }
+                                                 @media screen and (max-width: 622px) {
+                                                    input {
+                                                        margin-left: 0px;
+                                                        
+                                                    }
+                                                }
+                    
+                        button {
+                            width: 131px;
+                            height: 35px;
+                            background-color: $primary-color;
+                            color: white;
+                            cursor: pointer;
+                            border: none;
+                            border-radius: 8px;
+                            margin-left: 15px;
+                            outline: none;
+                        }
+                        @media screen and (max-width:912px){
+                            button{
+                                width: 120px;
+                                height: 30px;
+                                margin-right: 10px;
+                            }
+                        }
+                        button:hover{
+                            background-color: $hover-primary;
+                        }
                 }
-                span{
-                    font-size: 16px;
-                    color: #1E1D4C;
-                    line-height: 24px;
+                @media screen and (max-width: 1024px){
+                    .coupancontent{
+                        gap: 0px;
+                        margin-left: 15px;
+                        }
                 }
-                input{
-                    font-size: 12px;
-                    width: 360px;
-                    height: 30px;
-                    border: 1px solid #4F4F4F;
-                    outline: none;
-                    border-radius: 8px;
-                    margin-left: 15px;
-                }
-                button{
-                    width: 131px;
-                    height: 35px;
-                    background-color: #1E1D4C;
-                    color: white;
-                    cursor: pointer;
-                    border: none;
-                    border-radius: 8px;
-                    margin-left: 15px;
-                    outline: none;
-                }
+                                
+                                
+                                @media screen and (max-width: 622px) {
+                                    .coupancontent {
+                                        flex-direction: column;
+                                        gap: 10px;
+                                        margin-left: 0px;
+                                    }
+                                }
+                
             }
+                        @media screen and (max-width: 622px) {
+                            .coupan {
+                                height: 130px;
+                                justify-content: center;
+                                
+                            }
+                        }
+                        @media screen and (max-width: 768px){
+                            .coupan{
+                                width: 100%;
+                            }
+                        }
+            
             .detailcontainer {
                 width: 95%;
                 border-radius: 13px;
                 background-color: white;
-                // height: 800px;
                 margin-top: 26px;
                 display: flex;
                 justify-content: center;
@@ -151,10 +269,11 @@
                     span{
                         font-size: 20px;
                         font-weight: 400;
-                        color: #1E1D4C;
+                        color: $secondary-color;
                     }
                     .names{
                         width: 100%;
+                        
                         
                         display: flex;
                         gap: 54px;
@@ -162,29 +281,42 @@
                         .firstname,.lastname{
                             display: flex;
                             flex-direction: column;
+                            
+                            width: 100%;
                             span{
                                 font-size: 16px;
                                 font-weight: 400;
                             }
                             input{
-                                width: 360px;
+                                width: 100%;
                                 height:48px;
                                 border-radius: 8px;
                                 outline: none;
                                 border:1px solid #4F4F4F;
                             }
                         }
+                        
                     }
+                                        @media screen and (max-width:425px) {
+                                            .names {
+                                                flex-direction: column;
+                                                gap: 10px;
+                                            }
+                    
+                                        }
+                                        
                     .contact{
                         width: 100%;
                         
                         display: flex;
                         gap: 54px;
                         margin-top: 19px;
+                        
                         .gender{
                             display: flex;
                             flex-direction: column;
-                            width: 360px;
+                            width: auto;
+                            
                             span {
                                     font-size: 16px;
                                     font-weight: 400;
@@ -198,9 +330,13 @@
                                     height: 41px;
                                     border: 1px solid #4F4F4F;
                                     background-color: white;
-                                    color: #1E1D4C;
+                                    color: $primary-color;
                                     border-radius: 8px;
                                     outline: none;
+                                }
+                                button:hover{
+                                    background-color: $hover-primary;
+                                    color: white;
                                 }
 
                             }
@@ -208,17 +344,25 @@
                         .contactnumber{
                             display: flex;
                             flex-direction: column;
+                            width: 100%;
+                            
                             span{
                                 font-size: 16px;
                                 font-weight: 400;
                             }
                             input{
-                                width: 360px;
+                                width: 100%;
                                 height:48px;
                                 border-radius: 8px;
                                 outline: none;
                                 border:1px solid #4F4F4F;
                             }
+                        }
+                    }
+                    @media screen and (max-width: 1024px) {
+                        .contact{
+                            flex-direction: column;
+                            gap: 10px;
                         }
                     }
                     .email,.cnic{
@@ -232,7 +376,7 @@
                                 font-weight: 400;
                             }
                             input{
-                                width: 775px;
+                                width: 100%;
                                 height:48px;
                                 border-radius: 8px;
                                 outline: none;
@@ -242,12 +386,18 @@
                     }
 
                 }
+               
+                }
+                @media screen and (max-width: 768px){
+                    .detailcontainer{
+                        width: 100%;
+                    }
                 }
             }
             .continue{
                 width: 95%;
                 height: 52px;
-                background-color: #1E1D4C;
+                background-color: $primary-color;
                 color: white;
                 font-size: 18px;
                 font-weight: 700;
@@ -257,11 +407,40 @@
                 margin-top: 33px; 
                 margin-bottom: 33px;               
             }
+            @media  screen and (max-width:768px) {
+          .continue{
+            width:100%;
+          }
+          
+        }
+        }
+        @media screen and (max-width:768px) {
+            .booking{
+                width: 100%;
+                order: 2;
+            }
+            
         }
         .bill{
             
             width: 30%;
             margin-top: 90px;
+            order: 2;
+        }
+        @media screen and (max-width:768px) {
+            .bill{
+                width: 100%;
+                margin-top: 50px;
+                
+                order: 1;
+            }
+            
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .main{
+            flex-direction: column;
+            
         }
     }
 

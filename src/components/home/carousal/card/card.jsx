@@ -18,7 +18,7 @@ function Card({
 			/>
 			<div className={Styles.content}>
 				<div className={Styles.top}>
-					<div>
+					<div className={Styles.left}>
 						{destination || organizer}
 					</div>
 					<div>

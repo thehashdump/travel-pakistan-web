@@ -16,7 +16,7 @@ function BookTour() {
 			<div className={Styles.top}>
 				<Navbar />
 				<div className={Styles.divTop}>
-					<span>6 Days Tour to Hunza & Naltar Valley</span>
+          6 Days Tour to Hunza & Naltar Valley
 				</div>
 			</div>
 			<div className={Styles.main}>
@@ -73,8 +73,9 @@ function BookTour() {
 											<button
 												style={{
 													backgroundColor:
-                            selectedGender === 'Male' ? '#1E1D4C' : 'white',
-													color: selectedGender === 'Male' ? 'white' : '#1E1D4C',
+                            selectedGender === 'Male' ? '#006600' : 'white',
+													color:
+                            selectedGender === 'Male' ? 'white' : '#006600',
 												}}
 												onClick={() => handleClick('Male')}
 											>
@@ -83,8 +84,9 @@ function BookTour() {
 											<button
 												style={{
 													backgroundColor:
-                            selectedGender === 'Female' ? '#1E1D4C' : 'white',
-													color: selectedGender === 'Female' ? 'white' : '#1E1D4C',
+                            selectedGender === 'Female' ? '#006600' : 'white',
+													color:
+                            selectedGender === 'Female' ? 'white' : '#006600',
 												}}
 												onClick={() => handleClick('Female')}
 											>
@@ -99,11 +101,11 @@ function BookTour() {
 								</div>
 								<div className={Styles.email}>
 									<span>Email Address</span>
-									<input type='email' required/>
+									<input type="email" required />
 								</div>
 								<div className={Styles.cnic}>
 									<span>CNIC</span>
-									<input required/>
+									<input required />
 								</div>
 							</div>
 						</div>
@@ -112,14 +114,16 @@ function BookTour() {
 							onClick={() => {
 								window.location.href = '/payment';
 							}}
-						>Continue</button>
+						>
+              Continue
+						</button>
 					</div>
 				</div>
 				<div className={Styles.bill}>
-					<BillCard/>
+					<BillCard />
 				</div>
 			</div>
-			<Footer/>
+			<Footer />
 		</div>
 	);
 }

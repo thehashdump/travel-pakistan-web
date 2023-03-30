@@ -2,39 +2,6 @@ import { Card } from './card';
 import Styles from './carousal.module.scss';
 
 function CarousalComponent({ title }) {
-	// const destinationsData = [
-	// 	{
-	// 		image: 'topDestinationCard1.png',
-	// 		destination: 'Neelum Valley1',
-	// 		price: 'Rs. 20,000',
-	// 		tripDetails: '4 Days Trip',
-	// 	},
-	// 	{
-	// 		image: 'topDestinationCard1.png',
-	// 		destination: 'Neelum Valley2',
-	// 		price: 'Rs. 20,000',
-	// 		tripDetails: '4 Days Trip',
-	// 	},
-	// 	{
-	// 		image: 'topDestinationCard1.png',
-	// 		destination: 'Neelum Valley3',
-	// 		price: 'Rs. 20,000',
-	// 		tripDetails: '4 Days Trip',
-	// 	},
-	// 	{
-	// 		image: 'topDestinationCard1.png',
-	// 		destination: 'Neelum Valley3',
-	// 		price: 'Rs. 20,000',
-	// 		tripDetails: '4 Days Trip',
-	// 	},
-	// 	{
-	// 		image: 'topDestinationCard1.png',
-	// 		destination: 'Neelum Valley3',
-	// 		price: 'Rs. 20,000',
-	// 		tripDetails: '4 Days Trip',
-	// 	},
-	// ];
-
 	return (
 		<div className={Styles.carousal}>
 			<div className={Styles.title}>
@@ -58,8 +25,8 @@ function CarousalComponent({ title }) {
 							/>
 							<Card
 								image=	{'topDestinationCard1.png'}
-								destination={'Neelum Valley1'}
-								price = {'Rs. 20,000'}
+								destination={'Top Ten Wonders of Islamabad Guided City Tour Islamabad Guided City Tour Islamabad Guided City Tour'}
+								price = {'Rs. 2,00,000'}
 								tripDetails= {'4 Days Trip'}
 							/>
 						</>

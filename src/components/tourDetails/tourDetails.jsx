@@ -30,28 +30,28 @@ function TourDetails() {
 							alt="tourDetails"
 							className={Styles.image}
 						/>
-					</div>
-					<div className={Styles.middle}>
-						<Image
-							src={require('../../assets/tourDetails1.png')}
-							alt="tourDetails"
-							className={Styles.image}
-						/>
-						<Image
-							src={require('../../assets/tourDetails2.png')}
-							alt="tourDetails"
-							className={Styles.image}
-						/>
-						<Image
-							src={require('../../assets/tourDetails3.png')}
-							alt="tourDetails"
-							className={Styles.image}
-						/>
-						<Image
-							src={require('../../assets/tourDetails4.png')}
-							alt="tourDetails"
-							className={Styles.image}
-						/>
+						<div className={Styles.bottom}>
+							<Image
+								src={require('../../assets/tourDetails1.png')}
+								alt="tourDetails"
+								className={Styles.image}
+							/>
+							<Image
+								src={require('../../assets/tourDetails2.png')}
+								alt="tourDetails"
+								className={Styles.image}
+							/>
+							<Image
+								src={require('../../assets/tourDetails3.png')}
+								alt="tourDetails"
+								className={Styles.image}
+							/>
+							<Image
+								src={require('../../assets/tourDetails4.png')}
+								alt="tourDetails"
+								className={Styles.image}
+							/>
+						</div>
 					</div>
 					<div className={Styles.right}>
 						<div className={Styles.topInfo}>
@@ -68,7 +68,7 @@ function TourDetails() {
 							</div>
 						</div>
 						<div className={Styles.map}>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51441.31704985877!2d74.6493444!3d36.31031065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e8a0927450692b%3A0x866b1b1181ca7cea!2sHunza%20Valley!5e0!3m2!1sen!2s!4v1675623071349!5m2!1sen!2s" width="100%" height="180" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51441.31704985877!2d74.6493444!3d36.31031065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e8a0927450692b%3A0x866b1b1181ca7cea!2sHunza%20Valley!5e0!3m2!1sen!2s!4v1675623071349!5m2!1sen!2s" width="100%" height="100%" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						</div>
 						<div className={Styles.bottomInfo}>
 							<div className={Styles.tripInfo}>

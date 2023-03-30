@@ -1,16 +1,42 @@
+@import '../../utils/sass/variables.scss';
+
 .tourList{
     display: flex;
     flex-direction: column;
 
     .top{
         width: 100%;
-        height: 350px;
-        padding: 0px 0px 17px;
+        min-height: 350px;
+        padding: 170px 0px 17px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         background: url(../../assets/listTourBackground.png);
         background-size: cover;
+        gap: 50px;
+
+        .title{
+            width: 90%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins';
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 36px;
+            color: #FFFFFF;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 550px) {
+            padding: 130px 0px 17px;
+            .title{
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
     }
     .main{
         display: flex;
@@ -20,27 +46,31 @@
         .filterBox{
             display: flex;
             width: 25%;
-            height: fit-content;
+            height: max-content;
             background: #FFFFFF;
             border-radius: 15px;
             flex-direction: column;
             font-family: 'Poppins';
             font-style: normal;
 
-            .top{
+            .filterTop{
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                height: 100px;
                 justify-content: space-between;
                 background: #FFFFFF;
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 24px;
-                color: #1E1D4C;
+                color: $primary-color;
                 border-bottom: 1px solid #4F4F4F33;
                 padding: 14px 22px;
                 border-radius: 15px 15px 0px 0px;
+                span{
+                    span{
+                        color: $secondary-color;
+                    }
+                }
             }
             .middle{
                 display: flex;
@@ -50,7 +80,7 @@
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 24px;
-                color: #1E1D4C;
+                color: $primary-color;
                 border-bottom: 1px solid #4F4F4F33;
 
                 .range{
@@ -64,7 +94,7 @@
                         font-size: 12px;
                         line-height: 18px;
                         text-align: center;
-                        color: #1E1D4C;
+                        color: $secondary-color;
                     }
                 }
             }
@@ -76,7 +106,7 @@
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 24px;
-                color: #1E1D4C;
+                color: $primary-color;
                 .checkBox{
                     display: flex;
                     gap: 11px;
@@ -84,13 +114,13 @@
                     font-size: 12px;
                     line-height: 18px;
                     text-align: center;
-                    color: #4F4F4F;
+                    color: $quaternary;
                 }
                 .resetButton{
                     width: 134px;
                     height: 46px;
                     display: flex;
-                    background: #14183E;
+                    background: $primary-color;
                     border-radius: 38px;
                     font-weight: 700;
                     font-size: 16px;
@@ -100,9 +130,11 @@
                     justify-content: center;
                     align-items: center;
                     margin: 7px auto;
+                    border: none;
+                    outline: none;
                     cursor: pointer;
                     &:hover{
-                        background: #1E1D4C;
+                        background: $hover-primary;
                     }
                 }
 
@@ -114,6 +146,23 @@
             width: 75%;
             align-items: flex-end;
             gap: 15px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            flex-direction: column;
+            gap: 30px;
+            padding: 30px 60px 50px;
+            
+            .filterBox{
+                width: 100%;
+            }
+            .list{
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            padding: 30px 20px 50px;
         }
     }
 }
