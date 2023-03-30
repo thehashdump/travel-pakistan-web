@@ -69,10 +69,10 @@
             font-weight: 300;
             font-size: 14px;
           }
-          @media screen and (max-width:475px) {
+          @media screen and (max-width:1024px) {
             .encryptionMsg{
-              font-size: 12px;
-              line-height: 15px;
+              font-size: 14px;
+              line-height: 12px;
             }
             
           }
@@ -144,7 +144,7 @@
                 }
               }
             }
-            @media screen and (max-width:600px) {
+            @media screen and (max-width:835px) {
               .cardDetails{
                 flex-direction: column;
                 gap: 10px;
@@ -207,7 +207,7 @@
                 display: flex;
                 align-items: center;
                 width: 100%;
-                gap: 20px;
+                gap: 10px;
                 input {
                   display: flex;
                   flex: 1;
@@ -224,6 +224,8 @@
                   font-weight: 600;
                   color: black;
                 }
+                      
+                
                 .asterik {
                   color: red;
                 }
