@@ -36,7 +36,7 @@
       }
       .main{
         width: 97%;
-        height: 1000px;
+        height: auto;
         border: 1px solid red;
        .agencyIntro{
         display: flex;
@@ -156,13 +156,12 @@
        }
        .mainContainer{
         width: 100%;
-        border: 1px solid blue;
-        height: 100%;
+        height: auto;
         display: flex;
+        margin-top: 30px;
             .about{
-                width: 65%;
-                height: 100%;
-                border: 1px solid green;
+                width: 45%;
+                height: auto;
                 display: flex;
                 padding: 10px;
                 flex-direction: column;
@@ -195,9 +194,44 @@
 
             }
             .cards{
-                width: 35%;
-                height: 100%;
-                border: 1px solid yellow;
+                width: 55%;
+                height: auto;
+                
+                .heading1{
+                    font-size: 32px;
+                    color: $secondary-color;
+                    font-weight: 600;
+                    
+                }
+                .button{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    .more{
+                    width: 134px;
+                    height: 46px;
+                    background-color: $primary-color;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    border: none;
+                    align-items: center;
+                    cursor: pointer;
+                    outline: none;
+                    border-radius: 38px;
+                    margin-top: 40px;
+                    &:hover{
+                        background-color: $hover-primary;
+                    }
+                    span{
+                        font-size: 16px;
+                        color: white;
+                        font-weight: 600;
+                    }
+
+                }
+                }
+                 
 
             }
        }

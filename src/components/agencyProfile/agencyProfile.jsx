@@ -55,7 +55,6 @@ function AgencyProfile() {
 				</div>
 
 				<div className={Styles.images}>
-
 					<div className={Styles.imgContainer1}></div>
 
 					<div className={Styles.imgContainer2}></div>
@@ -63,7 +62,6 @@ function AgencyProfile() {
 					<div className={Styles.imgContainer3}></div>
 
 					<div className={Styles.imgContainer4}></div>
-
 				</div>
 				<div className={Styles.mainContainer}>
 					<div className={Styles.about}>
@@ -71,25 +69,60 @@ function AgencyProfile() {
 						<div className={Styles.text}>
 							<span className={Styles.heading}>About</span>
 							<span className={Styles.intro}>
-                                We " NorthX " are expert in tourism services
-and fully understand &
-aware of your travel needs! From just airport
-transfer to Multi - days / Multi-destination packages,
- from Solo travelers to MICE groups, from budget package
-  to exclusive trip, from historical Lahore city to Hussiani Bridge
-  Hanza, anywhere, everywhere around Pakistan, We are ready to Plan
-  Your Trips.
-
+                We " NorthX " are expert in tourism services and fully
+                understand & aware of your travel needs! From just airport
+                transfer to Multi - days / Multi-destination packages, from Solo
+                travelers to MICE groups, from budget package to exclusive trip,
+                from historical Lahore city to Hussiani Bridge Hanza, anywhere,
+                everywhere around Pakistan, We are ready to Plan Your Trips.
 							</span>
 							<div className={Styles.location}>
-								<Image src={require('../../assets/location-1.png')}/>
+								<Image src={require('../../assets/location-1.png')} />
 								<span>Islamabad, Pakistan</span>
-
 							</div>
 						</div>
 					</div>
 					<div className={Styles.cards}>
-						<AgencyCard/>
+						<span class={Styles.heading1}>Tour and Tickets by NorthX</span>
+						<AgencyCard
+							image="1"
+							tourTitle="Top Ten Wonders of Lahore Guided City Tour"
+							agency="NorthX"
+							duration="Full-Day Trip"
+							hours="6+ hours"
+							description="Explore, Learn, Shop, eat and enjoy on this
+              wonderful guided day tour at Majestic Lahore."
+							policy="Free Cancellation"
+							price="8,000/-"
+						/>
+						<AgencyCard
+							image="2"
+							tourTitle="Top Ten Wonders of Islamabad Guided City Tour"
+							agency="NorthX"
+							duration="Full-Day Trip"
+							hours="6+ hours"
+							description="Explore, Learn, Shop, eat and enjoy on this
+              wonderful guided day tour at Majestic Lahore."
+							policy="Free Cancellation"
+							price="13,000/-"
+						/>
+						<AgencyCard
+							image="3"
+							tourTitle="Top Ten Wonders of Karachi Guided City Tour"
+							agency="NorthX"
+							duration="Full-Day Trip"
+							hours="6+ hours"
+							description="Explore, Learn, Shop, eat and enjoy on this
+              wonderful guided day tour at Majestic Lahore."
+							policy="Free Cancellation"
+							price="16,,000/-"
+						/>
+						<div className={Styles.button}>
+							<button className={Styles.more}>
+								<span>See more</span>
+							</button>
+						</div>
+
 					</div>
 				</div>
 			</div>
