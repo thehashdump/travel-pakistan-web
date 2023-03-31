@@ -3,6 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
+import { AgencyCard } from './agencyCard/agencyCard';
 import Styles from './agencyProfile.module.scss';
 
 function AgencyProfile() {
@@ -87,7 +88,9 @@ transfer to Multi - days / Multi-destination packages,
 							</div>
 						</div>
 					</div>
-					<div className={Styles.cards}></div>
+					<div className={Styles.cards}>
+						<AgencyCard/>
+					</div>
 				</div>
 			</div>
 			<Footer />
