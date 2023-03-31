@@ -4,6 +4,7 @@ import { Image } from 'react-bootstrap';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
 import { AgencyCard } from './agencyCard/agencyCard';
+import { ReviewSection } from './reviewSection/reviewSection';
 import Styles from './agencyProfile.module.scss';
 
 function AgencyProfile() {
@@ -125,6 +126,7 @@ function AgencyProfile() {
 
 					</div>
 				</div>
+				<ReviewSection/>
 			</div>
 			<Footer />
 		</div>
