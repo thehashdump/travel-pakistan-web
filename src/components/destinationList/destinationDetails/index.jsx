@@ -1,0 +1,1 @@
+export { DestinationDetails } from './destinationDetails';

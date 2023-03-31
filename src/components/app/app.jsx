@@ -7,6 +7,8 @@ import { SignUp } from '../SignUp';
 import { BookTour } from '../bookTour';
 import { TourPayment } from '../tourPayment';
 import Styles from './app.module.scss';
+import { DestinationList } from '../destinationList/destinationList';
+import { DestinationDetails } from '../destinationList/destinationDetails';
 
 function App() {
 	return (
@@ -15,6 +17,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/tours" element={<TourList />} />
+					<Route path="/virtual-tour-guide" element={<DestinationList />} />
+					<Route path="/virtual-tour-guide/:destination" element={<DestinationDetails />} />
 					<Route path="/tour" element={<TourDetails />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
