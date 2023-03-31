@@ -7,6 +7,7 @@ import { SignUp } from '../SignUp';
 import { BookTour } from '../bookTour';
 import { TourPayment } from '../tourPayment';
 import { MyAccount } from '../myAccount';
+import { AgencyProfile } from '../agencyProfile';
 import Styles from './app.module.scss';
 import { DestinationList } from '../destinationList/destinationList';
 import { DestinationDetails } from '../destinationList/destinationDetails';
@@ -28,6 +29,7 @@ function App() {
 					<Route path="/payment" element={<TourPayment />} />
 					<Route path="/suggest-me-a-tour" element={<SuggestTour />} />
 					<Route path="/account" element={<MyAccount />} />
+					<Route path="/organizer-profile" element={<AgencyProfile />} />
 
 				</Routes>
 			</Layout>
