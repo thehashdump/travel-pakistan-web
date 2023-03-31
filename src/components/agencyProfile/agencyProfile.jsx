@@ -11,6 +11,9 @@ function AgencyProfile() {
 					<span>Your Travel Partner</span>
 				</div>
 			</div>
+			<div className={Styles.main}>
+
+			</div>
 			<Footer/>
 		</div>
 	);
