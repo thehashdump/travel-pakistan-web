@@ -1,0 +1,388 @@
+@import '../../../utils/sass/variables.scss';
+
+.tourDetails{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-style: normal;
+
+    .top{
+        width: 100%;
+        min-height: 500px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../../assets/vtgBackground2.jpg);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.9;
+        text-align: center;
+
+        .title{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .title{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+    }
+    .main{
+        width: 100%;
+        padding: 50px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #E5E5E5;
+        gap: 50px;
+
+        .info{
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            gap: 12px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            .left{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    background: url(../../../assets/tourDetails1.png);
+                    object-fit: cover;
+                }
+                .bottom{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: 13px;
+                    width: 100%;
+
+                    .image{
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        background: url(../../../assets/tourDetails2.png);
+                        object-fit: cover;
+                    }
+                }
+            }
+            .right{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .topInfo{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 7px;
+                    .title{
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 36px;
+                        color: $primary-color;
+                    }
+                    .moreInfo{
+                        display: flex;
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: $quaternary;
+                        justify-content: space-between;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                        }
+                        @media screen and (max-width: 400px){
+                            flex-direction: column;
+                            align-items: flex-start;
+                            span{
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+                .map{
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px 0px;
+                }
+                .bottomInfo{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 10px;
+                    
+                    .tripInfo{
+                        display: flex;
+                        align-items: center;
+                        gap: 30px;
+                        .days,
+                        .people
+                        {
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                            font-weight: 300;
+                            font-size: 10px;
+                            line-height: 15px;
+                            color: $quaternary;
+                        }
+                        @media screen and (max-width: 400px){
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 10px;
+                        }
+                    }
+                    .requirement{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+
+                        .heading{
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: $primary-color;
+                        }
+                        ul{
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 18px;
+                            color: $quaternary;
+                        }
+                        .requirementList{
+                            font-size: 12px;
+                            line-height: 18px;
+                        }
+                    }
+                    .tags{
+                        display: flex;
+                        gap: 10px;
+                        .tag{
+                            width: fit-content;
+                            padding: 7px 15px;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: $secondary-color;
+                            background-color: gainsboro;
+                            border-radius: 5px;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width:1180px){
+                .tags{
+                    flex-wrap: wrap;
+                }
+            }
+
+            @media screen and (max-width: 1009px){
+                flex-direction: column;
+                .left{
+                    width: 100%;
+                    
+                }
+                .middle{
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    .image{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .right{
+                    width: 100%;
+                    .topInfo{
+                        .title{
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+                        .moreInfo{
+                            font-size: 12px;
+                            line-height: 18px;
+                        }
+                    }
+                    .bottomInfo{
+                        .tripInfo{
+                            .days,
+                            .people
+                            {
+                                font-size: 10px;
+                                line-height: 15px;
+                            }
+                        }
+                        .requirement{
+                            .heading{
+                                font-size: 12px;
+                                line-height: 18px;
+                            }
+                            ul{
+                                font-size: 10px;
+                                line-height: 15px;
+                            }
+                        }
+                        .tags{
+                            flex-wrap: wrap;
+                            .tag{
+                                font-size: 12px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .details{
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            border-radius: 8px;
+            width: 100%;
+            padding: 15px 25px;
+            gap: 20px;
+
+            .heading{
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 36px;
+                color: $primary-color;
+            }
+            .content{
+                display: flex;
+                .left{
+                    display: flex;
+                    width: 100%;
+                    
+                    .steps{
+                        width: 100%;
+                        .item{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 25px 0px;
+                            background-color: #FFFFFF;
+                            font-weight: 500;
+                            font-size: 24px;
+                            line-height: 36px;
+                            color: $secondary-color;
+                            cursor: pointer;
+                            .title{
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                            }
+                        }
+                    }
+                    .route,
+                    .duration
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        span{
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: $primary-color;
+                        }
+                    }
+                    .tips,
+                    .policy
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        span{
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: $primary-color;
+                        }
+                        ul{
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: $quaternary;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+                    }
+
+                    .tinerary{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        span{
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: $primary-color;
+                        }
+                    }
+                }
+                
+                @media screen and (max-width: 1009px){
+                    flex-direction: column;
+                    gap: 20px;
+                    .left{
+                        width: 100%;
+                        .card{
+                            width: 100%;
+                            padding: 20px;
+                            gap: 10px;
+                            .date,.passengers{
+                                padding: 5px;
+                                gap: 2px;
+                            }
+                            .passengers{
+                                input{
+                                    font-size: 12px;
+                                }
+                            }
+                            .pickup{
+                                padding: 5px;
+                                gap: 2px;
+                                select{
+                                    padding: 5px;
+                                }
+                            }
+                            .price{
+                                font-size: 16px;
+                            }
+                            .button{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 1009px){
+           padding: 30px;
+        }
+    }
+    
+}
