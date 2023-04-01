@@ -1,14 +1,14 @@
 @import '../../../utils/sass/variables.scss';
 .mainContainer{
     width: 100%;
-    border: 1px solid yellow;
+
     height: auto;
     display: flex;
     margin-top: 20px;
     font-family: "Poppins";
     .ratings{
         width: 30%;
-        border: 1px solid red;
+
         .heading{
             font-size: 32px;
             color: black;
@@ -62,7 +62,7 @@
     }
     .reviews{
         width: 70%;
-        border: 1px solid green;
+
         .postReview{
             display: flex;
             flex-direction: column;
@@ -99,7 +99,8 @@
             
             hr{
                 width: 100%;
-                border: 1px solid #4f4f4f;
+            border: 1px solid #4F4F4FCC;
+
                 margin-top: 15px;
             }
             
