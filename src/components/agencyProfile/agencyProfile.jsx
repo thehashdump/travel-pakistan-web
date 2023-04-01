@@ -116,7 +116,7 @@ function AgencyProfile() {
 							description="Explore, Learn, Shop, eat and enjoy on this
               wonderful guided day tour at Majestic Lahore."
 							policy="Free Cancellation"
-							price="16,,000/-"
+							price="16,000/-"
 						/>
 						<div className={Styles.button}>
 							<button className={Styles.more}>
