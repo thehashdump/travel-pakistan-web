@@ -36,7 +36,7 @@ function AgencyProfile() {
 										}
 										onClick={() => handleStarClick(value)}
 									>
-										<FaStar size={10} />
+										<FaStar size={18} />
 									</span>
 								);
 							})}
