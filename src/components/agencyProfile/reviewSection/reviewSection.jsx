@@ -1,5 +1,5 @@
-// import { Image } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
+import { ReviewCard } from './reviewCard/reviewCard';
 import Styles from './reviewSection.module.scss';
 
 function ReviewSection() {
@@ -48,18 +48,15 @@ function ReviewSection() {
 							<FaStar size={20} className={Styles.starActive} />
 							<FaStar size={20} className={Styles.starActive} />
 							<FaStar size={20} className={Styles.starActive} />
-
 						</div>
 						<div className="starExc">
 							<FaStar size={20} className={Styles.starActive} />
 							<FaStar size={20} className={Styles.starActive} />
 							<FaStar size={20} className={Styles.starActive} />
-
 						</div>
 						<div className="starExc">
 							<FaStar size={20} className={Styles.starActive} />
 							<FaStar size={20} className={Styles.starActive} />
-
 						</div>
 						<div className="starExc">
 							<FaStar size={20} className={Styles.starActive} />
@@ -69,9 +66,53 @@ function ReviewSection() {
 			</div>
 			<div className={Styles.reviews}>
 				<div className={Styles.postReview}>
-					<textarea className={Styles.textArea} placeholder='Share your experience with us :)'></textarea>
-					<button className={Styles.postBtn}>Post Review</button>
-					<hr/>
+					<textarea
+						className={Styles.textArea}
+						placeholder="Share your experience with us :)"
+					></textarea>
+					<div className={Styles.btn}>
+						<button className={Styles.postBtn}>Post Review</button>
+					</div>
+
+					<hr />
+					<ReviewCard
+						image="1"
+						name="Malkova Latina"
+						date="Oct, 2022"
+						review="A very informative tour of the City of Islamabad,
+             and how it came to be the capital of Pakistan.
+             We particularly enjoyed the tour of Shah Faisal Masjid,
+              and the extra effort our guide went to in
+               capturing amazing pictures of us whilst
+            there."
+					/>
+					<ReviewCard
+						image="2"
+						name="Mr. Raxtin"
+						date="Apr, 2022"
+						review="A very informative tour of the City of Islamabad,
+             and how it came to be the capital of Pakistan.
+             We particularly enjoyed the tour of Shah Faisal Masjid,
+              and the extra effort our guide went to in
+               capturing amazing pictures of us whilst
+            there."
+					/>
+					<ReviewCard
+						image="3"
+						name="Frank Disk"
+						date="Jan, 2022"
+						review="A very informative tour of the City of Islamabad,
+             and how it came to be the capital of Pakistan.
+             We particularly enjoyed the tour of Shah Faisal Masjid,
+              and the extra effort our guide went to in
+               capturing amazing pictures of us whilst
+            there."
+					/>
+				</div>
+				<div className={Styles.button}>
+					<button className={Styles.more}>
+						<span>View More</span>
+					</button>
 				</div>
 			</div>
 		</div>

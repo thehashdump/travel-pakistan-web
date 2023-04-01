@@ -76,7 +76,11 @@
                 font-size: 16px;
                 resize: none;
             }
-            .postBtn{
+            .btn{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                .postBtn{
                 width: 134px;
                 height: 40px;
                 border: none;
@@ -91,11 +95,42 @@
                     background-color: $hover-primary;
                 }
             }
+            }
+            
             hr{
                 width: 100%;
                 border: 1px solid #4f4f4f;
                 margin-top: 15px;
             }
+            
+        }
+        .button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .more{
+                    width: 134px;
+                    height: 40px;
+                    background-color: $primary-color;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    border: none;
+                    align-items: center;
+                    cursor: pointer;
+                    outline: none;
+                    border-radius: 38px;
+                    margin-top: 20px;
+                    &:hover{
+                        background-color: $hover-primary;
+                    }
+                    span{
+                        font-size: 16px;
+                        color: white;
+                        font-weight: 500;
+                    }
+
+                }
         }
     }
 }
