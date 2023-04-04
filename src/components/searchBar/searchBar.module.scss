@@ -84,7 +84,7 @@
                         line-height: 14px;
                         color: $quaternary;
                     }
-                    .dateString{
+                    .dateInput{
                         font-weight: 700;
                         font-size: 12px;
                         line-height: 20px;
@@ -92,6 +92,9 @@
                         align-items: center;
                         color: $primary-color;
                         mix-blend-mode: normal;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
                     }
                 }
             }
