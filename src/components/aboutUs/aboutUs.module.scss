@@ -1,0 +1,37 @@
+@import '../../utils/sass/variables.scss';
+.aboutUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    background-color: #E5E5E5;
+
+    .top {
+        width: 100%;
+        min-height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/aboutImage.png);
+        background-size: cover;
+        background-position: center;
+        .divTop{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .divTop{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+    }
+}
