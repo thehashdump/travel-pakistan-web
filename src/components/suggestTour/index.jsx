@@ -1,0 +1,1 @@
+export { SuggestTour } from './suggestTour';
