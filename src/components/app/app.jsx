@@ -9,6 +9,7 @@ import { TourPayment } from '../tourPayment';
 import Styles from './app.module.scss';
 import { DestinationList } from '../destinationList/destinationList';
 import { DestinationDetails } from '../destinationList/destinationDetails';
+import { SuggestTour } from '../suggestTour/suggestTour';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/booktour" element={<BookTour />} />
 					<Route path="/payment" element={<TourPayment />} />
+					<Route path="/suggest-me-a-tour" element={<SuggestTour />} />
 
 				</Routes>
 			</Layout>

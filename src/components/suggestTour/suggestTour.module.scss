@@ -1,0 +1,141 @@
+@import '../../utils/sass/variables.scss';
+
+.tourList{
+    display: flex;
+    flex-direction: column;
+
+    .top{
+        width: 100%;
+        min-height: 500px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/suggestTourBackground.png);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.9;
+        text-align: center;
+
+        .title{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .title{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 60px 100px;
+        background-color:  #EBF0F4;
+        align-items: center;
+        justify-content: center;
+        .title{
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 70px;
+            color: $secondary-color;
+            padding: 20px;
+            text-align: center;
+        }
+        .bottom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            .left{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .form{
+                    display: flex;
+                    flex-direction: column;
+                    width: 90%;
+                    max-width: 300px;
+                    gap: 20px;
+                    .formItem{
+                        display: flex;
+                        flex-direction: column;
+                        label{
+                            font-family: 'Poppins';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: $primary-color;
+                        }
+                        input{
+                            background: inherit;
+                            border: 2px solid $quaternary;
+                            border-radius: 6px;
+                            padding: 5px 10px;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $secondary-color;
+                            font-weight: 700;
+
+                        }
+                        .submitButton{
+                            background: $primary-color;
+                            border-radius: 4px;
+                            padding: 15px;
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: white;
+                            font-weight: 700;
+                            border: none;
+                            cursor: pointer;
+
+                            &:hover{
+                                background: $hover-primary;
+                            }
+                        }
+                    }
+
+                }
+            }
+            .right{
+                width: 50%;
+                max-width: 600px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            @media screen and (max-width: 920px){
+                flex-direction: column;
+                .left{
+                    width: 100%;
+                    margin-top: 30px;
+                    order: 1;
+                }
+                .right{
+                    order: 0;
+                    width: 100%;
+                }
+            }
+            
+        }
+        
+    }
+}
