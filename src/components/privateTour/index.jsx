@@ -1,1 +1,1 @@
-export { PrivateTour } from "./privateTour";
+export { PrivateTour } from './privateTour';
