@@ -49,6 +49,13 @@
             text-align: center;
         }
     }
+     @media screen and (max-width:800px) {
+           .heading{
+            line-height: 30px;
+            padding: 15px;
+            margin-top: 20px;
+           }
+    }
     .content{
         display: flex;
         width: 95%;
@@ -76,12 +83,43 @@
                 }
             }
         }
+        @media screen and (max-width:1024px) {
+        .text{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+    }
         .video{
             width: 50%;
             overflow: hidden;
             border-radius: 20px;
+            object-fit: cover;
             
         }
+        @media screen and (max-width:1024px) {
+        .video{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+    }
+    @media screen and (max-width:1024px) {
+        .content{
+            flex-direction: column;
+        }
+        
+    }
+    @media screen and (max-width:768px) {
+        .content{
+            margin-top: 0px;
+           margin-bottom: 20px;
+        }
+        
     }
     .stats{
         width: 80%;
@@ -105,6 +143,10 @@
                     line-height: 45px;
                     text-align: center;
                 }
+                @media screen and (max-width:768px) {
+        font-size: 24px;
+        
+    }
             }
             .heading2{
                 font-weight: 600;
@@ -119,6 +161,16 @@
                 }
             }
         }
+    }
+    @media screen and (max-width:470px) {
+           .stats{
+            width: 90%;
+            flex-direction: column;
+            gap: 30px;
+
+           } 
+        
+        
     }
     .moto{
         display: flex;
@@ -151,7 +203,7 @@
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 30px;
-                color: $quaternary;
+                color: $secondary-color;
                 
                 @media screen and (max-width: 920px){
                     font-size: 15px;
@@ -174,9 +226,33 @@
                 }
             }
         }
+         @media screen and (max-width:800px) {
+           .vision,.mission{
+            width: 80%;
+
+           } 
+        
+        
+    }
+     @media screen and (max-width:450px) {
+           .vision,.mission{
+            width: 90%;
+           }
+        
+        
+    }
+    }
+    @media screen and (max-width:800px) {
+           .moto{
+            flex-direction: column;
+            width: 100%;
+
+           } 
+        
+        
     }
     .founders{
-        width: 90%;
+        width: 80%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -222,6 +298,14 @@
                 }
             }
         }
+        @media screen and (max-width:800px) {
+           .founder1{
+            gap: 0px;
+
+           } 
+        
+        
+    }
         .founder2{
             display: flex;
             flex-direction: column;
@@ -263,6 +347,14 @@
                 }
             }
         }
+         @media screen and (max-width:800px) {
+           .founder2{
+            gap: 0px;
+
+           } 
+        
+        
+    }
         .founder3{
             display: flex;
             flex-direction: column;
@@ -301,8 +393,35 @@
                         line-height: 20px;
                         text-align: center;
                     }
+                   
                 }
             }
         }
+         @media screen and (max-width:800px) {
+           .founder3{
+            gap: 0px;
+
+           } 
+        
+        
+    }
+        
+    }
+    @media screen and (max-width:800px) {
+           .founders{
+            width: 90%;
+
+           } 
+        
+        
+    }
+    @media screen and (max-width:720px) {
+           .founders{
+            flex-direction: column;
+            gap: 20px;
+
+           } 
+        
+        
     }
 }

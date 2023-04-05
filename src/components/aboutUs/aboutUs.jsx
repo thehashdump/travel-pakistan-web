@@ -49,7 +49,7 @@ function AboutUs() {
 			<div className={Styles.stats}>
 				<div className={Styles.founded}>
 					<Image src={require('../../assets/founded.png')} sizes={200} />
-					<span className={Styles.heading1}>founded</span>
+					<span className={Styles.heading1}>Founded</span>
 					<span className={Styles.heading2}>2023</span>
 				</div>
 				<div className={Styles.destinations}>
@@ -59,7 +59,7 @@ function AboutUs() {
 				</div>
 				<div className={Styles.organizers}>
 					<Image src={require('../../assets/organizers.png')} />
-					<span className={Styles.heading1}>Tour Organizers</span>
+					<span className={Styles.heading1}>Organizers</span>
 					<span className={Styles.heading2}>10+</span>
 				</div>
 			</div>
@@ -80,7 +80,7 @@ function AboutUs() {
 				<div className={Styles.mission}>
 					<span className={Styles.heading}>Mission</span>
 					<span className={Styles.subText}>
-            Enrich the world through organized adventures
+            Enrich the world through adventures
 					</span>
 					<span className={Styles.desc}>
             Travel Pakistan mission is to help travelers who want to get away
