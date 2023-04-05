@@ -34,4 +34,275 @@
             }
         }
     }
+    .heading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 47px;
+        line-height: 70px;
+        color: $primary-color;
+        padding: 20px;
+        @media screen and (max-width: 920px){
+            font-size: 30px;
+            line-height: 45px;
+            text-align: center;
+        }
+    }
+    .content{
+        display: flex;
+        width: 95%;
+        height: auto;
+        margin-top: 20px;
+        .text{
+            width: 50%;
+            height: auto;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            .subtext{
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: $quaternary;
+                padding: 20px;
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+        .video{
+            width: 50%;
+            overflow: hidden;
+            border-radius: 20px;
+            
+        }
+    }
+    .stats{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 55px;
+        .founded,.destinations,.organizers{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .heading1{
+                font-weight: 600;
+                font-size: 32px;
+                line-height: 70px;
+                color: $primary-color;
+                // padding: 20px;
+                @media screen and (max-width: 920px){
+                    font-size: 30px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+            }
+            .heading2{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $quaternary;
+                // padding: 20px;
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .moto{
+        display: flex;
+        width: 90%;
+        height: auto;
+        margin-top: 60px;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        .vision,.mission{
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .heading{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+               
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+            }
+            .subText{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 30px;
+                color: $quaternary;
+                
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+            .desc{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 30px;
+                color: $quaternary;
+                margin-top: 10px;
+                text-align: center;
+                
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .founders{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        .founder1{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            .profile{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-image: url('../../assets/founder1.jpg');
+                background-size: cover;
+            }
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+                text-align: center;
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                .desc{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $quaternary;
+                    margin-top: 5px;
+                    text-align: center;
+                    
+                    @media screen and (max-width: 920px){
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .founder2{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            .profile{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-image: url('../../assets/founder2.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+                text-align: center;
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                .desc{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $quaternary;
+                    margin-top: 5px;
+                    text-align: center;
+                    
+                    @media screen and (max-width: 920px){
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .founder3{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            .profile{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-image: url('../../assets/founder3.jpg');
+                background-size: cover;
+                // background-position: center;
+            }
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+                text-align: center;
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                .desc{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $quaternary;
+                    margin-top: 5px;
+                    text-align: center;
+                    
+                    @media screen and (max-width: 920px){
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
 }
