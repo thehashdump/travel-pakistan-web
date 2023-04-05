@@ -14,6 +14,7 @@ import { DestinationDetails } from '../destinationList/destinationDetails';
 import { SuggestTour } from '../suggestTour/suggestTour';
 import { PrivateTour } from '../privateTour/privateTour';
 import { AboutUs } from '../aboutUs';
+import { ContactUs } from '../contactUs';
 
 function App() {
 	return (
@@ -34,6 +35,7 @@ function App() {
 					<Route path="/organizer-profile" element={<AgencyProfile />} />
 					<Route path="/private-tour-request" element={<PrivateTour />} />
 					<Route path="/about" element={<AboutUs />} />
+					<Route path="/contact" element={<ContactUs />} />
 
 				</Routes>
 			</Layout>

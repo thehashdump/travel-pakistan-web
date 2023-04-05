@@ -1,0 +1,43 @@
+@import '../../utils/sass/variables.scss';
+.contactUs{
+    display: flex;
+    flex-direction: column;
+
+    .top{
+        width: 100%;
+        min-height: 500px;
+        padding: 0px 0px 17px;
+        border-left: 50px;
+        border-right: transparent;
+        border-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/contactBackground.png);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.9;
+        text-align: center;
+         position: relative; /* Add position: relative */
+  overflow: hidden;
+ 
+
+
+       
+    }
+    
+.top::before {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  right: 0; 
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 200px 1370px; 
+  border-color: transparent transparent white; 
+  z-index: 1; 
+}
+
+}
