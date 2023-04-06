@@ -12,6 +12,7 @@ import Styles from './app.module.scss';
 import { DestinationList } from '../destinationList/destinationList';
 import { DestinationDetails } from '../destinationList/destinationDetails';
 import { SuggestTour } from '../suggestTour/suggestTour';
+import { PrivateTour } from '../privateTour/privateTour';
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 					<Route path="/suggest-me-a-tour" element={<SuggestTour />} />
 					<Route path="/account" element={<MyAccount />} />
 					<Route path="/organizer-profile" element={<AgencyProfile />} />
+					<Route path="/private-tour-request" element={<PrivateTour />} />
 
 				</Routes>
 			</Layout>
