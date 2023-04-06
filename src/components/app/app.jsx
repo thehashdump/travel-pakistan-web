@@ -25,7 +25,7 @@ function App() {
 					<Route path="/tours" element={<TourList />} />
 					<Route path="/virtual-tour-guide" element={<DestinationList />} />
 					<Route path="/virtual-tour-guide/:destination" element={<DestinationDetails />} />
-					<Route path="/tour" element={<TourDetails />} />
+					<Route path="/tours/:tour" element={<TourDetails />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/booktour" element={<BookTour />} />
