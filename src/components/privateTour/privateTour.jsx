@@ -102,53 +102,95 @@ function PrivateTour() {
 						<div className={Styles.multipleOptions}>
 							<div className={Styles.specify}>
 								<span className={Styles.heading1}>If other (specify)</span>
-								<input type="text" placeholder="Enter Destination" className={Styles.destination} />
+								<input
+									type="text"
+									placeholder="Enter Destination"
+									className={Styles.destination}
+								/>
 							</div>
 							<div className={Styles.days}>
 								<span className={Styles.heading2}>Estimated Days</span>
-								<input type="text" placeholder="No. of Days" className={Styles.daysInput} />
+								<input
+									type="number"
+									placeholder="No. of Days"
+									className={Styles.daysInput}
+								/>
 							</div>
 							<div className={Styles.budget}>
 								<span className={Styles.heading3}>Budget (PKR)</span>
-								<input type="text" placeholder="Enter Amount" className={Styles.amount} />
+								<input
+									type="text"
+									placeholder="Enter Amount"
+									className={Styles.amount}
+								/>
 							</div>
 						</div>
 
 						<div className={Styles.contact}>
-							<span className={Styles.heading4}>Contact Details</span>
+							{/* <span className={Styles.heading4}>Additional Details</span> */}
 							<div className={Styles.name}>
 								<div className={Styles.firstname}>
-									<span>First Name</span>
-									<input type="text" placeholder="Enter First Name" className={Styles.firstnameInput} />
+									<span>Route</span>
+									<input
+										type="text"
+										placeholder="Specify your trip route"
+										className={Styles.firstnameInput}
+									/>
 								</div>
 								<div className={Styles.lastname}>
-									<span>Last Name</span>
-									<input type="text" placeholder="Enter Last Name" className={Styles.lastnameInput} />
+									<span>No. of Travelers</span>
+									<input
+										type="number"
+										placeholder="Number of Travelers"
+										className={Styles.lastnameInput}
+									/>
 								</div>
-
 							</div>
 							<div className={Styles.contactInfo}>
 								<div className={Styles.number}>
-									<span>Contact Number</span>
-									<input type="text" placeholder="Enter Contact Number" className={Styles.numberInput} />
-
+									<span>Departure Date</span>
+									<input
+										type="date"
+										placeholder="Departure Date"
+										className={Styles.numberInput}
+									/>
 								</div>
 								<div className={Styles.email}>
-									<span>Email Address</span>
-									<input type="text" placeholder="Enter Email Address" className={Styles.emailInput} />
+									<span>Departure Time</span>
+									<input
+										type="time"
+										placeholder="Enter Email Address"
+										className={Styles.emailInput}
+									/>
 								</div>
+								<div className={Styles.pickup}>
+									<span>PickUp Location</span>
+									<select className={Styles.select}>
+										<option value="1">Select Pickup</option>
+										<option value="2">Karachi</option>
+										<option value="3">Lahore</option>
+										<option value="4">Islamabad</option>
+										<option value="5">Multan</option>
+										<option value="6">Peshawar</option>
 
+									</select>
+								</div>
 							</div>
 							<div className={Styles.requirements}>
-								<span className={Styles.heading5}> Additional Requirements</span>
-								<textarea className={Styles.textarea} placeholder="Share More Details"></textarea>
-
+								<span className={Styles.heading5}>
+									{' '}
+                  Additional Requirements
+								</span>
+								<textarea
+									className={Styles.textarea}
+									placeholder="Share More Details"
+								></textarea>
 							</div>
-
 						</div>
 						<div className={Styles.submit}>
 							<button className={Styles.submitButton}>
-								<span className={Styles.submitText}>Request Plan</span></button>
+								<span className={Styles.submitText}>Request Plan</span>
+							</button>
 						</div>
 					</div>
 				</div>
