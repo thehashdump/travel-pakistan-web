@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import YouTube from 'react-youtube';
 import { Image } from 'react-bootstrap';
 import { useCallback } from 'react';
