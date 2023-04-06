@@ -1,0 +1,427 @@
+@import '../../utils/sass/variables.scss';
+.aboutUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    background-color: #E5E5E5;
+
+    .top {
+        width: 100%;
+        min-height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/aboutImage.png);
+        background-size: cover;
+        background-position: center;
+        .divTop{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .divTop{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+    }
+    .heading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 47px;
+        line-height: 70px;
+        color: $primary-color;
+        padding: 20px;
+        @media screen and (max-width: 920px){
+            font-size: 30px;
+            line-height: 45px;
+            text-align: center;
+        }
+    }
+     @media screen and (max-width:800px) {
+           .heading{
+            line-height: 30px;
+            padding: 15px;
+            margin-top: 20px;
+           }
+    }
+    .content{
+        display: flex;
+        width: 95%;
+        height: auto;
+        margin-top: 20px;
+        .text{
+            width: 50%;
+            height: auto;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            .subtext{
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: $quaternary;
+                padding: 20px;
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+        @media screen and (max-width:1024px) {
+        .text{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+    }
+        .video{
+            width: 50%;
+            overflow: hidden;
+            border-radius: 20px;
+            object-fit: cover;
+            
+        }
+        @media screen and (max-width:1024px) {
+        .video{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+    }
+    @media screen and (max-width:1024px) {
+        .content{
+            flex-direction: column;
+        }
+        
+    }
+    @media screen and (max-width:768px) {
+        .content{
+            margin-top: 0px;
+           margin-bottom: 20px;
+        }
+        
+    }
+    .stats{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 55px;
+        .founded,.destinations,.organizers{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .heading1{
+                font-weight: 600;
+                font-size: 32px;
+                line-height: 70px;
+                color: $primary-color;
+                // padding: 20px;
+                @media screen and (max-width: 920px){
+                    font-size: 30px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                @media screen and (max-width:768px) {
+        font-size: 24px;
+        
+    }
+            }
+            .heading2{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $quaternary;
+                // padding: 20px;
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:470px) {
+           .stats{
+            width: 90%;
+            flex-direction: column;
+            gap: 30px;
+
+           } 
+        
+        
+    }
+    .moto{
+        display: flex;
+        width: 90%;
+        height: auto;
+        margin-top: 60px;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        .vision,.mission{
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .heading{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+               
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+            }
+            .subText{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 30px;
+                color: $secondary-color;
+                
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+            .desc{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 30px;
+                color: $quaternary;
+                margin-top: 10px;
+                text-align: center;
+                
+                @media screen and (max-width: 920px){
+                    font-size: 15px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+         @media screen and (max-width:800px) {
+           .vision,.mission{
+            width: 80%;
+
+           } 
+        
+        
+    }
+     @media screen and (max-width:450px) {
+           .vision,.mission{
+            width: 90%;
+           }
+        
+        
+    }
+    }
+    @media screen and (max-width:800px) {
+           .moto{
+            flex-direction: column;
+            width: 100%;
+
+           } 
+        
+        
+    }
+    .founders{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        .founder1{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            .profile{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-image: url('../../assets/uzair.jpg');
+                background-size: cover;
+            }
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+                text-align: center;
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                .desc{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $quaternary;
+                    margin-top: 5px;
+                    text-align: center;
+                    
+                    @media screen and (max-width: 920px){
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:800px) {
+           .founder1{
+            gap: 0px;
+
+           } 
+        
+        
+    }
+        .founder2{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            .profile{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-image: url('../../assets/aitezaz.JPG');
+                background-size: cover;
+                background-position: center;
+            }
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+                text-align: center;
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                .desc{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $quaternary;
+                    margin-top: 5px;
+                    text-align: center;
+                    
+                    @media screen and (max-width: 920px){
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+         @media screen and (max-width:800px) {
+           .founder2{
+            gap: 0px;
+
+           } 
+        
+        
+    }
+        .founder3{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            .profile{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-image: url('../../assets/asim.jpg');
+                background-size: cover;
+                // background-position: center;
+            }
+            .name{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+                color: $primary-color;
+                text-align: center;
+                @media screen and (max-width: 920px){
+                    font-size: 22px;
+                    line-height: 45px;
+                    text-align: center;
+                }
+                .desc{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: $quaternary;
+                    margin-top: 5px;
+                    text-align: center;
+                    
+                    @media screen and (max-width: 920px){
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                   
+                }
+            }
+        }
+         @media screen and (max-width:800px) {
+           .founder3{
+            gap: 0px;
+
+           } 
+        
+        
+    }
+        
+    }
+    @media screen and (max-width:800px) {
+           .founders{
+            width: 90%;
+
+           } 
+        
+        
+    }
+    @media screen and (max-width:720px) {
+           .founders{
+            flex-direction: column;
+            gap: 20px;
+
+           } 
+        
+        
+    }
+}

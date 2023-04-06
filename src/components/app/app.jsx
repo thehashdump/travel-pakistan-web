@@ -13,6 +13,7 @@ import { DestinationList } from '../destinationList/destinationList';
 import { DestinationDetails } from '../destinationList/destinationDetails';
 import { SuggestTour } from '../suggestTour/suggestTour';
 import { PrivateTour } from '../privateTour/privateTour';
+import { AboutUs } from '../aboutUs';
 
 function App() {
 	return (
@@ -32,6 +33,7 @@ function App() {
 					<Route path="/account" element={<MyAccount />} />
 					<Route path="/organizer-profile" element={<AgencyProfile />} />
 					<Route path="/private-tour-request" element={<PrivateTour />} />
+					<Route path="/about" element={<AboutUs />} />
 
 				</Routes>
 			</Layout>
