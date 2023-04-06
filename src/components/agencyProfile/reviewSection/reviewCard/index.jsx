@@ -1,0 +1,1 @@
+import { ReviewCard } from './reviewCard';

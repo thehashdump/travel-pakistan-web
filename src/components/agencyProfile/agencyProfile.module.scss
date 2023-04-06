@@ -1,0 +1,255 @@
+@import '../../utils/sass/variables.scss';
+.agencyProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  background-color: #e5e5e5;
+
+   .top {
+        width: 100%;
+        min-height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/travel-partner.png);
+        background-size: cover;
+        background-position: center;
+        .divTop{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;           
+        }
+        @media screen and (max-width: 920px){
+            .divTop{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+      }
+      .main{
+        width: 97%;
+        height: auto;
+        margin-top: 20px;
+       .agencyIntro{
+        display: flex;
+        flex-direction: column;
+         .agencyName{
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 20px;
+            color: $secondary-color;
+            margin-top: 15px;
+            @media screen and (max-width: 920px){
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+        .services{
+            
+            margin-top: 15px;
+            
+            align-items: center;            
+            
+            .rating{
+                
+                
+                .star {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                   
+                    cursor: pointer;
+                    }
+
+                .starActive {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                
+                color: $tertiary-color;
+                cursor: pointer;
+                }
+                .starsCount{
+                    font-size: 14px;
+                    color: $quaternary;
+                    margin-left: 12px;
+                    margin-top: 15px;
+                }
+                .writeReview{
+                    font-size: 16px;
+                    color: $quaternary;
+                    margin-left: 12px;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+            }
+            .listDiv{
+                .list{
+                display:flex;
+                align-items: center;
+                gap: 25px;
+                
+                li{
+                    font-size: 14px;           
+                    list-style: disc;
+                    color:$quaternary;
+                    gap: 12px;
+                }
+            }
+
+            }
+            
+
+            
+        }
+
+       }
+       .images{
+        
+        width: 100%;
+        height: auto;
+        display:flex;
+       justify-content: space-between;
+       gap: 20px;
+        
+       
+            // gap: 2px;
+             .imgContainer1{
+                width: 273px;
+                height: 204px;
+                background-image: url('../../assets/agency-1.png');
+                background-size: cover;
+                border-radius: 5px;
+            }
+            
+            .imgContainer2{
+                width: 273px;
+                height: 204px;
+                background-image: url('../../assets/agency-2.png');
+                background-size: cover;
+                border-radius: 5px;
+            }
+            .imgContainer3{
+                width: 273px;
+                height: 204px;
+                background-image: url('../../assets/agency-3.png');
+                background-size: cover;
+                border-radius: 5px;
+            }
+            .imgContainer4{
+                width: 273px;
+                height: 204px;
+                background-image: url('../../assets/agency-4.png');
+                background-size: cover;
+                border-radius: 5px;
+            }
+
+           
+       }
+       .mainContainer{
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin-top: 30px;
+            .about{
+                width: 45%;
+                height: auto;
+                display: flex;
+                padding: 10px;
+                flex-direction: column;
+                .profileImg{
+                    width: 228px;
+                    height: 228px;
+                    border-radius: 50%;
+                    background-image: url('../../assets/aboutProfile.png');
+                    background-size: cover;
+                }
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    gap: 10px;
+                    .heading{
+                        font-size: 32px;
+                        color: $secondary-color;
+                        font-weight: 600;
+                    }
+                    .intro{
+                        font-size: 20px;
+                        color: $quaternary;
+                    }
+                    .location{
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+
+            }
+            .cards{
+                width: 55%;
+                height: auto;
+                
+                .heading1{
+                    font-size: 32px;
+                    color: $secondary-color;
+                    font-weight: 600;
+                    
+                }
+                .button{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    .more{
+                    width: 134px;
+                    height: 46px;
+                    background-color: $primary-color;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    border: none;
+                    align-items: center;
+                    cursor: pointer;
+                    outline: none;
+                    border-radius: 38px;
+                    margin-top: 40px;
+                    &:hover{
+                        background-color: $hover-primary;
+                    }
+                    span{
+                        font-size: 16px;
+                        color: white;
+                        font-weight: 600;
+                    }
+
+                }
+                }
+                 
+
+            }
+       }
+       .visited{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        .heading{
+            font-size: 32px;
+            color: $secondary-color;
+            font-weight: 600;
+        }
+       }
+       
+
+      }
+    }
