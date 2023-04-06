@@ -5,7 +5,7 @@ function Card() {
 	return (
 		<div className={Styles.card}
 			onClick={() => {
-				window.location.href = '/tour';
+				window.location.href = '/tours/6-days-tour-to-hunza-naltar-valley';
 			}}
 		>
 			<div className={Styles.cardImage}>

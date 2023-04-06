@@ -40,10 +40,33 @@ function Navbar() {
 							onClick={() => {
 								window.location.href = '/';
 							}}
-						>Home</span>
-						<span className={Styles.navbarLink}>About Us</span>
-						<span className={Styles.navbarLink}>Virtual Tour Guide</span>
-						<span className={Styles.navbarLink}>Contact Us</span>
+						>
+							Home
+						</span>
+						<span
+							className={Styles.navbarLink}
+							onClick={() => {
+								window.location.href = '/about';
+							}}
+						>
+							About Us
+						</span>
+						<span
+							className={Styles.navbarLink}
+							onClick={() => {
+								window.location.href = '/virtual-tour-guide';
+							}}
+						>
+							Virtual Tour Guide
+						</span>
+						<span
+							className={Styles.navbarLink}
+							onClick={() => {
+								window.location.href = '/contact';
+							}}
+						>
+							Contact Us
+						</span>
 						<button
 							className={Styles.loginButton}
 							onClick={() => {

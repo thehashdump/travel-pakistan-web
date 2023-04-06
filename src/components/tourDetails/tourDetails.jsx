@@ -64,7 +64,14 @@ function TourDetails() {
 									</svg>
 									Islamabad - Hunza Valley
 								</span>
-								<span>By Dream Trip Planners</span>
+								<span
+									className={Styles.organizer}
+									onClick={() => {
+										window.location.href = '/organizer-profile';
+									}}
+								>
+									By Dream Trip Planners
+								</span>
 							</div>
 						</div>
 						<div className={Styles.map}>

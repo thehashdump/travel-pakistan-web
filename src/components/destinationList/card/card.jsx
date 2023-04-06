@@ -7,7 +7,12 @@ function Card({
 	visitors
 }) {
 	return (
-		<div className={Styles.card}>
+		<div
+			className={Styles.card}
+			onClick={() => {
+				window.location.href = '/virtual-tour-guide/hunza';
+			}}
+		>
 			<Image
 				src={require(`../../../assets/${image}`)}
 				alt={'view image'}

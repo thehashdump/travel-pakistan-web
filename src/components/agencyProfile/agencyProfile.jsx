@@ -120,7 +120,13 @@ function AgencyProfile() {
 						/>
 						<div className={Styles.button}>
 							<button className={Styles.more}>
-								<span>See more</span>
+								<span
+									onClick={() => {
+										window.location.href = '/tours';
+									}}
+								>
+									See more
+								</span>
 							</button>
 						</div>
 
