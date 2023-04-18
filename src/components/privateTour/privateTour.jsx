@@ -127,15 +127,34 @@ function PrivateTour() {
 						</div>
 
 						<div className={Styles.contact}>
-							{/* <span className={Styles.heading4}>Additional Details</span> */}
 							<div className={Styles.name}>
 								<div className={Styles.firstname}>
 									<span>Route</span>
-									<input
-										type="text"
-										placeholder="Specify your trip route"
-										className={Styles.firstnameInput}
-									/>
+									<div className={Styles.inputFields}>
+										<input
+											type="text"
+											placeholder=""
+											className={Styles.firstnameInput}
+										/>
+										<span className={Styles.dash}>-</span>
+										<input
+											type="text"
+											placeholder=""
+											className={Styles.firstnameInput}
+										/>
+										<span className={Styles.dash}>-</span>
+										<input
+											type="text"
+											placeholder=""
+											className={Styles.firstnameInput}
+										/>
+										<span className={Styles.dash}>-</span>
+										<input
+											type="text"
+											placeholder=""
+											className={Styles.firstnameInput}
+										/>
+									</div>
 								</div>
 								<div className={Styles.lastname}>
 									<span>No. of Travelers</span>
@@ -172,7 +191,6 @@ function PrivateTour() {
 										<option value="4">Islamabad</option>
 										<option value="5">Multan</option>
 										<option value="6">Peshawar</option>
-
 									</select>
 								</div>
 							</div>
