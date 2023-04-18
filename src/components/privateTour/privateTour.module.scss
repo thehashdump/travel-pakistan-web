@@ -394,13 +394,27 @@
                     margin-top: 20px;
                     .firstname{
                         width: 100%;
-                        
-                        
-                        border-radius: 8px;
-                        
+                        border-radius: 8px;                        
                         gap: 5px;
                         display: flex;
                         flex-direction: column;
+                        .inputFields{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 10px;
+                        }
+                        @media screen and (max-width:425px) {
+                            .inputFields{
+                                width: 80%;
+                                flex-direction: column;
+                                gap: 15px;
+                                align-items: center;
+                                justify-content: center;
+                                
+                            }
+                            
+                        }
                         span{
                             font-weight: 400;
                             font-size: 16px;
@@ -408,7 +422,7 @@
                             color: $secondary-color;
                         }
                         .firstnameInput{
-                            width: 100%;
+                            width: 20%;
                             height: 48px;
                             border: none;
                             outline: none;
@@ -416,6 +430,20 @@
                             border-radius: 8px;
                             padding: 10px;
                         }
+                        @media screen and (max-width:768px) {
+                            .firstnameInput{
+                                width:100%;
+                                
+                            }
+                            
+                        }
+                    }
+                    @media screen and (max-width:425px) {
+                        .firstname{
+                           align-items: center;
+                           justify-content: center;
+                        }
+                        
                     }
                     .lastname{
                         width: 40%;
@@ -441,7 +469,7 @@
                          
                         
                     }
-                    @media screen and (max-width:425px) {
+                    @media screen and (max-width:560px) {
                         .lastname{
                             width: 100%!important;
                         }
@@ -449,7 +477,7 @@
 
 
                 }
-                 @media screen and (max-width:425px) {
+                 @media screen and (max-width:560px) {
                         .name{
                             flex-direction: column;
                             gap: 15px;
@@ -532,7 +560,7 @@
                         }
                     }
                 }
-                @media screen and (max-width:425px) {
+                @media screen and (max-width:625px) {
                     .contactInfo{
                         flex-direction: column;
                         gap: 15px;
