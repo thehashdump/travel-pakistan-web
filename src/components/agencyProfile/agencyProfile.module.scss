@@ -121,13 +121,11 @@
         display:flex;
        justify-content: space-between;
        gap: 20px;
-        
-       
-            // gap: 2px;
+
              .imgContainer1{
                 width: 273px;
                 height: 204px;
-                background-image: url('../../assets/agency-1.png');
+                background-image: url('../../assets/agency-1.jpg');
                 background-size: cover;
                 border-radius: 5px;
             }
@@ -135,21 +133,21 @@
             .imgContainer2{
                 width: 273px;
                 height: 204px;
-                background-image: url('../../assets/agency-2.png');
+                background-image: url('../../assets/agency-2.jpg');
                 background-size: cover;
                 border-radius: 5px;
             }
             .imgContainer3{
                 width: 273px;
                 height: 204px;
-                background-image: url('../../assets/agency-3.png');
+                background-image: url('../../assets/agency-3.jpg');
                 background-size: cover;
                 border-radius: 5px;
             }
             .imgContainer4{
                 width: 273px;
                 height: 204px;
-                background-image: url('../../assets/agency-4.png');
+                background-image: url('../../assets/agency-4.jpg');
                 background-size: cover;
                 border-radius: 5px;
             }
