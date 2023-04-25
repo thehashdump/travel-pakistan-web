@@ -45,7 +45,7 @@
             font-weight: 700;
             font-size: 36px;
             line-height: 20px;
-            color: $secondary-color;
+            color: $primary-color;
             margin-top: 15px;
             @media screen and (max-width: 920px){
                 font-size: 30px;
@@ -59,40 +59,9 @@
             
             align-items: center;            
             
-            .rating{
-                
-                
-                .star {
-                    display: inline-block;
-                    width: 15px;
-                    height: 15px;
-                   
-                    cursor: pointer;
-                    }
+           
 
-                .starActive {
-                display: inline-block;
-                width: 15px;
-                height: 15px;
-                
-                color: $tertiary-color;
-                cursor: pointer;
-                }
-                .starsCount{
-                    font-size: 14px;
-                    color: $quaternary;
-                    margin-left: 12px;
-                    margin-top: 15px;
-                }
-                .writeReview{
-                    font-size: 16px;
-                    color: $quaternary;
-                    margin-left: 12px;
-                    text-decoration: underline;
-                    cursor: pointer;
-                }
-
-            }
+            
             .listDiv{
                 .list{
                 display:flex;
@@ -104,7 +73,17 @@
                     list-style: disc;
                     color:$quaternary;
                     gap: 12px;
+                    @media screen and (max-width:600px) 
+                    {
+                        font-size: 12px;
+                    }
+                    
                 }
+                 @media screen and (max-width:516px) 
+                    {
+                        flex-wrap: wrap;
+                    }
+
             }
 
             }
@@ -128,6 +107,7 @@
                 background-image: url('../../assets/agency-1.jpg');
                 background-size: cover;
                 border-radius: 5px;
+                
             }
             
             .imgContainer2{
@@ -152,6 +132,12 @@
                 border-radius: 5px;
             }
 
+             @media screen and (max-width:768px) 
+                    {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+
            
        }
        .mainContainer{
@@ -165,13 +151,29 @@
                 display: flex;
                 padding: 10px;
                 flex-direction: column;
-                .profileImg{
-                    width: 228px;
-                    height: 228px;
-                    border-radius: 50%;
-                    background-image: url('../../assets/aboutProfile.png');
-                    background-size: cover;
+                .imgBox{
+                    width: 300px;
+                    height: 230px;
+                    display: flex;
+                     @media screen and (max-width:1024px) {
+                            width: 100%;                        
+                            margin-top: 20px;
+                            margin-right: 10px;                   
+                            
+                            
+                        }
+                    
+                    .profileImg{
+                        width: 228px;
+                        height: 228px;
+                        border-radius: 50%;
+                        background-image: url('../../assets/aboutProfile.png');
+                        background-size: cover;
+                       
+                        
+                    }
                 }
+                
                 .text{
                     display: flex;
                     flex-direction: column;
@@ -179,28 +181,58 @@
                     gap: 10px;
                     .heading{
                         font-size: 32px;
-                        color: $secondary-color;
+                        color: $primary-color;
                         font-weight: 600;
+                        @media screen and (max-width:990px){
+                            font-size: 28px;
+                        }
                     }
                     .intro{
                         font-size: 20px;
                         color: $quaternary;
+                         @media screen and (max-width:990px) 
+                    {
+                        font-size: 16px;
+                    }
+                    @media screen and (max-width:768px) 
+                    {
+                        font-size: 14px;
+                    }
                     }
                     .location{
                         display: flex;
                         gap: 5px;
                     }
                 }
-
+                @media screen and (max-width:1024px) {
+                    width: 100%;
+                    margin-top: 20px;
+                    flex-direction: row;
+                    
+                }
+                @media screen and (max-width:514px) {
+                    width: 100%;
+                    margin-top: 20px;
+                    flex-direction: column;
+                    
+                }
             }
+            
             .cards{
                 width: 55%;
                 height: auto;
                 
                 .heading1{
                     font-size: 32px;
-                    color: $secondary-color;
+                    color: $primary-color;
                     font-weight: 600;
+                    @media screen and (max-width:990px){
+                        font-size: 28px;
+                    }
+                     @media screen and (max-width:425px){
+                        font-size: 22px;
+                        
+                    }
                     
                 }
                 .button{
@@ -231,8 +263,17 @@
 
                 }
                 }
+                @media screen and (max-width:1024px) {
+                    width: 100%;
+                    margin-top: 20px;
+                    flex-direction: row;
+                    
+                }
                  
 
+            }
+            @media screen and (max-width:1024px){
+                flex-direction:column;
             }
        }
        .visited{

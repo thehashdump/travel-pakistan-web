@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
@@ -8,11 +6,6 @@ import { ReviewSection } from './reviewSection/reviewSection';
 import Styles from './agencyProfile.module.scss';
 
 function AgencyProfile() {
-	const [rating, setRating] = useState(5);
-
-	const handleStarClick = (value) => {
-		setRating(value);
-	};
 	return (
 		<div className={Styles.agencyProfile}>
 			<div className={Styles.top}>
@@ -25,24 +18,6 @@ function AgencyProfile() {
 				<div className={Styles.agencyIntro}>
 					<span className={Styles.agencyName}>NorthX</span>
 					<div className={Styles.services}>
-						<div className={Styles.rating}>
-							{[...Array(5)].map((star, index) => {
-								const value = index + 1;
-								return (
-									<span
-										key={value}
-										className={
-											value <= rating ? Styles.starActive : Styles.star
-										}
-										onClick={() => handleStarClick(value)}
-									>
-										<FaStar size={18} />
-									</span>
-								);
-							})}
-							<span className={Styles.starsCount}>(22)</span>
-							<span className={Styles.writeReview}>Write a review</span>
-						</div>
 						<div className={Styles.listDiv}>
 							<ul className={Styles.list}>
 								<li>Day Trips</li>
@@ -66,7 +41,9 @@ function AgencyProfile() {
 				</div>
 				<div className={Styles.mainContainer}>
 					<div className={Styles.about}>
-						<div className={Styles.profileImg}></div>
+						<div className={Styles.imgBox}>
+							<div className={Styles.profileImg}></div>
+						</div>
 						<div className={Styles.text}>
 							<span className={Styles.heading}>About</span>
 							<span className={Styles.intro}>
@@ -125,15 +102,13 @@ function AgencyProfile() {
 										window.location.href = '/tours';
 									}}
 								>
-									See more
+                  See more
 								</span>
 							</button>
 						</div>
-
 					</div>
 				</div>
-				<ReviewSection/>
-
+				<ReviewSection />
 			</div>
 			<Footer />
 		</div>
