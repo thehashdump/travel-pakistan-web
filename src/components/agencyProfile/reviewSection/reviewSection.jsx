@@ -143,9 +143,10 @@ function ReviewSection() {
 						<button className={Styles.more} onClick={handleViewMoreClick}>
 							<span>View More</span>
 						</button>
+
 					</div>
 				)}
-        ;
+
 			</div>
 		</div>
 	);
