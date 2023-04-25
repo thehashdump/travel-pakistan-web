@@ -61,7 +61,7 @@ function AgencyProfile() {
 						</div>
 					</div>
 					<div className={Styles.cards}>
-						<span class={Styles.heading1}>Tour and Tickets by NorthX</span>
+						<span className={Styles.heading1}>Tour and Tickets by NorthX</span>
 						<AgencyCard
 							image="1"
 							tourTitle="Top Ten Wonders of Lahore Guided City Tour"
