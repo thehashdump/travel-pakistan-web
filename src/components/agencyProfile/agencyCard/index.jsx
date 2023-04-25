@@ -1,1 +1,1 @@
-import { AgencyCard } from './agencyCard';
+export { AgencyCard } from './agencyCard';
