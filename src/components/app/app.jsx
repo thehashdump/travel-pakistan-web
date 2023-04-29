@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from '../home';
+import { Home as Dashboard } from '../organizerDashboard/home';
 import { TourDetails } from '../tourDetails';
 import { TourList } from '../tourList';
 import { SignIn } from '../signIn';
@@ -36,7 +37,7 @@ function App() {
 					<Route path="/private-tour-request" element={<PrivateTour />} />
 					<Route path="/about" element={<AboutUs />} />
 					<Route path="/contact" element={<ContactUs />} />
-
+					<Route path="/dashboard/:id" element={<Dashboard />} />
 				</Routes>
 			</Layout>
 		</div>

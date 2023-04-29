@@ -1,0 +1,136 @@
+.stepper{
+    width: 100%;
+
+    @media screen and (max-width: 560px) {
+        padding: 0;
+    }
+    .step{
+        width: 100%;
+        @media screen and (max-width: 560px) {
+            padding: 0;
+        }
+    }
+}
+.inputContainer{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    @media screen and (max-width: 560px) {
+        flex-direction: column;
+        .input{
+            width: 100%;
+        }
+    }
+
+    .input{
+        display: flex;
+        flex: 1;
+        margin-bottom: 10px;
+    }
+    .title{
+        width: fit-content;
+        margin-right: 20px;
+    }
+}
+.facilities{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+    .input{
+        display: flex;
+        width: 100%;
+    }
+}
+.iternary{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+    .input{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
+.tags{
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    .title{
+        width: fit-content;
+        margin-right: 20px;
+    }
+}
+
+.pickup{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+
+    .dateAndTime{
+        display: flex;
+        width: 100%;
+        gap: 15px;
+        align-items: center;
+        .input{
+            display: flex;
+            flex: 1;
+            margin-bottom: 10px;
+        }
+    }
+    .title{
+        width: fit-content;
+        margin-right: 20px;
+    }
+    .locations{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+
+        @media screen and (max-width: 560px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+.uploadedImages{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
+    align-items: center;
+    
+    .uploadedImage{
+        display: flex;
+
+        &:hover{
+            .deleteIcon{
+                display: block;
+            }
+        }
+
+        img{
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .deleteIcon{
+            // display: none;
+            margin-top: -8px;
+            margin-left: -11px;
+            cursor: pointer;
+        }
+    }
+}
