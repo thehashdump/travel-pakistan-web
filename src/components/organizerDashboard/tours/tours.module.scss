@@ -1,0 +1,127 @@
+@import '../../../utils/sass/variables.scss';
+
+.tours{
+    width: 100%;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    gap: 20px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    @media screen and (max-width: 785px){
+        padding: 0.5rem;
+    }
+
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        .title{
+            font-size: 2rem;
+            font-weight: 700;
+            color: $primary-color;
+        }
+
+        @media screen and (max-width: 785px){
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    .tabs{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        @media screen and (max-width: 540px){
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .tabsContainer{
+            width: 100%;
+            max-width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 7px 12px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+    
+            @media screen and (max-width: 486px){
+                flex-direction: column;
+            }
+            @media screen and (max-width: 540px){
+                width: 100%;
+                max-width: 90%;
+            }
+    
+            .tab, .activeTab{
+                display: flex;
+                width: 100%;
+                max-width: fit-content;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+                padding: 7px 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                font-size: 1.1rem;
+                font-weight: 500;
+                
+                @media screen and (max-width: 486px){
+                    max-width: 100%;
+                }
+
+                @media screen and (max-width: 540px) and (min-width: 487px){
+                    max-width: 50%;
+                }
+                
+            }
+            .activeTab{
+                background-color: $primary-color;
+                color: #fff;
+            }
+        }
+        .createTour{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 7px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+            background-color: $primary-color;
+            color: #fff;
+            font-weight: 600;
+            &:hover{
+                transform: scale(1.05);
+                background-color: $hover-primary;
+            }
+
+            @media screen and (max-width: 540px){
+                width: 90%;
+                font-size: 1.3rem;
+                padding: 10px 0px;
+            }
+        }
+    }
+    .toursContainer{
+        width: 100%;
+    }
+}

@@ -1,0 +1,190 @@
+@import '../../../utils/sass/variables.scss';
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .navbarContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3rem 0 2rem;
+
+        .logo{
+            display: flex;
+            align-items: center;
+            .navbarLogo{
+                width: 80px;
+                height: 80px;
+                cursor: pointer;
+                .navbarImage{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .name{
+                font-family: 'Philosopher';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 40px;
+                margin: -10px;
+                text-decoration: uppercase;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        .profile{
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            .profileImage{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+.mobileNavbar {
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 80px;
+	background-color: $secondary-color;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 90%;
+		margin: 0 auto;
+
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100px;
+			height: 100%;
+
+            .logoimg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+		}
+
+		.icon {
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
+#linkContainer {
+	position: static;
+	top: 80px;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+    padding-bottom: 0;
+    // backdrop-filter: blur(10px);
+
+	@media screen and (max-width: 1250px) {
+		display: none;
+	}
+
+	.links {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		font-family: 'Poppins', sans-serif;
+
+		.link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $secondary-color;
+			font-weight: 700;
+			font-size: 1.5rem;
+			cursor: pointer;
+
+			&:hover {
+				color: $tertiary-color;
+			}
+		}
+	}
+    .button {
+        padding: 12px 15px;
+        border-radius: 10px;
+        color: white;
+        background-color: $tertiary-color;
+        font-weight: 750;
+        font-size: 1.2rem;
+        border: none;
+        outline: none;
+    }
+}
+.dropDownMenue{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    width: 130px;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin-top: -12px;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+    .dropDownMenueLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+
+        .dropDownMenueLink {
+            display: flex;
+            color: $secondary-color;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $tertiary-color;
+            }
+        }
+    }
+}

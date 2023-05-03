@@ -1,0 +1,1 @@
+export { PrivateTours } from './privateTours';
