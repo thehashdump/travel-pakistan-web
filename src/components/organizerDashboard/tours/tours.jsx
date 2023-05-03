@@ -80,7 +80,7 @@ function Tours({ setActiveTab }) {
 									<TableCell>Tickets Purchased</TableCell>
 									{
 										active === 1
-										&& <TableCell>Active</TableCell>
+										&& <TableCell>Action</TableCell>
 									}
 								</TableRow>
 							</TableHead>

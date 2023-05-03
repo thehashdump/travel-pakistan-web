@@ -1,0 +1,264 @@
+@import '../../../utils/sass/variables.scss';
+
+.tours{
+    width: 100%;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    gap: 20px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    @media screen and (max-width: 785px){
+        padding: 0.5rem;
+    }
+
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        .title{
+            font-size: 2rem;
+            font-weight: 700;
+            color: $primary-color;
+        }
+
+        @media screen and (max-width: 785px){
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    .tabs{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        @media screen and (max-width: 540px){
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .tabsContainer{
+            width: 100%;
+            max-width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 7px 12px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+    
+            @media screen and (max-width: 450px){
+                flex-direction: column;
+            }
+            @media screen and (max-width: 540px){
+                width: 100%;
+                max-width: 90%;
+            }
+    
+            .tab, .activeTab{
+                display: flex;
+                width: 100%;
+                max-width: fit-content;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+                padding: 7px 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                font-size: 1.1rem;
+                font-weight: 500;
+                
+                @media screen and (max-width: 450px){
+                    max-width: 100%;
+                }
+
+                @media screen and (max-width: 540px) and (min-width: 450px){
+                    max-width: 50%;
+                }
+                
+            }
+            .activeTab{
+                background-color: $primary-color;
+                color: #fff;
+            }
+        }
+        .createTour{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 7px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+            background-color: $primary-color;
+            color: #fff;
+            font-weight: 600;
+            &:hover{
+                transform: scale(1.05);
+                background-color: $hover-primary;
+            }
+
+            @media screen and (max-width: 540px){
+                width: 90%;
+                font-size: 1.3rem;
+                padding: 10px 0px;
+            }
+        }
+    }
+    .toursContainer{
+        width: 100%;
+    }
+}
+.popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px) brightness(0.5) saturate(1.2);
+    z-index: 1000;
+
+
+    .popupInner{
+        width: 90%;
+        max-width: 500px;
+        height: fit-content;
+        max-height: 80vh;
+        background-color: #fff;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+        z-index: 1000;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        border-radius: 10px;
+        padding: 1.5rem 2.5rem;
+    
+        .popupTitle{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $primary-color;
+        }
+        .popupContent{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (max-width: 400px){
+                gap: 1rem;
+            }
+
+            .tourDetails{
+                width: 100%;
+                display: flex;
+                gap: 1.2rem;
+
+                @media screen and (max-width: 400px){
+                    flex-direction: column;
+                    gap: 0rem;
+                }
+
+                .heading{
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: $primary-color;
+                }
+                .value{
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: $secondary-color;
+                }
+            }
+            .bidContainer{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+                .title{
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: $primary-color;
+                }
+                .bidInput{
+                    width: 100%;
+                    height: 40px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 0.5rem;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $secondary-color;
+                    outline: none;
+                    transition: all 0.3s ease-in-out;
+                    &:focus{
+                        border: 1px solid $primary-color;
+                    }
+                }
+                .bidButton{
+                    width: 100%;
+                    padding: 7px 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $primary-color;
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    margin: 0 auto;
+                    &:hover{
+                        transform: scale(1.05);
+                        background-color: $hover-primary;
+                    }
+                }
+            }
+        }
+        .closePopup{
+            width: 100%;
+            .closeButton{
+                width: 100%;
+                padding: 7px 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: red;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                margin: 0 auto;
+                &:hover{
+                    transform: scale(1.05);
+                    background-color: #ff0000b3;
+                }
+            }
+        }
+    }
+}

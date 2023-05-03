@@ -4,6 +4,7 @@ import Styles from './navbar.module.scss';
 
 function Navbar({ setActiveTab }) {
 	const [showBurgerMenue, setShowBurgerMenue] = useState(false);
+	const [showDropDownMenue, setShowDropDownMenue] = useState(false);
 	const dropDownMenueRef = useRef(null);
 	const navbarRef = useRef(null);
 
@@ -50,7 +51,12 @@ function Navbar({ setActiveTab }) {
 							</div>
 							<span className={Styles.name}>Travel Pakistan</span>
 						</div>
-						<div className={Styles.profile}>
+						<div
+							className={Styles.profile}
+							onClick={() => {
+								setShowDropDownMenue(!showDropDownMenue);
+							}}
+						>
 							<Image
 								src={require('../../../assets/profile-1.jpg')}
 								alt="Profile"
@@ -104,9 +110,9 @@ function Navbar({ setActiveTab }) {
 							className={Styles.link}
 							onClick={() => {
 								setShowBurgerMenue(false);
-								setActiveTab('chat');
+								setActiveTab('reviews');
 							}}
-						>Chat</span>
+						>Reviews</span>
 						<button
 							className={Styles.button}
 							onClick={() => {
@@ -117,6 +123,28 @@ function Navbar({ setActiveTab }) {
 					</div>
 				</div></>
 			)}
+			{
+				showDropDownMenue && (
+					<div
+						className={Styles.dropDownMenue}
+					>
+						<div className={Styles.dropDownMenueLinks}>
+							<span
+								className={Styles.dropDownMenueLink}
+								onClick={() => {
+									window.location.href = '/';
+								}}
+							>HOME</span>
+							<span
+								className={Styles.dropDownMenueLink}
+								onClick={() => {
+									window.location.href = '/organizer-profile';
+								}}
+							>PROFILE</span>
+						</div>
+					</div>
+				)
+			}
 		</>
 	);
 }

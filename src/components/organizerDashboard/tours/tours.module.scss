@@ -60,7 +60,7 @@
             background-color: #f5f5f5;
             border-radius: 10px;
     
-            @media screen and (max-width: 450px){
+            @media screen and (max-width: 486px){
                 flex-direction: column;
             }
             @media screen and (max-width: 540px){
@@ -82,11 +82,11 @@
                 font-size: 1.1rem;
                 font-weight: 500;
                 
-                @media screen and (max-width: 450px){
+                @media screen and (max-width: 486px){
                     max-width: 100%;
                 }
 
-                @media screen and (max-width: 540px) and (min-width: 450px){
+                @media screen and (max-width: 540px) and (min-width: 487px){
                     max-width: 50%;
                 }
                 

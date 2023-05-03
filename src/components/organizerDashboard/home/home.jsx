@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { CreateTour } from '../createTour';
 import { Dashboard } from '../dashboard';
 import { Navbar } from '../navbar';
+import { PrivateTours } from '../privateTours/privateTours';
+import { Reviews } from '../reviews';
 import { Sidebar } from '../sidebar';
 import { Tours } from '../tours';
 import Styles from './home.module.scss';
@@ -25,11 +27,9 @@ function Home() {
 						)) || (activeTab === 'create tour' && (
 							<CreateTour />
 						)) || (activeTab === 'private tours' && (
-							<h1>Private Tours</h1>
+							<PrivateTours />
 						)) || (activeTab === 'reviews' && (
-							<h1>Reviews</h1>
-						)) || (activeTab === 'chat' && (
-							<h1>Chat</h1>
+							<Reviews />
 						))
 					}
 				</div>

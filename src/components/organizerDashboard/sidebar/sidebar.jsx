@@ -21,7 +21,7 @@ function Sidebar({ setActiveTab }) {
 	return (
 		<div className={Styles.sidebar}>
 			<div className={Styles.title}>
-				Organizer Dashboard
+				ORGANIZER DASHBOARD
 			</div>
 			<div className={Styles.container}>
 				<div className={Styles.links}>
@@ -34,7 +34,7 @@ function Sidebar({ setActiveTab }) {
 							}
 						}
 					>
-						Dashboard
+						DASHBOARD
 					</div>
 					<div
 						className={Styles.link}
@@ -45,7 +45,7 @@ function Sidebar({ setActiveTab }) {
 							}
 						}
 					>
-						Tours
+						TOURS
 					</div>
 					<div
 						className={Styles.link}
@@ -56,7 +56,7 @@ function Sidebar({ setActiveTab }) {
 							}
 						}
 					>
-						Private Tours
+						PRIVATE TOURS
 					</div>
 					<div
 						className={Styles.link}
@@ -67,22 +67,11 @@ function Sidebar({ setActiveTab }) {
 							}
 						}
 					>
-						Reviews
-					</div>
-					<div
-						className={Styles.link}
-						onClick = {
-							(e) => {
-								handleActiveTabs(e);
-								setActiveTab('chat');
-							}
-						}
-					>
-						Chat
+						REVIEWS
 					</div>
 				</div>
 				<div className={Styles.logout}>
-					Logout
+					LOGOUT
 				</div>
 			</div>
 		</div>
