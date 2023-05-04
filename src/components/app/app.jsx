@@ -16,6 +16,7 @@ import { SuggestTour } from '../suggestTour/suggestTour';
 import { PrivateTour } from '../privateTour/privateTour';
 import { AboutUs } from '../aboutUs';
 import { ContactUs } from '../contactUs';
+import { OrganizerRegistration } from '../organizerRegistration';
 
 function App() {
 	return (
@@ -25,7 +26,10 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/tours" element={<TourList />} />
 					<Route path="/virtual-tour-guide" element={<DestinationList />} />
-					<Route path="/virtual-tour-guide/:destination" element={<DestinationDetails />} />
+					<Route
+						path="/virtual-tour-guide/:destination"
+						element={<DestinationDetails />}
+					/>
 					<Route path="/tours/:tour" element={<TourDetails />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
@@ -38,6 +42,7 @@ function App() {
 					<Route path="/about" element={<AboutUs />} />
 					<Route path="/contact" element={<ContactUs />} />
 					<Route path="/dashboard/:id" element={<Dashboard />} />
+					<Route path="/organizer-registration" element={<OrganizerRegistration />} />
 				</Routes>
 			</Layout>
 		</div>

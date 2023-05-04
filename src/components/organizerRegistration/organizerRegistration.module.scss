@@ -1,0 +1,45 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    .top{
+        width: 100%;
+        min-height: 350px;
+        padding: 0px 0px 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(../../assets/OrganizerRegister.jpg);
+        background-size: cover;
+        background-position: center;
+
+        .title{
+            margin-top: 100px;
+            font-weight: 700;
+            font-size: 37px;
+            line-height: 70px;
+            color: #FFFFFF;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 920px){
+            .title{
+                font-size: 30px;
+                line-height: 45px;
+                text-align: center;
+            }
+        }
+    }
+    .form{
+        padding: 25px;
+        background-color: rgb(238, 238, 238);
+        border-radius: 20px;
+        width:95%;
+    }
+}
