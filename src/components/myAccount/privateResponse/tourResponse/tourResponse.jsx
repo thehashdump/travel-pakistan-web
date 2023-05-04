@@ -16,9 +16,6 @@ import Styles from './tourResponse.module.scss';
 function TourResponse() {
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
-	const [searchValue, setSearchValue] = useState('');
-	const handleSearchInputChange = (event) => setSearchValue(event.target.value);
-
 	const rows = [
 		{
 			srNo: 1,
@@ -63,15 +60,6 @@ function TourResponse() {
 
 	return (
 		<div className={Styles.mainContainer}>
-			<div className={Styles.toggling}>
-				<input
-					type="text"
-					placeholder="Search Organizer"
-					value={searchValue}
-					onChange={handleSearchInputChange}
-					className={Styles.searchBar}
-				/>
-			</div>
 
 			<TableContainer>
 				<Table className={Styles.table}>
@@ -88,7 +76,7 @@ function TourResponse() {
 						{rows
 
 							.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-							.filter((row) => row.organizer.toLowerCase().includes(searchValue.toLowerCase()))
+
 							.map((row) => (
 								<TableRow key={row.srNo}>
 									<TableCell>{row.srNo}</TableCell>
