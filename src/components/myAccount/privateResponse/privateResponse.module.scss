@@ -1,5 +1,108 @@
 @import '../../../utils/sass/variables.scss';
 
-.hello{
-    color: red;
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  
+
+  .tabsContainer {
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tabs {
+      display: flex;
+                width: 100%;
+                max-width: fit-content;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+                padding: 7px 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                font-size: 1.1rem;
+                font-weight: 500;
+                gap: 0.5rem;
+                background-color: #f5f5f5;
+
+      // Add styles for active tab
+      & > div.activeTab {
+        background-color: $primary-color;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 5px;
+      }
+    }
+
+    .createTour {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 7px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-size: 1rem;
+      background-color: $primary-color;
+      color: #fff;
+      font-weight: 600;
+
+      &:hover {
+        transform: scale(1.05);
+        background-color: $hover-primary;
+      }
+    }
+  }
+.activeRequests{
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    height: auto;
+    margin-top: 15px;
+    
+    .firstRow{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        .requestDesc{
+            flex-direction: column!important;
+            justify-content: flex-start!important;
+            align-items: flex-start!important;
+        }
+        .requestContent,.requestDesc{
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+            justify-content: center;
+            align-items: center;
+            .heading{
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .subheading{
+                font-size: 1rem;
+                font-weight: 500;
+                color: #666;
+                
+            }
+        }
+    }
+}
+  // Add styles for active tab content
+  .activeRequests,
+  .responses {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
 }
