@@ -40,7 +40,10 @@ function PrivateResponse() {
             Responses
 					</div>
 				</div>
-				<div className={Styles.createTour}>
+				<div className={Styles.createTour}
+					onClick={() => {
+						window.location.href = '/private-tour-request';
+					}}>
 					<span>+</span> Create Request
 				</div>
 			</div>

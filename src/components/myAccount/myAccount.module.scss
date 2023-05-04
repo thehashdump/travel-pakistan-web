@@ -247,7 +247,8 @@
       }
       @media screen and (max-width: 502px) {
         .leftSidebar {
-          height: 185px;
+          height: 30%;
+          width: 40%;
         }
       }
 
@@ -258,7 +259,7 @@
         .bookings,        
         .history {
           width: 100%;
-          height: 100%;
+          height: 70vh;
           background-image: url(../../assets/noData.png);
           background-size: contain;
           background-position: center;

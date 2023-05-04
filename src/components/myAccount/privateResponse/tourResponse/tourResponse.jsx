@@ -60,7 +60,6 @@ function TourResponse() {
 
 	return (
 		<div className={Styles.mainContainer}>
-
 			<TableContainer>
 				<Table className={Styles.table}>
 					<TableHead>
@@ -84,7 +83,13 @@ function TourResponse() {
 									<TableCell>{row.rating}</TableCell>
 									<TableCell>{row.bid}</TableCell>
 									<TableCell>
-										<Button variant="contained" color="primary">
+										<Button
+											variant="contained"
+											color="primary"
+											onClick={() => {
+												window.location.href = '/booktour';
+											}}
+										>
                       BOOK
 										</Button>
 									</TableCell>
