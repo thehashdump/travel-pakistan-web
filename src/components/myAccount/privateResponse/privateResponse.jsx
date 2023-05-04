@@ -1,6 +1,20 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { useState } from 'react';
 import Styles from './privateResponse.module.scss';
+import { TourResponse } from './tourResponse';
+
+const content = {
+	destination: 'Kumrat valley',
+	duration: '5 Days',
+	budget: 'PKR 67,000',
+	num_travelers: 2,
+	route: 'Lahore - Islamabad - Murree - Kashmir - Kumrat Valley',
+	departure_date: '7-5-2023',
+	departure_time: '7:00pm',
+	pickup_location: 'Lahore',
+	description:
+    'The trip should be smooth and free from any hidden charges. Transportation vehicle should be neat and clean.'
+};
 
 function PrivateResponse() {
 	const [activeTab, setActiveTab] = useState('activeRequests');
@@ -38,49 +52,48 @@ function PrivateResponse() {
 				<div className={Styles.firstRow}>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>Destination:</span>
-						<span className={Styles.subheading}>Kumrat valley</span>
+						<span className={Styles.subheading}>{content.destination}</span>
 					</div>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>Duration:</span>
-						<span className={Styles.subheading}>5 Days</span>
+						<span className={Styles.subheading}>{content.duration}</span>
 					</div>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>Budget:</span>
-						<span className={Styles.subheading}>PKR 67,000</span>
+						<span className={Styles.subheading}>{content.budget}</span>
 					</div>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>No. of Travelers:</span>
-						<span className={Styles.subheading}>2</span>
+						<span className={Styles.subheading}>{content.num_travelers}</span>
 					</div>
 				</div>
 				<div className={Styles.firstRow}>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>Route:</span>
 						<span className={Styles.subheading}>
-              Lahore - Islambad - Murree - Kashmir - Kumrat Valley
+							{content.route}
 						</span>
 					</div>
 				</div>
 				<div className={Styles.firstRow}>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>Departure Date: </span>
-						<span className={Styles.subheading}>7-5-2023</span>
+						<span className={Styles.subheading}>{content.departure_date}</span>
 					</div>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>Departure Time:</span>
-						<span className={Styles.subheading}>7:00pm</span>
+						<span className={Styles.subheading}>{content.departure_time}</span>
 					</div>
 					<div className={Styles.requestContent}>
 						<span className={Styles.heading}>PickUp Location:</span>
-						<span className={Styles.subheading}>Lahore</span>
+						<span className={Styles.subheading}>{content.pickup_location}</span>
 					</div>
 				</div>
 				<div className={Styles.firstRow}>
 					<div className={Styles.requestDesc}>
 						<span className={Styles.heading}>Description:</span>
 						<span className={Styles.subheading}>
-              The trip should be smooth and free from any hidden charges,
-              Transporation vehicle should be neat and clean
+							{content.description}
 						</span>
 					</div>
 				</div>
@@ -90,7 +103,7 @@ function PrivateResponse() {
 					activeTab === 'responses' ? Styles.active : ''
 				}`}
 			>
-        Bye Bye
+				<TourResponse/>
 			</div>
 		</div>
 	);
