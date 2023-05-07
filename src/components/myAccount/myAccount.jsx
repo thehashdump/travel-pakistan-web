@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Styles from './myAccount.module.scss';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
+import { PrivateResponse } from './privateResponse';
 
 function MyAccount() {
 	const [activeTab, setActiveTab] = useState('Activity Feed');
@@ -95,6 +96,7 @@ function MyAccount() {
 
 						{activeTab === 'Private Tour Requests' && (
 							<div className={Styles.requests}>
+								<PrivateResponse/>
 
 							</div>
 						)}
