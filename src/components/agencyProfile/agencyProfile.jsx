@@ -1,117 +1,137 @@
+/* eslint-disable no-underscore-dangle */
+import { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
+import { useParams } from 'react-router';
 import { Navbar } from '../navbar';
+import axios from '../../utils/axiosConfig';
 import { Footer } from '../footer';
 import { AgencyCard } from './agencyCard/agencyCard';
 import { ReviewSection } from './reviewSection/reviewSection';
 import Styles from './agencyProfile.module.scss';
 
 function AgencyProfile() {
+	const { id } = useParams();
+	const user = JSON.parse(localStorage.getItem('user'));
+	const [agencyData, setAgencyData] = useState([]);
+	const [tours, setTours] = useState([]);
+	const [reviews, setReviews] = useState([]);
+	useEffect(() => {
+		axios.get(`organizers/${id}`).then((res) => {
+			setAgencyData(res.data.organizer);
+		}).catch((err) => {
+			console.log(err);
+		});
+	}, [id]);
+
+	useEffect(() => {
+		axios.get(`tours/${id}`).then((res) => {
+			setTours(res.data.tours);
+		}).catch((err) => {
+			console.log(err);
+		});
+	}, [id]);
+
+	useEffect(() => {
+		axios.get(`reviews/${id}`).then((res) => {
+			setReviews(res.data.reviews);
+		}).catch((err) => {
+			console.log(err);
+		});
+	}, [id]);
+
 	return (
-		<div className={Styles.agencyProfile}>
-			<div className={Styles.top}>
-				<Navbar />
-				<div className={Styles.divTop}>
-					<span>Your Travel Partner</span>
-				</div>
-			</div>
-			<div className={Styles.main}>
-				<div className={Styles.agencyIntro}>
-					<span className={Styles.agencyName}>NorthX</span>
-					<div className={Styles.services}>
-						<div className={Styles.listDiv}>
-							<ul className={Styles.list}>
-								<li>Day Trips</li>
-								<li>Long Adventures</li>
-								<li>Hiking</li>
-								<li>Private Tours</li>
-								<li>Weekend Trips</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<div className={Styles.images}>
-					<div className={Styles.imgContainer1}></div>
-
-					<div className={Styles.imgContainer2}></div>
-
-					<div className={Styles.imgContainer3}></div>
-
-					<div className={Styles.imgContainer4}></div>
-				</div>
-				<div className={Styles.mainContainer}>
-					<div className={Styles.about}>
-						<div className={Styles.imgBox}>
-							<div className={Styles.profileImg}></div>
-						</div>
-						<div className={Styles.text}>
-							<span className={Styles.heading}>About</span>
-							<span className={Styles.intro}>
-                We " NorthX " are expert in tourism services and fully
-                understand & aware of your travel needs! From just airport
-                transfer to Multi - days / Multi-destination packages, from Solo
-                travelers to MICE groups, from budget package to exclusive trip,
-                from historical Lahore city to Hussiani Bridge Hanza, anywhere,
-                everywhere around Pakistan, We are ready to Plan Your Trips.
-							</span>
-							<div className={Styles.location}>
-								<Image src={require('../../assets/location-1.png')} />
-								<span>Islamabad, Pakistan</span>
+		<>
+			{
+				(!agencyData && !tours) ? (<div>Loading...</div>)
+					: (
+						<div className={Styles.agencyProfile}>
+							<div className={Styles.top}>
+								<Navbar />
+								<div className={Styles.divTop}>
+									{
+										user?.organizerId === id
+											? <span>HELLOW, {agencyData.name?.toUpperCase()}</span>
+											: <span>WELCOME TO {agencyData.name?.toUpperCase()}</span>
+									}
+								</div>
 							</div>
+							<div className={Styles.main}>
+								<div className={Styles.agencyIntro}>
+									<span className={Styles.agencyName}>{agencyData.name?.toUpperCase()}</span>
+									<div className={Styles.services}>
+										<div className={Styles.listDiv}>
+											<ul className={Styles.list}>
+												{
+													agencyData.specialities?.map((service) => (
+														<li key={service}>{service}</li>
+													))
+												}
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div className={Styles.images}>
+									{
+										agencyData.images?.map((image) => (
+											<div className={Styles.imgContainer}>
+												<Image
+													src={image}
+													alt="agency image"
+													className={Styles.img}
+												/>
+											</div>
+										))
+									}
+								</div>
+								<div className={Styles.mainContainer}>
+									<div className={Styles.about}>
+										<div className={Styles.imgBox}>
+											<div className={Styles.profileImg}>
+												<Image
+													src={agencyData.displayPicture}
+													alt="profile image"
+													className={Styles.img}
+												/>
+											</div>
+										</div>
+										<div className={Styles.text}>
+											<span className={Styles.heading}>About</span>
+											<span className={Styles.intro}>
+												{agencyData.description}
+											</span>
+											<div className={Styles.location}>
+												<Image src={require('../../assets/location-1.png')} />
+												<span>{agencyData.address}</span>
+											</div>
+										</div>
+									</div>
+									<div className={Styles.cards}>
+										<span className={Styles.heading1}>Tours by {agencyData.name}</span>
+										{
+											tours?.map((tour) => (
+												<AgencyCard
+													key={tour._id}
+													tour={tour}
+													agency={agencyData.name}
+													showButton={user?.organizerId !== id}
+												/>
+											))
+										}
+									</div>
+								</div>
+								<ReviewSection
+									reviews={reviews}
+									agency={agencyData.name}
+									agencyId={agencyData._id}
+									showPostReview={user?.organizerId !== id}
+								/>
+							</div>
+							<Footer />
 						</div>
-					</div>
-					<div className={Styles.cards}>
-						<span className={Styles.heading1}>Tour and Tickets by NorthX</span>
-						<AgencyCard
-							image="1"
-							tourTitle="Top Ten Wonders of Lahore Guided City Tour"
-							agency="NorthX"
-							duration="Full-Day Trip"
-							hours="6+ hours"
-							description="Explore, Learn, Shop, eat and enjoy on this
-              wonderful guided day tour at Majestic Lahore."
-							policy="Free Cancellation"
-							price="8,000/-"
-						/>
-						<AgencyCard
-							image="2"
-							tourTitle="Top Ten Wonders of Islamabad Guided City Tour"
-							agency="NorthX"
-							duration="Full-Day Trip"
-							hours="6+ hours"
-							description="Explore, Learn, Shop, eat and enjoy on this
-              wonderful guided day tour at Majestic Lahore."
-							policy="Free Cancellation"
-							price="13,000/-"
-						/>
-						<AgencyCard
-							image="3"
-							tourTitle="Top Ten Wonders of Karachi Guided City Tour"
-							agency="NorthX"
-							duration="Full-Day Trip"
-							hours="6+ hours"
-							description="Explore, Learn, Shop, eat and enjoy on this
-              wonderful guided day tour at Majestic Lahore."
-							policy="Free Cancellation"
-							price="16,000/-"
-						/>
-						<div className={Styles.button}>
-							<button className={Styles.more}>
-								<span
-									onClick={() => {
-										window.location.href = '/tours';
-									}}
-								>
-                  See more
-								</span>
-							</button>
-						</div>
-					</div>
-				</div>
-				<ReviewSection />
-			</div>
-			<Footer />
-		</div>
+					)
+			}
+		</>
 	);
 }
 

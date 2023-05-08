@@ -10,16 +10,23 @@ import {
 	ResponsiveContainer
 } from 'recharts';
 import { Image } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Styles from './dashboard.module.scss';
+import axios from '../../../utils/axiosConfig';
 
 function Dashboard() {
-	const data = [
-		{ name: 'Kashmir', ticketsSold: 150 },
-		{ name: 'Naran', ticketsSold: 250 },
-		{ name: 'Gilgit', ticketsSold: 100 },
-		{ name: 'Kumrat', ticketsSold: 300 },
-		{ name: 'Swat', ticketsSold: 200 },
-	];
+	const { id } = useParams();
+	const [dashboardData, setDashboardData] = useState([]);
+
+	useEffect(() => {
+		axios.get(`organizer-dashboard/${id}`).then((res) => {
+			setDashboardData(res.data.dashboardData);
+		}).catch((err) => {
+			console.log(err);
+		});
+	}, [id]);
+	console.log(dashboardData.tours);
 	return (
 		<div className={Styles.dashboard}>
 			<div className={Styles.header}>
@@ -39,7 +46,7 @@ function Dashboard() {
 						Total Tours
 					</div>
 					<div className={Styles.value}>
-						10
+						{dashboardData.totalTours}
 					</div>
 				</div>
 				<div className={Styles.widget}>
@@ -53,7 +60,7 @@ function Dashboard() {
 						Tickets Sold
 					</div>
 					<div className={Styles.value}>
-						100
+						{dashboardData.ticketsSold}
 					</div>
 				</div>
 				<div className={Styles.widget}>
@@ -67,15 +74,15 @@ function Dashboard() {
 						Ratings
 					</div>
 					<div className={Styles.value}>
-						4.5
+						{dashboardData.ratings ? dashboardData.ratings : 0}
 					</div>
 				</div>
 			</div>
 			<div className={Styles.graph}>
 				<ResponsiveContainer width="100%" height={250}>
-					<LineChart data={data} >
+					<LineChart data={dashboardData.tours} >
 						<CartesianGrid strokeDasharray="3 3" />
-						<XAxis dataKey="name" />
+						<XAxis dataKey={'name'} interval={0}/>
 						<YAxis />
 						<Tooltip />
 						<Legend label={{ value: 'Number of Tickets' }}/>

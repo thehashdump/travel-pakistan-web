@@ -1,16 +1,30 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
-	Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination, Button
+	Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination
 } from '@material-ui/core';
-import { tours } from './dummyData';
+import { useParams } from 'react-router';
 import Styles from './tours.module.scss';
+import axios from '../../../utils/axiosConfig';
 
 function Tours({ setActiveTab }) {
+	const { id } = useParams();
+	const [tours, setTours] = useState([]);
 	const [active, setActive] = useState(1);
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
-	const [displayTours, setDisplayTours] = useState(tours.filter((tour) => tour.active));
+	const [displayTours, setDisplayTours] = useState([]);
+
+	useEffect(() => {
+		axios.get(`/tours/${id}`).then((response) => {
+			setTours(response.data.tours);
+
+			setDisplayTours(response.data.tours.filter((tour) => tour.active));
+		}).catch((error) => {
+			console.log(error);
+		});
+	}, [id]);
 
 	const handleChangePage = (event, newPage) => {
 		setPage(newPage);
@@ -78,10 +92,6 @@ function Tours({ setActiveTab }) {
 									<TableCell>Duration (Days)</TableCell>
 									<TableCell>Capacity</TableCell>
 									<TableCell>Tickets Purchased</TableCell>
-									{
-										active === 1
-										&& <TableCell>Action</TableCell>
-									}
 								</TableRow>
 							</TableHead>
 							<TableBody>
@@ -93,16 +103,6 @@ function Tours({ setActiveTab }) {
 											<TableCell>{tour.durationDays}</TableCell>
 											<TableCell>{tour.capacity}</TableCell>
 											<TableCell>{tour.ticketsPurchased}</TableCell>
-											{
-												active === 1
-												&& (
-													<TableCell>
-														<Button variant="contained" color="primary">
-															Edit
-														</Button>
-													</TableCell>
-												)
-											}
 										</TableRow>
 									))}
 							</TableBody>

@@ -1,13 +1,27 @@
 import { useState } from 'react';
+import axios from '../../utils/axiosConfig';
 import { Footer } from '../footer';
 import { Navbar } from '../navbar';
 import { Card } from './card';
 import Styles from './suggestTour.module.scss';
 
 function SuggestTour() {
+	const [tour, setTour] = useState({});
 	const [showTour, setShowTour] = useState(false);
+	const [destination, setDestination] = useState('Hunza');
 	const [days, setDays] = useState(1);
-	const [budget, setBudget] = useState(3000);
+	const [budget, setBudget] = useState(15000);
+
+	const handleFetchTour = () => {
+		axios.get(`suggest-me-tour?destination=${destination}&days=${days}&budget=${budget}`).then((response) => {
+			setTour(response.data.tours[0]);
+			console.log(response.data.tours[0]);
+			setShowTour(true);
+		}).catch((error) => {
+			console.log(error);
+		});
+	};
+
 	return (
 		<div className={Styles.tourList}>
 			<div className={Styles.top}>
@@ -33,7 +47,10 @@ function SuggestTour() {
 											type="text"
 											className="input"
 											name="destination"
-											placeholder= "e.g. Skardu"
+											value={destination}
+											onChange={(e) => {
+												setDestination(e.target.value);
+											}}
 										/>
 									</div>
 									<div className={Styles.formItem}>
@@ -64,24 +81,26 @@ function SuggestTour() {
 										/>
 									</div>
 									<div className={Styles.formItem}>
-										<button
-											type="submit"
+										<div
 											className={Styles.submitButton}
 											onClick={() => {
-												setShowTour(true);
+												handleFetchTour();
 											}}
 										>
 											Suggest Me A Tour
-										</button>
+										</div>
 									</div>
 								</form>
 							) : (
-								<Card
-									image=	{'destination1.jpg'}
-									destination={'Skurdu'}
-									days = {5}
-									price = {'Rs 10000'}
-								/>
+								<>
+									{
+										tour && (
+											<Card
+												tour={tour}
+											/>
+										)
+									}
+								</>
 							)
 						}
 					</div>

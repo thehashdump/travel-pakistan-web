@@ -11,7 +11,7 @@
         width: 30%;
 
         .heading{
-            font-size: 32px;
+            font-size: 26px;
             color: black;
             @media screen and (max-width:768px) {
                 font-size: 28px;
@@ -60,11 +60,13 @@
             gap: 5px;
             margin-top: 5px;
             color: $tertiary-color;
+            cursor: pointer;
             .starExc{
                 gap: 5px;
+
                 .starActive{
-                color: $tertiary-color;
-            }
+                    color: $tertiary-color;
+                }
             }
         }
         }

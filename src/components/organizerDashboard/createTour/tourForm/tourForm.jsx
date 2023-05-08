@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-duplicates */
 /* eslint-disable import/no-extraneous-dependencies */
@@ -17,12 +18,15 @@ import {
 	LinearProgress
 } from '@material-ui/core';
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
+import { toast, ToastContainer } from 'react-toastify';
 import storage from '../../../../firebase';
 import Styles from './tourForm.module.scss';
+import axios from '../../../../utils/axiosConfig';
 
 const steps = ['Basic Info', 'Pickup and Route Info', 'Price and Facilities', 'Images', 'Itinerary'];
 
 const TourForm = () => {
+	const user = JSON.parse(localStorage.getItem('user'));
 	const [activeStep, setActiveStep] = useState(0);
 	const [name, setName] = useState('');
 	const [destination, setDestination] = useState('');
@@ -93,6 +97,7 @@ const TourForm = () => {
 
 	const handleSubmit = () => {
 		const tour = {
+			organizer: user._id,
 			name,
 			destination,
 			durationDays,
@@ -105,14 +110,21 @@ const TourForm = () => {
 			tips,
 			departureDate,
 			departureTime,
-			departureLocations,
+			departureLocation: departureLocations,
 			price,
 			inclusions,
 			exclusions,
 			itinerary,
 			overview
 		};
-		console.log(tour);
+		axios.post('create-tour', tour).then(() => {
+			toast.success('Tour created successfully');
+			setTimeout(() => {
+				window.location.reload();
+			}, 4000);
+		}).catch((err) => {
+			console.log(err);
+		});
 	};
 
 	const handleReset = () => {
@@ -351,7 +363,7 @@ const TourForm = () => {
 										label="Activities"
 										multiline minRows={1}
 										value={itinerary[index + 1]}
-										onChange={(e) => setItinerary({ ...itinerary, [index + 1]: e.target.value })}
+										onChange={(e) => setItinerary({ ...itinerary, [`Day ${index + 1}`]: e.target.value })}
 									/>
 								</div>
 							))
@@ -397,6 +409,9 @@ const TourForm = () => {
 					</div>
 				</div>
 			)}
+			<ToastContainer
+				position="bottom-center"
+			/>
 		</div>
 	);
 };
