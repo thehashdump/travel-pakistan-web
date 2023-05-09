@@ -181,7 +181,11 @@ function Navbar() {
 						ref={navbarRef}
 					>
 						<div className={Styles.wrapper}>
-							<div className={Styles.logo}>
+							<div className={Styles.logo}
+								onClick={() => {
+									window.location.href = '/';
+								}}
+							>
 								<Image
 									src={require('../../assets/Travel-Pakistan-Logo.png')}
 									alt="Logo"
@@ -257,7 +261,7 @@ function Navbar() {
 													<span
 														className={Styles.link}
 														onClick={() => {
-															window.location.href = '/';
+															window.location.href = '/private-tour-request';
 														}}
 													>PRIVATE TOUR</span>
 												</>

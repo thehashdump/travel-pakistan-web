@@ -109,23 +109,34 @@ function AgencyProfile() {
 									<div className={Styles.cards}>
 										<span className={Styles.heading1}>Tours by {agencyData.name}</span>
 										{
-											tours?.map((tour) => (
-												<AgencyCard
-													key={tour._id}
-													tour={tour}
-													agency={agencyData.name}
-													showButton={user?.organizerId !== id}
-												/>
-											))
+											tours?.length === 0 && (
+												<span className={Styles.noTours}>No tours available</span>
+											)
+										}
+										{
+											tours?.length > 0 && (
+												tours?.map((tour) => (
+													<AgencyCard
+														key={tour._id}
+														tour={tour}
+														agency={agencyData.name}
+														showButton={user?.organizerId !== id}
+													/>
+												))
+											)
 										}
 									</div>
 								</div>
-								<ReviewSection
-									reviews={reviews}
-									agency={agencyData.name}
-									agencyId={agencyData._id}
-									showPostReview={user?.organizerId !== id}
-								/>
+								{
+									reviews?.length > 0 && (
+										<ReviewSection
+											reviews={reviews}
+											agency={agencyData.name}
+											agencyId={agencyData._id}
+											showPostReview={user?.organizerId !== id}
+										/>
+									)
+								}
 							</div>
 							<Footer />
 						</div>

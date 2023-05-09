@@ -207,6 +207,8 @@
             .cards{
                 width: 55%;
                 height: auto;
+                display: flex;
+                flex-direction: column;
                 
                 .heading1{
                     font-size: 32px;
