@@ -23,7 +23,7 @@
     
             .top{
                 display: flex;
-                align-items: center;
+                align-items: center;;
     
                 .logo{
                     width: 100px;
@@ -56,13 +56,11 @@
 
             
         }
-        .top{
+        .top, .topWithoutLogin{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 20px;
             width: 100%;
-    
-           
     
             .company,
             .quickAccess,
@@ -140,6 +138,9 @@
             @media screen and (max-width: 800px){
                 grid-template-columns: 1fr;
             }
+        }
+        .topWithoutLogin{
+            grid-template-columns: 1fr 1fr 1fr;
         }
         @media screen and (max-width: 1250px){
             flex-direction: column;

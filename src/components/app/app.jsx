@@ -27,17 +27,17 @@ function App() {
 					<Route path="/tours" element={<TourList />} />
 					<Route path="/virtual-tour-guide" element={<DestinationList />} />
 					<Route
-						path="/virtual-tour-guide/:destination"
+						path="/virtual-tour-guide/:id"
 						element={<DestinationDetails />}
 					/>
-					<Route path="/tours/:tour" element={<TourDetails />} />
+					<Route path="/tours/:id" element={<TourDetails />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/booktour" element={<BookTour />} />
 					<Route path="/payment" element={<TourPayment />} />
 					<Route path="/suggest-me-a-tour" element={<SuggestTour />} />
-					<Route path="/account" element={<MyAccount />} />
-					<Route path="/organizer-profile" element={<AgencyProfile />} />
+					<Route path="/account/:id" element={<MyAccount />} />
+					<Route path="/organizer-profile/:id" element={<AgencyProfile />} />
 					<Route path="/private-tour-request" element={<PrivateTour />} />
 					<Route path="/about" element={<AboutUs />} />
 					<Route path="/contact" element={<ContactUs />} />

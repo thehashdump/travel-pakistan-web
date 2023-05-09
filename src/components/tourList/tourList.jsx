@@ -1,3 +1,6 @@
+/* eslint-disable no-underscore-dangle */
+import { useEffect, useState } from 'react';
+import axios from '../../utils/axiosConfig';
 import { Footer } from '../footer';
 import { Navbar } from '../navbar';
 import { SearchBar } from '../searchBar';
@@ -5,6 +8,20 @@ import { Card } from './card/card';
 import Styles from './tourList.module.scss';
 
 function TourList() {
+	const params = new URLSearchParams(window.location.search);
+	const [source,] = useState(params.get('pickup'));
+	const [destination,] = useState(params.get('destination'));
+	const [people,] = useState(params.get('people'));
+	const [days,] = useState(params.get('days'));
+	const [tours, setTours] = useState([]);
+	useEffect(() => {
+		axios.get(`search-tours?pickup=${source}&destination=${destination}&people=${people}&days=${days}`).then((res) => {
+			setTours(res.data.tours);
+		}).catch((err) => {
+			console.log(err);
+		});
+	}, [source, destination, people, days]);
+
 	return (
 		<div className={Styles.tourList}>
 			<div className={Styles.top}>
@@ -15,7 +32,7 @@ function TourList() {
 			<div className={Styles.main}>
 				<div className={Styles.filterBox}>
 					<div className={Styles.filterTop}>
-						<span>Destination: <span>14 places found</span></span>
+						<span>Destination: <span>{tours.length} places found</span></span>
 						<span>Filter By:</span>
 					</div>
 					<div className={Styles.middle}>
@@ -50,11 +67,31 @@ function TourList() {
 					</div>
 				</div>
 				<div className={Styles.list}>
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
+					{
+						tours.length === 0 && (
+							<div className={Styles.noTours}>
+								<span>NO TOURS FOUND</span>
+							</div>
+						)
+					}
+					{
+						tours.map((tour) => (
+							<Card
+								key={tour._id}
+								id={tour._id}
+								name={tour.name}
+								price={tour.price.adults}
+								duration={tour.durationDays}
+								source={source}
+								destination={tour.destination}
+								image={tour.images[0]}
+								organizer={tour.organizer.name}
+								peopleGoing={tour.ticketsPurchased}
+								ticketLeft={tour.capacity - tour.ticketsPurchased}
+								tags={tour.tags}
+							/>
+						))
+					}
 				</div>
 			</div>
 			<Footer />

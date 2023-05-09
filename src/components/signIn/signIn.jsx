@@ -1,7 +1,28 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import { Image } from 'react-bootstrap';
+import axios from '../../utils/axiosConfig';
 import Styles from './signIn.module.scss';
 
 function SignIn() {
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+
+	const handleSignIn = () => {
+		const data = {
+			username,
+			password
+		};
+		axios.post('sign-in', data).then((res) => {
+			localStorage.setItem('user', JSON.stringify(res.data.user));
+			window.location.href = '/';
+		}).catch((err) => {
+			console.log(err);
+			toast.error('Invalid Credentials');
+		});
+	};
+
 	return (
 		<div className={Styles.SignIn}>
 			<div className={Styles.image}>
@@ -25,18 +46,24 @@ function SignIn() {
 					<div>
 						<span className={Styles.signinheading}>Sign in</span>
 						<form>
-							<input placeholder="Email Address" className={Styles.email} required/>
+							<input
+								placeholder="Username"
+								className={Styles.email}
+								required
+								onChange={(e) => { setUsername(e.target.value); }}
+							/>
 							<input
 								type="password"
 								placeholder="Password"
 								className={Styles.password}
 								required
+								onChange={(e) => { setPassword(e.target.value); }}
 							/>
 							<button
 								className={Styles.loginbtn}
 								onClick={(e) => {
 									e.preventDefault();
-									window.location.href = '/';
+									handleSignIn(e);
 								}}
 							>Login</button>
 							<div className={Styles.noaccount}>
@@ -53,33 +80,13 @@ function SignIn() {
 									</span>
 								</span>
 							</div>
-							<div className={Styles.borderline}>
-								<hr/>
-								<span>Or</span>
-								<hr/>
-							</div>
-							<div className={Styles.sociallogin}>
-								<span>Login Using</span>
-								<Image
-									src={require('../../assets/google.png')}
-									alt="Google"
-									className={Styles.icon}
-								/>
-								<Image
-									src={require('../../assets/facebook.png')}
-									alt="Facebook"
-									className={Styles.icon}
-								/>
-								<Image
-									src={require('../../assets/twitter.png')}
-									alt="Twitter"
-									className={Styles.icon}
-								/>
-							</div>
 						</form>
 					</div>
 				</div>
 			</div>
+			<ToastContainer
+				position="bottom-center"
+			/>
 		</div>
 	);
 }

@@ -1,7 +1,23 @@
+/* eslint-disable no-underscore-dangle */
+import { useEffect, useState } from 'react';
+import axios from '../../../utils/axiosConfig';
 import { Card } from './card';
 import Styles from './carousal.module.scss';
 
 function CarousalComponent({ title }) {
+	const [topTours, setTopTours] = useState([]);
+	const [topOrganizers, setTopOrganizers] = useState([]);
+	useEffect(() => {
+		axios.get('top-tours').then((res) => {
+			setTopTours(res.data.tours);
+			console.log(topTours);
+		});
+		axios.get('top-organizers').then((res) => {
+			setTopOrganizers(res.data.organizers);
+			console.log(topOrganizers);
+		});
+	}, []);
+
 	return (
 		<div className={Styles.carousal}>
 			<div className={Styles.title}>
@@ -9,47 +25,34 @@ function CarousalComponent({ title }) {
 			</div>
 			<div className={Styles.carousalContainer}>
 				{
-					title === 'Top Destinations' ? (
+					title === 'Top Tours' ? (
 						<>
-							<Card
-								image=	{'topDestinationCard1.png'}
-								destination={'Neelum Valley1'}
-								price = {'Rs. 20,000'}
-								tripDetails= {'4 Days Trip'}
-							/>
-							<Card
-								image=	{'topDestinationCard1.png'}
-								destination={'Neelum Valley1'}
-								price = {'Rs. 20,000'}
-								tripDetails= {'4 Days Trip'}
-							/>
-							<Card
-								image=	{'topDestinationCard1.png'}
-								destination={'Top Ten Wonders of Islamabad Guided City Tour Islamabad Guided City Tour Islamabad Guided City Tour'}
-								price = {'Rs. 2,00,000'}
-								tripDetails= {'4 Days Trip'}
-							/>
+
+							{
+								topTours.map((tour) => (
+									<Card
+										image=	{tour.images[0]}
+										destination={tour.name}
+										price = {`Rs ${tour.price.adults}`}
+										tripDetails= {`${tour.durationDays} Days Trip`}
+										id={tour._id}
+									/>
+								))
+							}
 						</>
 					) : (
 						<>
-							<Card
-								image="topOrganizerCard1.png"
-								organizer="NorthX"
-								rating = "4.9(300+)"
-								tripDetails="Trips Completed: 730+"
-							/>
-							<Card
-								image="topOrganizerCard1.png"
-								organizer="NorthX"
-								rating = "4.9(300+)"
-								tripDetails="Trips Completed: 730+"
-							/>
-							<Card
-								image="topOrganizerCard1.png"
-								organizer="NorthX"
-								rating = "4.9(300+)"
-								tripDetails="Trips Completed: 730+"
-							/>
+							{
+								topOrganizers.map((item) => (
+									<Card
+										id={item._id}
+										image= {item.organizer.displayPicture}
+										organizer= {item.organizer.name}
+										rating = {item.avgRating}
+										tripDetails= {`Trips Completed: ${item.organizer.tripsCompleted}`}
+									/>
+								))
+							}
 						</>
 					)
 				}
