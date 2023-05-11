@@ -1,22 +1,64 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable import/no-extraneous-dependencies */
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 import { Image } from 'react-bootstrap';
-import { useState } from 'react';
+import { useLocation } from 'react-router';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
 import { BillCard } from './billCard';
 import Styles from './bookTour.module.scss';
 
 function BookTour() {
-	const [selectedGender, setSelectedGender] = useState(null);
+	const location = useLocation();
+	const user = JSON.parse(localStorage.getItem('user'));
+	const { tour, tickets, pickup } = location.state;
+	const [name, setName] = useState(user ? user.username : '');
+	const [contact, setContact] = useState(user ? user.phone : '');
+	const [email, setEmail] = useState(user ? user.email : '');
+	const [cnic, setCnic] = useState(user ? user.cnic : '');
+	const [amount, setAmount] = useState(0);
+	const [payment, setPayment] = useState({});
 
-	const handleClick = (gender) => {
-		setSelectedGender(gender);
-	};
+	useEffect(() => {
+		if (user) {
+			setPayment({
+				tour: tour._id,
+				purchasedBy: user._id,
+				amount,
+				pickup,
+				travellers: {
+					adults: tickets.adults,
+					children: tickets.children,
+				},
+			});
+		} else {
+			setPayment({
+				tour: tour._id,
+				amount,
+				pickup,
+				travellers: {
+					adults: tickets.adults,
+					children: tickets.children,
+				},
+				user: {
+					name,
+					contact,
+					email,
+					cnic,
+				},
+			});
+		}
+	}, [user, name, contact, email, cnic, amount,
+		tour._id, pickup, tickets.adults, tickets.children]);
+
 	return (
 		<div className={Styles.tourDetails}>
 			<div className={Styles.top}>
 				<Navbar />
 				<div className={Styles.divTop}>
-          6 Days Tour to Hunza & Naltar Valley
+					{tour.name}
 				</div>
 			</div>
 			<div className={Styles.main}>
@@ -26,16 +68,16 @@ function BookTour() {
 						<div className={Styles.tourinfo}>
 							<div className={Styles.tourcontent}>
 								<span className={Styles.tourtitle}>
-                  6 Days Tour to Hunza & Naltar Valley | 23 NOV, 2022
+									{tour.name} | {moment(tour.startDate).format('DD MMM YYYY')}
 								</span>
 								<div className={Styles.tourlocation}>
 									<span className={Styles.location}>
 										<Image src={require('../../assets/location-1.png')} />
-                    Hunza Valley
+										{tour.destination}
 									</span>
 								</div>
 								<span className={Styles.agencyname}>
-                  By Dream Trip Planners
+									By {tour.agencyName}
 								</span>
 							</div>
 						</div>
@@ -48,9 +90,13 @@ function BookTour() {
 						</div>
 						<div className={Styles.detailheading}>
 							<span>
-                Enter Traveler Details |{' '}
-								<span className={Styles.signin}>SIGN IN</span>
-								<span className={Styles.subtext}>to book faster</span>
+								Enter Traveler Details
+								{
+									!user ? (
+										<><span className={Styles.signup}> |{' '}SIGN IN</span>
+											<span className={Styles.subtext}>to book faster</span></>
+									) : null
+								}
 							</span>
 						</div>
 						<div className={Styles.detailcontainer}>
@@ -58,69 +104,60 @@ function BookTour() {
 								<span>Passenger: Adult (Primary Contact)</span>
 								<div className={Styles.names}>
 									<div className={Styles.firstname}>
-										<span>First Name</span>
-										<input required />
-									</div>
-									<div className={Styles.lastname}>
-										<span>Last Name</span>
-										<input required />
+										<span>Name</span>
+										<input
+											required
+											value={name}
+											onChange={(e) => setName(e.target.value)}
+										/>
 									</div>
 								</div>
 								<div className={Styles.contact}>
-									<div className={Styles.gender}>
-										<span>Gender</span>
-										<div>
-											<button
-												style={{
-													backgroundColor:
-                            selectedGender === 'Male' ? '#006600' : 'white',
-													color:
-                            selectedGender === 'Male' ? 'white' : '#006600',
-												}}
-												onClick={() => handleClick('Male')}
-											>
-                        Male
-											</button>
-											<button
-												style={{
-													backgroundColor:
-                            selectedGender === 'Female' ? '#006600' : 'white',
-													color:
-                            selectedGender === 'Female' ? 'white' : '#006600',
-												}}
-												onClick={() => handleClick('Female')}
-											>
-                        Female
-											</button>
-										</div>
-									</div>
 									<div className={Styles.contactnumber}>
 										<span>Contact Number</span>
-										<input required />
+										<input
+											required
+											value={contact}
+											onChange={(e) => setContact(e.target.value)}
+										/>
 									</div>
 								</div>
 								<div className={Styles.email}>
 									<span>Email Address</span>
-									<input type="email" required />
+									<input
+										type="email"
+										required
+										value={email}
+										onChange={(e) => setEmail(e.target.value)}
+									/>
 								</div>
 								<div className={Styles.cnic}>
 									<span>CNIC</span>
-									<input required />
+									<input
+										required
+										value={cnic}
+										onChange={(e) => setCnic(e.target.value)}
+									/>
 								</div>
 							</div>
 						</div>
-						<button
-							className={Styles.continue}
-							onClick={() => {
-								window.location.href = '/payment';
-							}}
+						<Link
+							to='/payment' state={{ tour, payment, tickets }}
 						>
-              Continue
-						</button>
+							<button
+								className={Styles.continue}
+							>
+								Continue
+							</button>
+						</Link>
 					</div>
 				</div>
 				<div className={Styles.bill}>
-					<BillCard />
+					<BillCard
+						tour={tour}
+						tickets={tickets}
+						setAmount={setAmount}
+					/>
 				</div>
 			</div>
 			<Footer />

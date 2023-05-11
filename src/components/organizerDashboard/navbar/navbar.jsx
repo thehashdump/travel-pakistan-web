@@ -1,8 +1,10 @@
 import { Image } from 'react-bootstrap';
 import { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router';
 import Styles from './navbar.module.scss';
 
 function Navbar({ setActiveTab }) {
+	const { id } = useParams();
 	const [showBurgerMenue, setShowBurgerMenue] = useState(false);
 	const [showDropDownMenue, setShowDropDownMenue] = useState(false);
 	const dropDownMenueRef = useRef(null);
@@ -138,7 +140,7 @@ function Navbar({ setActiveTab }) {
 							<span
 								className={Styles.dropDownMenueLink}
 								onClick={() => {
-									window.location.href = '/organizer-profile';
+									window.location.href = `/organizer-profile/${id}`;
 								}}
 							>PROFILE</span>
 						</div>

@@ -1,16 +1,26 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
-	Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination, Button
+	Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination
 } from '@material-ui/core';
-import { reviews } from './dummyData';
 import Styles from './reviews.module.scss';
+import axios from '../../../utils/axiosConfig';
 
 function Reviews() {
+	const user = JSON.parse(localStorage.getItem('user'));
 	const [showPopup, setShowPopup] = useState(false);
 	const [reply, setReply] = useState('');
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
+	const [reviews, setReviews] = useState([]);
+
+	useEffect(() => {
+		axios.get(`/reviews/${user.organizerId}`).then((response) => {
+			setReviews(response.data.reviews);
+		}).catch((error) => {
+			console.log(error);
+		});
+	}, []);
 
 	const handleChangePage = (event, newPage) => {
 		setPage(newPage);
@@ -38,17 +48,16 @@ function Reviews() {
 										<TableCell>User Name</TableCell>
 										<TableCell>Ratings</TableCell>
 										<TableCell>Review</TableCell>
-										<TableCell>Action</TableCell>
 									</TableRow>
 								</TableHead>
 								<TableBody>
 									{reviews.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 										.map((review) => (
 											<TableRow>
-												<TableCell>{review.user}</TableCell>
+												<TableCell>{review.user.username}</TableCell>
 												<TableCell>{review.rating}</TableCell>
 												<TableCell>{review.comment}</TableCell>
-												<TableCell>
+												{/* <TableCell>
 													<Button
 														variant="contained"
 														color="secondary"
@@ -56,7 +65,7 @@ function Reviews() {
 													>
 														Reply
 													</Button>
-												</TableCell>
+												</TableCell> */}
 											</TableRow>
 										))}
 								</TableBody>

@@ -1,17 +1,49 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
 	Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination, Button
 } from '@material-ui/core';
 import moment from 'moment';
-import { privateTourRequests } from './dummyData';
+import { toast, ToastContainer } from 'react-toastify';
 import Styles from './privateTours.module.scss';
+import axios from '../../../utils/axiosConfig';
 
 function PrivateTours() {
+	const user = JSON.parse(localStorage.getItem('user'));
 	const [showPopup, setShowPopup] = useState(false);
 	const [bid, setBid] = useState(0);
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
+	const [id, setId] = useState('');
+	const [privateTour, setPrivateTour] = useState({});
+	const [privateTourRequests, setPrivateTourRequests] = useState([]);
+
+	const handleBiding = () => {
+		const data = {
+			price: bid,
+			tourId: id,
+			organizer: user.organizerId
+		};
+		axios.post('/bid-private-tour', data).then(() => {
+			toast.success('Bid successfully placed');
+		}).catch((error) => {
+			console.log(error);
+		});
+	};
+
+	useEffect(() => {
+		axios.get('/private-tours').then((response) => {
+			setPrivateTourRequests(response.data.privateTours);
+		}).catch((error) => {
+			console.log(error);
+		});
+	}, []);
+
+	useEffect(() => {
+		setPrivateTour(privateTourRequests.find((tour) => tour._id === id));
+		console.log(privateTourRequests.find((tour) => tour._id === id));
+	}, [id, privateTourRequests]);
 
 	const handleChangePage = (event, newPage) => {
 		setPage(newPage);
@@ -21,7 +53,6 @@ function PrivateTours() {
 		setRowsPerPage(parseInt(event.target.value, 10));
 		setPage(0);
 	};
-	console.log(privateTourRequests);
 
 	return (
 		<>
@@ -51,7 +82,7 @@ function PrivateTours() {
 									{privateTourRequests.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 										.map((tour) => (
 											<TableRow>
-												<TableCell>{tour.user}</TableCell>
+												<TableCell>{tour.user.username}</TableCell>
 												<TableCell>{tour.destination}</TableCell>
 												<TableCell>{tour.durationDays}</TableCell>
 												<TableCell>{tour.travelers}</TableCell>
@@ -62,7 +93,10 @@ function PrivateTours() {
 													<Button
 														variant="contained"
 														color="secondary"
-														onClick={() => setShowPopup(true)}
+														onClick={() => {
+															setShowPopup(true);
+															setId(tour._id);
+														}}
 													>
 														BID
 													</Button>
@@ -85,7 +119,7 @@ function PrivateTours() {
 				</div>
 			</div>
 			{
-				showPopup && (
+				showPopup && privateTour && (
 					<div className={Styles.popup}>
 						<div className={Styles.popupInner}>
 							<div className={Styles.popupTitle}>
@@ -97,7 +131,7 @@ function PrivateTours() {
 										User's Name:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].user}
+										{privateTour.user.username}
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -105,7 +139,7 @@ function PrivateTours() {
 										Destination:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].destination}
+										{privateTour.destination}
 									</div>
 								</div>
 								<div className={Styles.tourDetails} style={{ flexDirection: 'column', gap: '0rem' }}>
@@ -113,7 +147,7 @@ function PrivateTours() {
 										Description:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].description}
+										{privateTour.description}
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -122,7 +156,7 @@ function PrivateTours() {
 									</div>
 									<div className={Styles.value}>
 										{
-											privateTourRequests[0].route.map((route, index) => (
+											privateTour.route.map((route, index) => (
 												<span>
 													{index !== 0 && <> -&gt; </> }
 													{route}
@@ -136,7 +170,7 @@ function PrivateTours() {
 										Duration:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].durationDays} Days
+										{privateTour.durationDays} Days
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -144,7 +178,7 @@ function PrivateTours() {
 										Travelers:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].travelers}
+										{privateTour.travelers}
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -152,7 +186,7 @@ function PrivateTours() {
 										Location:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].departureLocation}
+										{privateTour.departureLocation}
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -160,7 +194,7 @@ function PrivateTours() {
 										Date:
 									</div>
 									<div className={Styles.value}>
-										{moment(privateTourRequests[0].departureDate).format('MM-DD-YYYY')}
+										{moment(privateTour.departureDate).format('MM-DD-YYYY')}
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -168,7 +202,7 @@ function PrivateTours() {
 										Time:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].departureTime}
+										{privateTour.departureTime}
 									</div>
 								</div>
 								<div className={Styles.tourDetails}>
@@ -176,7 +210,7 @@ function PrivateTours() {
 										Budget:
 									</div>
 									<div className={Styles.value}>
-										{privateTourRequests[0].budget}
+										{privateTour.budget}
 									</div>
 								</div>
 								<div className={Styles.bidContainer}>
@@ -193,7 +227,10 @@ function PrivateTours() {
 									<button
 										type="submit"
 										className={Styles.bidButton}
-										onClick={() => setShowPopup(false)}
+										onClick={() => {
+											setShowPopup(false);
+											handleBiding();
+										}}
 									>
 										BID
 									</button>
@@ -212,6 +249,9 @@ function PrivateTours() {
 					</div>
 				)
 			}
+			<ToastContainer
+				position="bottom-center"
+			/>
 		</>
 	);
 }

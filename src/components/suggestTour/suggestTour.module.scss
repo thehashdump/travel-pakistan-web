@@ -98,6 +98,9 @@
                             font-weight: 700;
                             border: none;
                             cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
 
                             &:hover{
                                 background: $hover-primary;

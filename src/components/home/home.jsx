@@ -8,7 +8,7 @@ function Home() {
 	return (
 		<div className={Styles.home}>
 			<HeroSection />
-			<CarousalComponent title="Top Destinations"/>
+			<CarousalComponent title="Top Tours"/>
 			<Guide />
 			<CarousalComponent title="Top Tour Organizers"/>
 			<Footer />

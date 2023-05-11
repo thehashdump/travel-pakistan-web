@@ -1,7 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 import { Image } from 'react-bootstrap';
 import Styles from './footer.module.scss';
 
 function Footer() {
+	const user = JSON.parse(localStorage.getItem('user'));
 	return (
 		<div className={Styles.footer}>
 			<div className={Styles.wrapper}>
@@ -22,17 +24,26 @@ function Footer() {
 						Control for much longer.
 					</div>
 				</div>
-				<div className={Styles.top}>
+				<div className={user ? Styles.top : Styles.topWithoutLogin}>
 					<div className={Styles.company}>
 						<div className={Styles.title}>
 							Company
 						</div>
 						<div className={Styles.links}>
-							<div className={Styles.link}>
-								About Us
+							<div
+								className={Styles.link}
+								onClick={() => {
+									window.location.href = '/about';
+								}}
+							>
+								About
 							</div>
-							<div className={Styles.link}>
-								Contact Us
+							<div className={Styles.link}
+								onClick={() => {
+									window.location.href = '/contact';
+								}}
+							>
+								Contact
 							</div>
 						</div>
 					</div>
@@ -44,27 +55,59 @@ function Footer() {
 							<div className={Styles.link}>
 								Virtual Tour Guide
 							</div>
-							<div className={Styles.link}>
-								Recommend Me
+							<div className={Styles.link}
+								onClick={() => {
+									window.location.href = '/suggest-me-a-tour';
+								}}
+							>
+								Suggest Me Tour
 							</div>
 						</div>
 					</div>
-					<div className={Styles.more}>
-						<div className={Styles.title}>
-							More
-						</div>
-						<div className={Styles.links}>
-							<div className={Styles.link}>
-								Hotel Booking
+					{
+						user ? (
+							<div className={Styles.more}>
+								<div className={Styles.title}>
+									More
+								</div>
+								<div className={Styles.links}>
+									<div className={Styles.link}
+										onClick={() => {
+											window.location.href = `/account/${user._id}`;
+										}}
+									>
+										Profile
+									</div>
+									{
+										user?.role === 'organizer' ? (
+											<div className={Styles.link}
+												onClick={() => {
+													window.location.href = `/dashboard/${user.organizerId}`;
+												}}
+											>
+												Dashboard
+											</div>
+										) : (
+											<div className={Styles.link}
+												onClick={() => {
+													window.location.href = '/organizer-registration';
+												}}
+											>
+												Create Agency
+											</div>
+										)
+									}
+									<div className={Styles.link}
+										onClick={() => {
+											window.location.href = '/private-tour-request';
+										}}
+									>
+										Private Tour
+									</div>
+								</div>
 							</div>
-							<div className={Styles.link}>
-								Restaurants
-							</div>
-							<div className={Styles.link}>
-								Discussion Forum
-							</div>
-						</div>
-					</div>
+						) : null
+					}
 					<div className={Styles.socials}>
 						<div className={Styles.icons}>
 							<div className={Styles.icon}>

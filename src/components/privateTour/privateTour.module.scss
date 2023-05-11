@@ -297,13 +297,13 @@
                     line-height: 17px;
                     color: $secondary-color;
                 }
-                .select{
+                .destination{
                     width: 100%;
                     border: 1px solid $secondary-color;
                     height: 48px;
                     border-radius: 8px;
                     outline: none;
-
+                    padding: 10px;
                 }
             }
             .multipleOptions{
@@ -321,18 +321,11 @@
                         line-height: 17px;
                         color: $secondary-color;
                     }
-                    .destination{
-                        width: 100%;
-                        border: 1px solid $secondary-color;
-                        height: 48px;
-                        border-radius: 8px;
-                        outline: none;
-                        padding: 10px;
-                    }
                 }
-                .days{
+                .days,.lastname,.budget{
                     display: flex;
                     flex-direction: column;
+                    flex: 1;
                     gap: 5px;
                     .heading2{
                         font-weight: 400;
@@ -340,7 +333,7 @@
                         line-height: 17px;
                         color: $secondary-color;
                     }
-                    .daysInput{
+                    .daysInput,.lastnameInput,.amount{
                         width: 100%;
                         border: 1px solid $secondary-color;
                         height: 48px;
@@ -349,25 +342,7 @@
                         padding: 10px;
                     }
                 }
-                .budget{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-                    .heading3{
-                        font-weight: 400;
-                        font-size: 16px;
-                        line-height: 17px;
-                        color: $secondary-color;
-                    }
-                    .amount{
-                        width: 100%;
-                        border: 1px solid $secondary-color;
-                        height: 48px;
-                        border-radius: 8px;
-                        outline: none;
-                        padding: 10px;
-                    }
-                }
+                
             }
             @media screen and (max-width:520px) {
     .multipleOptions{
@@ -381,63 +356,26 @@
                 flex-direction: column;
                 // margin-top: 55px;
                 gap: 5px;
-                .heading4{
-                    font-weight: 500;
-                    font-size: 24px;
-                    line-height: 17px;
-                    color: $primary-color;
-                }
                 .name{
                     display: flex;
-                    justify-content: space-between;
-                    gap: 50px;
+                    flex-direction: column;
                     margin-top: 20px;
-                    .firstname{
-                        width: 100%;
-                        border-radius: 8px;                        
-                        gap: 5px;
-                        display: flex;
-                        flex-direction: column;
-                        .inputFields{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            gap: 10px;
-                        }
-                        @media screen and (max-width:425px) {
-                            .inputFields{
-                                width: 80%;
-                                flex-direction: column;
-                                gap: 15px;
-                                align-items: center;
-                                justify-content: center;
-                                
-                            }
-                            
-                        }
-                        span{
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 17px;
-                            color: $secondary-color;
-                        }
-                        .firstnameInput{
-                            width: 20%;
-                            height: 48px;
-                            border: none;
-                            outline: none;
-                            border: 1px solid $secondary-color;
-                            border-radius: 8px;
-                            padding: 10px;
-                        }
-                        @media screen and (max-width:768px) {
-                            .firstnameInput{
-                                width:100%;
-                                
-                            }
-                            
-                        }
+                    gap: 10px;
+                    .heading4{
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 17px;
+                        color: $secondary-color;
                     }
+                    .route{
+                        width: 100%;
+                        border: 1px solid $secondary-color;
+                        height: 48px;
+                        border-radius: 8px;
+                        outline: none;
+                        padding: 10px;
+                    }
+                    
                     @media screen and (max-width:425px) {
                         .firstname{
                            align-items: center;
@@ -527,12 +465,13 @@
                             line-height: 17px;
                             color: $secondary-color;
                         }
-                        .select{
+                        .pickupInput{
                     width: 100%;
                     border: 1px solid $secondary-color;
                     height: 48px;
                     border-radius: 8px;
                     outline: none;
+                    padding: 10px;
 
                 }
                     }

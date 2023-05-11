@@ -1,11 +1,28 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { Image } from 'react-bootstrap';
+import { useLocation } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 import { Navbar } from '../navbar';
 import { Footer } from '../footer';
 import { BillCard } from '../bookTour/billCard/billCard';
 import { InfoCard } from './infoCard/infoCard';
 import Styles from './tourPayment.module.scss';
+import axios from '../../utils/axiosConfig';
 
 function TourPayment() {
+	const location = useLocation();
+	const { payment, tour, tickets } = location.state;
+
+	const handlePaymet = () => {
+		axios.post('purchase-tour', payment).then(() => {
+			toast.success('Tour Purchased Successfully');
+			setTimeout(() => {
+				window.location.href = '/';
+			}, 4000);
+		}).catch((err) => {
+			console.log(err);
+		});
+	};
 	return (
 		<div className={Styles.tourDetails}>
 			<div className={Styles.top}>
@@ -145,18 +162,24 @@ function TourPayment() {
 						<button
 							className={Styles.continue}
 							onClick={() => {
-								window.location.href = '/';
+								handlePaymet();
 							}}
 						>Confirm</button>
 					</div>
 				</div>
 				<div className={Styles.bill}>
-					<BillCard />
+					<BillCard
+						tour={tour}
+						tickets={tickets}
+					/>
 					<InfoCard/>
 
 				</div>
 			</div>
 			<Footer />
+			<ToastContainer
+				position="bottom-center"
+			/>
 		</div>
 	);
 }

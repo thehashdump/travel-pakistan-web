@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-duplicates */
 /* eslint-disable import/no-extraneous-dependencies */
@@ -17,6 +18,9 @@ import {
 	LinearProgress,
 } from '@material-ui/core';
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from '../../../utils/axiosConfig';
 import storage from '../../../firebase';
 import Styles from './registrationForm.module.scss';
 
@@ -29,7 +33,6 @@ const RegistrationForm = () => {
 	const [activeStep, setActiveStep] = useState(0);
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
 	const [tagline, setTagline] = useState([]);
 	const [tags, setTags] = useState([]);
 	const [coverImage, setCoverImage] = useState([]);
@@ -208,25 +211,40 @@ const RegistrationForm = () => {
 	};
 
 	const handleSubmit = () => {
-		const tour = {
+		let user = JSON.parse(localStorage.getItem('user'));
+		const request = {
+			owner: user._id,
 			name,
 			email,
-			password,
 			tagline,
-			tags,
+			specialities: tags,
 			images,
+			displayPicture: displayPicture[0],
+			coverImage: coverImage[0],
 			description,
 			address,
 			phone,
 		};
-		console.log(tour);
+		axios.post('create-organizer', request).then((res) => {
+			if (res.data.create_organizer_failed) {
+				toast.error('Failed to create organizer');
+			} else {
+				user = {
+					...user,
+					organizerId: res.data.organizer._id,
+					role: 'organizer'
+				};
+				localStorage.setItem('user', JSON.stringify(user));
+				toast.success('Organizer created successfully');
+				window.location.href = '/';
+			}
+		});
 	};
 
 	const handleReset = () => {
 		setActiveStep(0);
 		setName('');
 		setEmail('');
-		setPassword('');
 		setTagline([]);
 		setTags([]);
 		setImages([]);
@@ -255,14 +273,6 @@ const RegistrationForm = () => {
 							value={email}
 							type="email"
 							onChange={(e) => setEmail(e.target.value)}
-							className={Styles.input}
-						/>
-						<TextField
-							id="durationDays"
-							label="Password"
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
 							className={Styles.input}
 						/>
 					</div>
@@ -568,6 +578,9 @@ const RegistrationForm = () => {
 					</div>
 				</div>
 			)}
+			<ToastContainer
+				position="bottom-center"
+			/>
 		</div>
 	);
 };

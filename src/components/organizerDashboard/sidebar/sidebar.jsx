@@ -70,7 +70,15 @@ function Sidebar({ setActiveTab }) {
 						REVIEWS
 					</div>
 				</div>
-				<div className={Styles.logout}>
+				<div className={Styles.logout}
+					onClick = {
+						() => {
+							localStorage.removeItem('user');
+							localStorage.removeItem('activeTab');
+							window.location.href = '/';
+						}
+					}
+				>
 					LOGOUT
 				</div>
 			</div>
