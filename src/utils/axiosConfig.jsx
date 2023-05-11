@@ -13,7 +13,7 @@ export const apiErrorResponse = (error) => {
 };
 
 const instance = axios.create({
-	baseURL: 'http://18.140.54.98:8000/api/'
+	baseURL: 'https://persian-blue-blackbuck-tam.cyclic.app/api/'
 });
 
 instance.interceptors.request.use((config) => config);
