@@ -1,10 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import axios from '../../../utils/axiosConfig';
 import Styles from './sidebar.module.scss';
 
 function Sidebar({ setActiveTab }) {
+	const { id } = useParams();
 	const handleActiveTabs = (e) => {
 		localStorage.setItem('activeTab', e.target.innerText.toLowerCase());
 	};
+	const [organizer, setOrganizer] = useState({});
+
+	useEffect(() => {
+		axios.get(`organizers/${id}`).then((res) => {
+			setOrganizer(res.data.organizer);
+		}).catch((err) => {
+			console.log(err);
+		});
+	}, [id]);
 
 	useEffect(() => {
 		const links = document.querySelectorAll(`.${Styles.link}`);
@@ -20,8 +32,9 @@ function Sidebar({ setActiveTab }) {
 	});
 	return (
 		<div className={Styles.sidebar}>
-			<div className={Styles.title}>
-				ORGANIZER DASHBOARD
+			<div className={Styles.name}>
+				{organizer.name} <br />
+				<span className={Styles.tagline}>{organizer.tagline}</span>
 			</div>
 			<div className={Styles.container}>
 				<div className={Styles.links}>
@@ -74,7 +87,6 @@ function Sidebar({ setActiveTab }) {
 					onClick = {
 						() => {
 							localStorage.removeItem('user');
-							localStorage.removeItem('activeTab');
 							window.location.href = '/';
 						}
 					}

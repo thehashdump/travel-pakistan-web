@@ -11,6 +11,27 @@
     box-sizing: border-box;
     padding: 1.2rem;
     gap: 1rem;
+
+    .name{
+        
+        font-family: 'Philosopher';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 24px;
+        text-decoration: uppercase;
+        color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        margin: 7px -10px;
+        gap : 5px;
+
+        span{
+            color: $secondary-color;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
      
     .title{
         width: 100%;

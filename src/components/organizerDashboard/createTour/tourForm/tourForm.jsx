@@ -117,6 +117,10 @@ const TourForm = () => {
 			itinerary,
 			overview
 		};
+		if (name === '' || destination === '' || durationDays === 0 || capacity === 0 || requirements.length === 0 || tags.length === 0 || images.length < 5 || description === '' || route.length === 0 || tips.length === 0 || departureDate === '' || departureTime === '' || departureLocations.length === 0 || price.adults === 0 || price.children === 0 || inclusions.length === 0 || exclusions.length === 0 || Object.keys(itinerary).length === 0 || overview === '') {
+			toast.error('Please fill all the fields');
+			return;
+		}
 		axios.post('create-tour', tour).then(() => {
 			toast.success('Tour created successfully');
 			setTimeout(() => {
@@ -317,6 +321,7 @@ const TourForm = () => {
 			return (
 				<FormControl fullWidth margin="normal">
 					<FormLabel component="legend">Images</FormLabel>
+					<p>Please upload at least 5 images</p>
 					<input
 						type="file"
 						accept="image/*"
