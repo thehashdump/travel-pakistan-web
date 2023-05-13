@@ -3,6 +3,7 @@ import { CreateTour } from '../createTour';
 import { Dashboard } from '../dashboard';
 import { Navbar } from '../navbar';
 import { PrivateTours } from '../privateTours/privateTours';
+import { PurchasedTickets } from '../purchasedTickets';
 import { Reviews } from '../reviews';
 import { Sidebar } from '../sidebar';
 import { Tours } from '../tours';
@@ -30,6 +31,8 @@ function Home() {
 							<PrivateTours />
 						)) || (activeTab === 'reviews' && (
 							<Reviews />
+						)) || (activeTab === 'purchased tickets' && (
+							<PurchasedTickets />
 						))
 					}
 				</div>

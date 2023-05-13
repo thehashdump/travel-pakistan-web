@@ -125,7 +125,7 @@ const TourForm = () => {
 			toast.success('Tour created successfully');
 			setTimeout(() => {
 				window.location.reload();
-			}, 4000);
+			}, 2000);
 		}).catch((err) => {
 			console.log(err);
 		});

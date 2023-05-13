@@ -82,11 +82,23 @@ function Sidebar({ setActiveTab }) {
 					>
 						REVIEWS
 					</div>
+					<div
+						className={Styles.link}
+						onClick = {
+							(e) => {
+								handleActiveTabs(e);
+								setActiveTab('purchased tickets');
+							}
+						}
+					>
+						PURCHASED TICKETS
+					</div>
 				</div>
 				<div className={Styles.logout}
 					onClick = {
 						() => {
 							localStorage.removeItem('user');
+							localStorage.setItem('activeTab', 'dashboard');
 							window.location.href = '/';
 						}
 					}

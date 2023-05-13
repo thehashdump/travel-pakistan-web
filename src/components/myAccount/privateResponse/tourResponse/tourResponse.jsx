@@ -30,7 +30,7 @@ function TourResponse({ responses }) {
 			toast.success('Tour Booked Successfully');
 			setTimeout(() => {
 				window.location.reload();
-			}, 4000);
+			}, 2000);
 		}).catch(() => {
 			toast.error('Error Booking Tour');
 		});
