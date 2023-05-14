@@ -67,7 +67,7 @@ function Navbar({ setActiveTab }) {
 							}}
 						>
 							<Image
-								src= {organizer.profilePicture ? organizer.profilePicture : require('../../../assets/aboutProfile.png')}
+								src= {organizer.displayPicture ? organizer.displayPicture : require('../../../assets/aboutProfile.png')}
 								alt="Profile"
 								className={Styles.profileImage}
 							/>
