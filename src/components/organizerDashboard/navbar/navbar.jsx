@@ -2,6 +2,7 @@ import { Image } from 'react-bootstrap';
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
 import Styles from './navbar.module.scss';
+import axios from '../../../utils/axiosConfig';
 
 function Navbar({ setActiveTab }) {
 	const { id } = useParams();
@@ -9,7 +10,13 @@ function Navbar({ setActiveTab }) {
 	const [showDropDownMenue, setShowDropDownMenue] = useState(false);
 	const dropDownMenueRef = useRef(null);
 	const navbarRef = useRef(null);
+	const [organizer, setOrganizer] = useState({});
 
+	useEffect(() => {
+		axios.get(`/organizers/${id}`).then((res) => {
+			setOrganizer(res.data.organizer);
+		});
+	}, [id]);
 	useEffect(() => {
 		if (isMobile) {
 			if (showBurgerMenue === false) {
@@ -60,7 +67,7 @@ function Navbar({ setActiveTab }) {
 							}}
 						>
 							<Image
-								src={require('../../../assets/profile-1.jpg')}
+								src= {organizer.profilePicture ? organizer.profilePicture : require('../../../assets/aboutProfile.png')}
 								alt="Profile"
 								className={Styles.profileImage}
 							/>
