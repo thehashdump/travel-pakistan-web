@@ -1,0 +1,1 @@
+export { PurchasedTickets } from './purchasedTickets';

@@ -46,7 +46,7 @@ function Dashboard() {
 						Total Tours
 					</div>
 					<div className={Styles.value}>
-						{dashboardData.totalTours}
+						{dashboardData.totalTours ? dashboardData.totalTours : 0}
 					</div>
 				</div>
 				<div className={Styles.widget}>
@@ -60,7 +60,7 @@ function Dashboard() {
 						Tickets Sold
 					</div>
 					<div className={Styles.value}>
-						{dashboardData.ticketsSold}
+						{dashboardData.ticketsSold ? dashboardData.ticketsSold : 0}
 					</div>
 				</div>
 				<div className={Styles.widget}>

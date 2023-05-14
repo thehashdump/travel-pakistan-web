@@ -134,131 +134,13 @@
     height: 100%;
     margin-top: 20px;
     padding: 10px;
-    .callUs{
-        width: 30%;
-        height: 146px;
-        border-radius: 15px;
-        border: 1px solid $primary-color;
-        display: flex;
-        flex-direction: column;
-        .callUsText{
-            margin-top: 20px;
-
-            .heading{
-                font-weight: 500;
-                font-size: 24px;
-                line-height: 27px;
-                color: $primary-color;
-                padding: 10px;
-            }
-            @media screen and (max-width:1024px) {
-            .heading{
-                font-weight: 500;
-                font-size: 20px;
-                line-height: 27px;
-                color: $primary-color;
-                padding: 10px;
-            }       
-        }
-         @media screen and (max-width:890px) {
-            .heading{
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 27px;
-                color: $primary-color;
-                padding: 10px;
-            }       
-        }
-            .subHeading{
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 17px;
-                color: $quaternary;
-                padding: 10px;
-            }
-            @media screen and (max-width:1024px) {
-            .subHeading{
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 17px;
-                color: $quaternary;
-                padding: 10px;
-            }}
-        }
-        .callUsButton{
-            width: 100%;
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .button{
-                width: 70%;
-                height: 35px;
-            
-            background-color: $primary-color;
-            border-radius: 38px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 15px;
-            outline: none;
-            border: none;
-             .buttonText{
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 27px;
-                color: #FFFFFF;
-            }
-
-            }
-            @media screen and (max-width:1024px) {
-        .button{
-            width: 80%;
-            height: 35px;
-        }       
-    }
-      @media screen and (max-width:890px) {
-        .button{
-            width: 90%;
-            height: 35px;
-        }       
-    }
-            .button:hover{
-                background-color: $hover-primary;
-            }
-                       
-           
-        }
-
-       
-
-    }
-      @media screen and (max-width:870px) {
-        .callUs{
-            width: 40%;
-            
-        }   
-        
-    }
-    @media screen and (max-width:768px) {
-        .callUs{
-            width: 70%;
-            
-            
-        }   
-        
-    }
-    @media screen and (max-width:425px) {
-    .callUs{
-        width: 90%;
-    }
-    
 }
     
 
     .detailsForm{
-        width: 70%;
+        width: 80%;
         height: auto;
+        margin: auto;
         display: flex;
         flex-direction: column;
         padding: 15px;
@@ -592,7 +474,4 @@
 
     }
     
-}
-
-
 }

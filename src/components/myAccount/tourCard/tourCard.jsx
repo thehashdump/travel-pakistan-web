@@ -1,10 +1,23 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-unsafe-optional-chaining */
 import React from 'react';
 import moment from 'moment';
+import { toast, ToastContainer } from 'react-toastify';
 import { Image } from 'react-bootstrap';
 import Styles from './tourCard.module.scss';
+import axios from '../../../utils/axiosConfig';
 
 function TourCard({ item }) {
+	const handleCancel = () => {
+		axios.post('cancel-booking', item).then(() => {
+			toast.success('Booking Cancelled Successfully');
+			setTimeout(() => {
+				window.location.reload();
+			}, 2000);
+		}).catch((err) => {
+			toast.error(err.response.data.message);
+		});
+	};
 	return (
 		<>
 			{
@@ -80,12 +93,28 @@ function TourCard({ item }) {
 							<div className={Styles.firstRow}>
 								<div className={Styles.requestDesc}>
 									<span className={Styles.heading}>Description:</span>
-									<span className={`${Styles.subheading} ${Styles.description}`}>
-										{item.tour.overview}
-									</span>
+									<div className={Styles.bottom}>
+										<span className={`${Styles.subheading} ${Styles.description}`}>
+											{item.tour.overview}
+										</span>
+										{
+											item.tour.active ? (
+												<button
+													type="button"
+													className={Styles.cancel}
+													onClick= {handleCancel}
+												>
+													CANCEL
+												</button>
+											) : null
+										}
+									</div>
 								</div>
 							</div>
 						</div>
+						<ToastContainer
+							position="bottom-center"
+						/>
 					</div>
 				)
 			}

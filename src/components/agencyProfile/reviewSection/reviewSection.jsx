@@ -21,7 +21,10 @@ function ReviewSection({
 			rating,
 			comment,
 		};
-		console.log(data);
+		if (rating === 0 || comment === '') {
+			toast.error('Please fill all the fields');
+			return;
+		}
 		axios.post('create-review', data).then(() => {
 			toast.success('Review posted successfully');
 			setRating(0);

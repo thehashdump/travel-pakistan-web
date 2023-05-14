@@ -1,9 +1,34 @@
+import { useState } from 'react';
 import { Image } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
+import axios from '../../utils/axiosConfig';
 import { Footer } from '../footer';
 import { Navbar } from '../navbar';
 import Styles from './contactUs.module.scss';
 
 function ContactUs() {
+	const [name, setName] = useState('Enter your name');
+	const [email, setEmail] = useState('Enter your email address');
+	const [query, setQuery] = useState('Go ahead! We are listening...');
+	const handleQuerySubmit = () => {
+		const data = {
+			name,
+			email,
+			query
+		};
+		if (name === 'Enter your name' || email === 'Enter your email address' || query === 'Go ahead! We are listening...') {
+			toast.error('Please fill all the fields');
+			return;
+		}
+		axios.post('create-query', data).then(() => {
+			toast.success('Query submitted successfully');
+			setTimeout(() => {
+				window.location.href = '/';
+			}, 2000);
+		}).catch(() => {
+			toast.error('Something went wrong');
+		});
+	};
 	return (
 		<div className={Styles.contactUs}>
 			<div className={Styles.top}>
@@ -16,21 +41,29 @@ function ContactUs() {
             We are here for you! How can we help?
 					</span>
 					<div className={Styles.input}>
-						<input className={Styles.name} placeholder="Enter your name" />
 						<input
-							className={Styles.email}
-							placeholder="Enter your email address"
+							className={Styles.name}
+							value={name}
+							onFocus={() => setName('')}
+							onChange={(e) => setName(e.target.value)}
 						/>
 						<input
-							className={Styles.contact}
-							placeholder="Enter your Contact Number"
+							className={Styles.email}
+							value={email}
+							onFocus={() => setEmail('')}
+							onChange={(e) => setEmail(e.target.value)}
 						/>
 						<textarea
 							className={Styles.message}
-							placeholder="Go ahead! We are listening..."
+							value={query}
+							onFocus={() => setQuery('')}
+							onChange={(e) => setQuery(e.target.value)}
 						/>
 					</div>
-					<button className={Styles.submit}>Submit</button>
+					<button
+						className={Styles.submit}
+						onClick={handleQuerySubmit}
+					>Submit</button>
 				</div>
 				<div className={Styles.location}>
 					<div className={Styles.vectorImage}></div>
@@ -52,6 +85,9 @@ function ContactUs() {
 			</div>
 
 			<Footer className={Styles.footer} />
+			<ToastContainer
+				position="bottom-center"
+			/>
 		</div>
 	);
 }

@@ -459,13 +459,23 @@ function TourDetails() {
 													PKR {tour.price.children} <span>per child</span>
 												</div>
 												<Link
-													to='/booktour' state={{ tour, tickets, pickup }}
+													to= {pickup !== '' && tickets.adults >= 1 ? '/bookTour' : '#' }
+													state={{ tour, tickets, pickup }}
 													className={Styles.link}
 												>
-													<button
-														className={Styles.button}
-													>Continue</button>
+													<>
+														{pickup !== '' && tickets.adults >= 1 ? (
+															<button className={Styles.button}>Continue</button>
+														) : (
+															<button className={Styles.button} disabled>
+															Continue
+															</button>
+														)}
+													</>
 												</Link>
+												{(pickup === '' || tickets.adults < 1) && (
+													<p>Please select a pickup location and at least 1 adult ticket.</p>
+												)}
 											</div>
 										</div>
 									</div>

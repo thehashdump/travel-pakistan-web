@@ -19,7 +19,7 @@ function BookTour() {
 	const [email, setEmail] = useState(user ? user.email : '');
 	const [cnic, setCnic] = useState(user ? user.cnic : '');
 	const [amount, setAmount] = useState(0);
-	const [payment, setPayment] = useState({});
+	const [payment, setPayment] = useState(null);
 
 	useEffect(() => {
 		if (user) {
@@ -33,7 +33,8 @@ function BookTour() {
 					children: tickets.children,
 				},
 			});
-		} else {
+		} else if (
+			name !== '' && contact !== '' && email !== '' && cnic !== '') {
 			setPayment({
 				tour: tour._id,
 				amount,
@@ -47,7 +48,7 @@ function BookTour() {
 					contact,
 					email,
 					cnic,
-				},
+				}
 			});
 		}
 	}, [user, name, contact, email, cnic, amount,
@@ -142,14 +143,23 @@ function BookTour() {
 							</div>
 						</div>
 						<Link
-							to='/payment' state={{ tour, payment, tickets }}
+							to={payment ? '/payment' : '#'} state={{ tour, payment, tickets }}
 						>
-							<button
-								className={Styles.continue}
-							>
-								Continue
-							</button>
+							{
+								!payment ? (
+									<button className={Styles.continue} disabled>
+										Continue
+									</button>
+								) : (
+									<button className={Styles.continue}>Continue</button>
+								)
+							}
 						</Link>
+						{
+							!payment ? (
+								<p>Enter the user details</p>
+							) : null
+						}
 					</div>
 				</div>
 				<div className={Styles.bill}>

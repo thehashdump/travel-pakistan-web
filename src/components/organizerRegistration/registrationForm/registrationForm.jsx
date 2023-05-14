@@ -225,6 +225,10 @@ const RegistrationForm = () => {
 			address,
 			phone,
 		};
+		if (name === '' || email === '' || tagline.length === 0 || tags.length === 0 || images.length === 0 || displayPicture.length === 0 || coverImage.length === 0 || description === '' || address === '' || phone === '') {
+			toast.error('Please fill all the fields');
+			return;
+		}
 		axios.post('create-organizer', request).then((res) => {
 			if (res.data.create_organizer_failed) {
 				toast.error('Failed to create organizer');

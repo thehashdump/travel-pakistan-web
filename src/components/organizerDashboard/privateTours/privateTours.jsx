@@ -25,8 +25,13 @@ function PrivateTours() {
 			tourId: id,
 			organizer: user.organizerId
 		};
+		if (bid === 0) {
+			toast.error('Please place a valid bid');
+			return;
+		}
 		axios.post('/bid-private-tour', data).then(() => {
 			toast.success('Bid successfully placed');
+			setShowPopup(false);
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -228,7 +233,6 @@ function PrivateTours() {
 										type="submit"
 										className={Styles.bidButton}
 										onClick={() => {
-											setShowPopup(false);
 											handleBiding();
 										}}
 									>

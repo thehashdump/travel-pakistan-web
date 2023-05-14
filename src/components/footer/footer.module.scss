@@ -141,6 +141,10 @@
         }
         .topWithoutLogin{
             grid-template-columns: 1fr 1fr 1fr;
+
+            @media screen and (max-width: 890px){
+                grid-template-columns: 1fr;
+            }
         }
         @media screen and (max-width: 1250px){
             flex-direction: column;
@@ -160,7 +164,7 @@
                     text-align: center;
                 }
             }
-            .top{
+            .top, .topWithoutLogin{
                 width: 70%;
                 margin: 0 auto;
                 .company,
@@ -201,7 +205,7 @@
                     }
                 }
             }
-            .top{
+            .top, .topWithoutLogin{
                 .company,
                 .quickAccess,
                 .more,

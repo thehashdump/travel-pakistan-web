@@ -31,12 +31,15 @@ function PrivateTour() {
 			departureLocation,
 			description,
 		};
-		console.log(data);
+		if (destination === '' || durationDays === 0 || travelers === 0 || budget === 0 || route.length === 0 || departureDate === '' || departureTime === '' || departureLocation === '' || description === '') {
+			toast.error('Please fill all the fields');
+			return;
+		}
 		axios.post('create-private-tour', data).then(() => {
 			toast.success('Request created successfully');
 			setTimeout(() => {
 				window.location.href = `/account/${_id}?tab=PrivateTourRequests`;
-			}, 4000);
+			}, 2000);
 		}).catch((err) => {
 			console.log(err);
 		});
@@ -93,21 +96,6 @@ function PrivateTour() {
 				</div>
 			</div>
 			<div className={Styles.requestTour}>
-				<div className={Styles.callUs}>
-					<div className={Styles.callUsText}>
-						<span className={Styles.heading}>Not sure of your plans?</span>
-						<br />
-						<span className={Styles.subHeading}>
-              Plan a tour as per your choice
-						</span>
-					</div>
-					<div className={Styles.callUsButton}>
-						<button className={Styles.button}>
-							<span className={Styles.buttonText}>Call +92 324-4943615</span>
-						</button>
-					</div>
-				</div>
-
 				<div className={Styles.detailsForm}>
 					<div className={Styles.heading}>
 						<span className={Styles.Text}>Share Details</span>

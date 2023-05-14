@@ -18,7 +18,7 @@ function TourPayment() {
 			toast.success('Tour Purchased Successfully');
 			setTimeout(() => {
 				window.location.href = '/';
-			}, 4000);
+			}, 2000);
 		}).catch((err) => {
 			console.log(err);
 		});
